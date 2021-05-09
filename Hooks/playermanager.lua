@@ -73,28 +73,14 @@ function PlayerManager:generic_attempt(name_id, reduction)
 	end
 
 	self:register_message(Message.OnEnemyKilled, "speed_up_"..name_id, speed_up_on_kill)
+	managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, duration)
 	return true
 end
 
 --[[ Common functions END ]] --
 
 function PlayerManager:_attempt_yakuza_injector()
-	if self:has_activate_temporary_upgrade("temporary", "yakuza_injector") then
-		return false
-	end
-
-	local duration = self:upgrade_value("temporary", "yakuza_injector")[2]
-	local now = managers.game_play_central:get_heist_timer()
-	managers.network:session():send_to_peers("sync_ability_hud", now + duration, duration)
-
-	self:activate_temporary_upgrade("temporary", "yakuza_injector")
-
-	local function speed_up_on_kill()
-		managers.player:speed_up_grenade_cooldown(1)
-	end
-
-	self:register_message(Message.OnEnemyKilled, "speed_up_yakuza_injector", speed_up_on_kill)
-	return true
+	return self:generic_attempt("yakuza_injector", 2)
 end
 
 
