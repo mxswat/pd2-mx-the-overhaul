@@ -3,6 +3,10 @@ Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", funct
         menu_deck12_1 = {
             "yakuza_injector",
             "temporary_yakuza_injector_1"
+        },
+        menu_deck7_1 = {
+            "burglar_luck",
+            "temporary_burglar_luck_1"
         }
     }
 

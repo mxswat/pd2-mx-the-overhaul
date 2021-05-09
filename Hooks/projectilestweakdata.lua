@@ -4,6 +4,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             name_id = "yakuza_injector",
             base_cooldown = 30,
             max_amount = 1,
+        },
+        {
+            name_id = "burglar_luck",
+            base_cooldown = 30,
+            max_amount = 1,
         }
     }
 

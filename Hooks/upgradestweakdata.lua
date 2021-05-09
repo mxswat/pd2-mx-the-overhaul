@@ -2,7 +2,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
     self.values.temporary.yakuza_injector = {
 		{
 			0.75,
-			10
+			8
+		}
+	}
+
+	self.values.temporary.burglar_luck = {
+		{
+			0.75,
+			8
 		}
 	}
 end)
@@ -18,6 +25,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "yakuza_injector",
+			category = "temporary"
+		}
+	}
+
+    self.definitions.burglar_luck = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_burglar_luck_1 = {
+		name_id = "menu_temporary_burglar_luck_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "burglar_luck",
 			category = "temporary"
 		}
 	}

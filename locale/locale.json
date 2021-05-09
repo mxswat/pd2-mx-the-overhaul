@@ -1,4 +1,6 @@
 {
   "bm_ability_yakuza_injector": "Yakuza's Injector",
-  "bm_ability_yakuza_injector_desc": "30 Seconds cooldown\n\nWhen activated, you gain 25% movement speed and 30% armor regeneration, and when you use your melee weapon, you will receive self-damage if you miss (useful in stealth) "
+  "bm_ability_yakuza_injector_desc": "30 Seconds cooldown -1s cooldown on kill\n\nWhen activated, you gain 35% movement speed and 40% armor regeneration for 8 seconds, and when you use your melee weapon, you will receive self-damage if you miss (useful in stealth) ",
+  "bm_ability_burglar_luck": "Burglar's Luck",
+  "bm_ability_burglar_luck_desc": "30 Seconds cooldown -1s cooldown on kill\n\nWhen activated, you gain 30% dodge for 8 seconds"
 }
