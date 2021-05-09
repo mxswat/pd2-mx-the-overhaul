@@ -22,8 +22,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "adrenaline_shot",
-            base_cooldown = 30,
-            max_amount = 1,
+            base_cooldown = 60,
+            max_amount = 2,
         },
     }
 

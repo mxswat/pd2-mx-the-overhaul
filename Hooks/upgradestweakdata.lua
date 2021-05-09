@@ -23,7 +23,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 	self.values.temporary.adrenaline_shot = {
 		{
 			0.75,
-			8
+			10
 		}
 	}
 end)

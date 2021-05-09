@@ -12,3 +12,12 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
     end
     return col_ray
 end
+
+
+local VPPP_PlayerStandard_get_swap_speed_multiplier = PlayerStandard._get_swap_speed_multiplier
+function PlayerStandard:_get_swap_speed_multiplier()
+	local multiplier = VPPP_PlayerStandard_get_swap_speed_multiplier(self)
+	multiplier = managers.player:give_temporary_value_boost(multiplier, "adrenaline_shot", 0.80)
+
+	return multiplier
+end
