@@ -35,7 +35,7 @@ function PlayerManager:give_temporary_value_boost(starting_value, temporay_namei
 	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value + boost) or starting_value
 end
 
-function PlayerManager:generic_attempt(name_id)
+function PlayerManager:generic_attempt(name_id, reduction)
 	if self:has_activate_temporary_upgrade("temporary", name_id) then
 		return false
 	end
@@ -47,7 +47,7 @@ function PlayerManager:generic_attempt(name_id)
 	self:activate_temporary_upgrade("temporary", name_id)
 
 	local function speed_up_on_kill()
-		managers.player:speed_up_grenade_cooldown(1)
+		managers.player:speed_up_grenade_cooldown(reduction or 1)
 	end
 
 	self:register_message(Message.OnEnemyKilled, "speed_up_"..name_id, speed_up_on_kill)
@@ -73,22 +73,7 @@ function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
 end
 
 function PlayerManager:_attempt_burglar_luck()
-	if self:has_activate_temporary_upgrade("temporary", "burglar_luck") then
-		return false
-	end
-
-	local duration = self:upgrade_value("temporary", "burglar_luck")[2]
-	local now = managers.game_play_central:get_heist_timer()
-	managers.network:session():send_to_peers("sync_ability_hud", now + duration, duration)
-
-	self:activate_temporary_upgrade("temporary", "burglar_luck")
-
-	local function speed_up_on_kill()
-		managers.player:speed_up_grenade_cooldown(1)
-	end
-
-	self:register_message(Message.OnEnemyKilled, "speed_up_burglar_luck", speed_up_on_kill)
-	return true
+	return self:generic_attempt("burglar_luck")
 end
 
 local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
@@ -97,4 +82,50 @@ function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, overri
 	chance = self:give_temporary_value_boost(chance, "burglar_luck", 0.30)
 	log("chance"..chance)
 	return chance
+end
+
+function PlayerManager:_attempt_auto_inject_super_stimpak()
+	if game_state_machine:verify_game_state(GameStateFilters.downed) then
+		self:send_message(Message.RevivePlayer, nil, nil)
+		return true
+	end
+	return false -- false Does not allow the attempt_ability() to remove 1 nade
+end
+
+local VPPP_PlayerManager_attempt_ability = PlayerManager.attempt_ability
+function PlayerManager:attempt_ability(ability)
+	if managers.blackmarket:equipped_grenade() == "auto_inject_super_stimpak" then
+		-- Sadly I had to duplicated the code to allow the usage of abilities when downed
+		-- If you read this and know how to avoid it, PLEASE tell me how
+		-- I was thinking about the function override used in Beardlib fixes, to override game_state_machine:verify_game_state but I'm unsure
+		if not self:player_unit() then
+			return
+		end
+	
+		local local_peer_id = managers.network:session():local_peer():id()
+		local has_no_grenades = self:get_grenade_amount(local_peer_id) == 0
+		local is_downed = false
+		local swan_song_active = managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier")
+	
+		if has_no_grenades or is_downed or swan_song_active then
+			return
+		end
+	
+		local attempt_func = self["_attempt_" .. ability]
+	
+		if attempt_func and not attempt_func(self) then
+			return
+		end
+	
+		local tweak = tweak_data.blackmarket.projectiles[ability]
+	
+		if tweak and tweak.sounds and tweak.sounds.activate then
+			self:player_unit():sound():play(tweak.sounds.activate)
+		end
+	
+		self:add_grenade_amount(-1)
+		self._message_system:notify("ability_activated", nil, ability)
+	else 
+		return VPPP_PlayerManager_attempt_ability(self, ability)
+	end
 end

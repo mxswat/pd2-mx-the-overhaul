@@ -17,7 +17,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "auto_inject_super_stimpak",
-            base_cooldown = 250,
+            base_cooldown = 300,
             max_amount = 1,
         }
     }

@@ -13,6 +13,7 @@
 		<hook file="networkpeer.lua" source_file="lib/network/base/networkpeer"/>
 		<hook file="unitnetworkhandler.lua" source_file="lib/network/handlers/unitnetworkhandler"/>
 		<hook file="tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
+		<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
 	</Hooks>
 
 	<AddFiles directory="Assets">
