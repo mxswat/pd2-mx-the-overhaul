@@ -12,6 +12,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			8
 		}
 	}
+
+	self.values.temporary.med_x = {
+		{
+			0.75,
+			8
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -41,5 +48,23 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 			upgrade = "burglar_luck",
 			category = "temporary"
 		}
+	}
+
+	self.definitions.med_x = {
+		category = "grenade",
+	}
+	
+	self.definitions.temporary_med_x_1 = {
+		name_id = "menu_temporary_med_x_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "med_x",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.auto_inject_super_stimpak = {
+		category = "grenade",
 	}
 end)

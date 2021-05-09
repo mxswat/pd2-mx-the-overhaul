@@ -18,5 +18,7 @@
 	<AddFiles directory="Assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/yakuza_injector"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/burglar_luck"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/med_x"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/auto_inject_super_stimpak"/>
 	</AddFiles>
 </mod>
