@@ -4,7 +4,7 @@
   "bm_ability_burglar_luck": "Burglar's Luck",
   "bm_ability_burglar_luck_desc": "30s cooldown -1s cooldown on kill\n\nWhen activated, you gain 30% dodge for 8 seconds",
   "bm_ability_med_x": "Med-X",
-  "bm_ability_med_x_desc": "Work In Progress?",
+  "bm_ability_med_x_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you receive -30% damage for 8 seconds",
   "bm_ability_auto_inject_super_stimpak": "Auto-inject Super Stimpak",
   "bm_ability_auto_inject_super_stimpak_desc": "300s cooldown no cooldown on kill\n\nWhen downed it can be activated to instantly revive you",
   "bm_ability_adrenaline_shot": "L4D2 Adrenaline Shot",

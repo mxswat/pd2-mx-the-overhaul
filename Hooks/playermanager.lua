@@ -53,6 +53,10 @@ function PlayerManager:give_temporary_value_boost(starting_value, temporay_namei
 	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value + boost) or starting_value
 end
 
+function PlayerManager:multiply_by_temporary_value_boost(starting_value, temporay_nameid, boost)
+	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value * boost) or starting_value
+end
+
 function PlayerManager:generic_attempt(name_id, reduction)
 	if self:has_activate_temporary_upgrade("temporary", name_id) then
 		return false
@@ -131,11 +135,18 @@ function PlayerManager:_attempt_auto_inject_super_stimpak()
 	return false -- false Does not allow the attempt_ability() to remove 1 nade
 end
 
+function PlayerManager:_attempt_adrenaline_shot()
+	return self:generic_attempt("adrenaline_shot", 2)
+end
+
 function PlayerManager:_attempt_med_x()
 	return self:generic_attempt("med_x")
 end
 
+local VPPP_PlayerManager_damage_reduction_skill_multiplier = PlayerManager.damage_reduction_skill_multiplier
+function PlayerManager:damage_reduction_skill_multiplier(damage_type)
+	local multiplier = VPPP_PlayerManager_damage_reduction_skill_multiplier(self, damage_type)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "med_x", 0.70)
 
-function PlayerManager:_attempt_adrenaline_shot()
-	return self:generic_attempt("adrenaline_shot", 2)
+	return multiplier
 end
