@@ -19,6 +19,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			8
 		}
 	}
+
+	self.values.temporary.adrenaline_shot = {
+		{
+			0.75,
+			8
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -66,5 +73,19 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 
 	self.definitions.auto_inject_super_stimpak = {
 		category = "grenade",
+	}
+	
+	self.definitions.adrenaline_shot = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_adrenaline_shot_1 = {
+		name_id = "menu_temporary_adrenaline_shot_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "adrenaline_shot",
+			category = "temporary"
+		}
 	}
 end)

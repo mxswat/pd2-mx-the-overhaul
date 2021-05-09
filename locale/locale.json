@@ -6,5 +6,7 @@
   "bm_ability_med_x": "Med-X",
   "bm_ability_med_x_desc": "Work In Progress?",
   "bm_ability_auto_inject_super_stimpak": "Auto-inject Super Stimpak",
-  "bm_ability_auto_inject_super_stimpak_desc": "300s cooldown no cooldown on kill\n\nWhen downed it can be activated to instantly revive you"
+  "bm_ability_auto_inject_super_stimpak_desc": "300s cooldown no cooldown on kill\n\nWhen downed it can be activated to instantly revive you",
+  "bm_ability_adrenaline_shot": "L4D2 Adrenaline Shot",
+  "bm_ability_adrenaline_shot_desc": "WIP"
 }

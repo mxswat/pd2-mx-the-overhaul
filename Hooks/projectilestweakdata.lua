@@ -19,7 +19,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             name_id = "auto_inject_super_stimpak",
             base_cooldown = 300,
             max_amount = 1,
-        }
+        },
+        {
+            name_id = "adrenaline_shot",
+            base_cooldown = 30,
+            max_amount = 1,
+        },
     }
 
     for i, injector in ipairs(injectors) do
