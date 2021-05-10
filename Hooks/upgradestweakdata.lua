@@ -37,7 +37,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 	self.values.temporary.liquid_armor = {
 		{
 			0.1,
-			20
+			10
 		}
 	}
 end)

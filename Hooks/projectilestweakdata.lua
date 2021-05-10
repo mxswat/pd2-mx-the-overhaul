@@ -33,7 +33,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "liquid_armor",
-            base_cooldown = 80,
+            base_cooldown = 90,
             max_amount = 1,
             activate = "" -- I know, it's a bad fix, but I had no better idea to disable the sound and keep the default value defined
         },

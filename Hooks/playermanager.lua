@@ -147,7 +147,7 @@ function PlayerManager:_attempt_spare_armor_plate()
 end
 
 function PlayerManager:_attempt_liquid_armor()
-	return self:generic_attempt("liquid_armor", 1.5)
+	return self:generic_attempt("liquid_armor", 2)
 end
 
 

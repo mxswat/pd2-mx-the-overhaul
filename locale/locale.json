@@ -12,5 +12,5 @@
   "bm_ability_spare_armor_plate": "Spare Armor Plates",
   "bm_ability_spare_armor_plate_desc": "2 plates with 150s cooldown -1s cooldown on kill\n\nWhen activated, you instantly regain armor",
   "bm_ability_liquid_armor": "Armorer's Liquid Armor",
-  "bm_ability_liquid_armor_desc": "80s cooldown -1.5s cooldown on kill\n\nWhen activated, your max armor doubles for 20 seconds"
+  "bm_ability_liquid_armor_desc": "90s cooldown -2s cooldown on kill\n\nWhen activated, your max armor doubles for 10 seconds"
 }
