@@ -145,3 +145,16 @@ function PlayerManager:_attempt_spare_armor_plate()
 	end
 	return activated
 end
+
+function PlayerManager:_attempt_liquid_armor()
+	return self:generic_attempt("liquid_armor", 1.5)
+end
+
+
+local VPPP_PlayerManager_body_armor_skill_multiplier = PlayerManager.body_armor_skill_multiplier
+function PlayerManager:body_armor_skill_multiplier(override_armor)
+	local multiplier = VPPP_PlayerManager_body_armor_skill_multiplier(self, override_armor)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "liquid_armor", 2)
+	log("multiplier"..multiplier)
+	return multiplier
+end

@@ -25,5 +25,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/auto_inject_super_stimpak"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/adrenaline_shot"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/spare_armor_plate"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/liquid_armor"/>
 	</AddFiles>
 </mod>

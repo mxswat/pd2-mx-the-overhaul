@@ -38,12 +38,24 @@ tweak_data.hud_icons.adrenaline_shot = {
     }
 }
 
+-- From pd2-lua\lib\tweak_data\hudiconstweakdata.lua
+local csb_size = 128
 tweak_data.hud_icons.spare_armor_plate = {
-    texture = "guis/textures/pd2/equipment",
+    texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
     texture_rect = {
-        32,
-        64,
-        32,
-        32
+        csb_size * 4,
+        csb_size * 0,
+        csb_size,
+        csb_size
+    }
+}
+
+tweak_data.hud_icons.liquid_armor = {
+    texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
+    texture_rect = {
+        csb_size * 4,
+        csb_size * 0,
+        csb_size,
+        csb_size
     }
 }

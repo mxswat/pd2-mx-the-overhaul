@@ -33,6 +33,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			0.5
 		}
 	}
+	
+	self.values.temporary.liquid_armor = {
+		{
+			0.1,
+			20
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -107,6 +114,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "spare_armor_plate",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.liquid_armor = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_liquid_armor_1 = {
+		name_id = "menu_temporary_liquid_armor_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "liquid_armor",
 			category = "temporary"
 		}
 	}
