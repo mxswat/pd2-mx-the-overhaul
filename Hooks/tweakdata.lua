@@ -59,3 +59,13 @@ tweak_data.hud_icons.liquid_armor = {
         csb_size
     }
 }
+
+tweak_data.hud_icons.blood_transfusion = {
+    texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
+    texture_rect = {
+        csb_size * 6,
+        csb_size * 0,
+        csb_size,
+        csb_size
+    }
+}

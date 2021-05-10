@@ -39,7 +39,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "blood_transfusion",
-            base_cooldown = 1,
+            base_cooldown = 60,
             max_amount = 1,
         },
     }
