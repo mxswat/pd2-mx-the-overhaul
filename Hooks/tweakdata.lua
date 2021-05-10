@@ -37,3 +37,13 @@ tweak_data.hud_icons.adrenaline_shot = {
         32
     }
 }
+
+tweak_data.hud_icons.spare_armor_plate = {
+    texture = "guis/textures/pd2/equipment",
+    texture_rect = {
+        32,
+        64,
+        32,
+        32
+    }
+}

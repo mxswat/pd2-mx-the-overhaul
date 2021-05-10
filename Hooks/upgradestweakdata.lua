@@ -26,6 +26,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			10
 		}
 	}
+
+	self.values.temporary.spare_armor_plate = {
+		{
+			0.1,
+			0.5
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -79,12 +86,27 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		category = "grenade",
 	}
 
+	
 	self.definitions.temporary_adrenaline_shot_1 = {
 		name_id = "menu_temporary_adrenaline_shot_1",
 		category = "temporary",
 		upgrade = {
 			value = 1,
 			upgrade = "adrenaline_shot",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.spare_armor_plate = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_spare_armor_plate_1 = {
+		name_id = "menu_temporary_spare_armor_plate_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "spare_armor_plate",
 			category = "temporary"
 		}
 	}

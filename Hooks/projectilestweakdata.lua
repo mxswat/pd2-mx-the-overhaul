@@ -25,6 +25,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             base_cooldown = 60,
             max_amount = 2,
         },
+        {
+            name_id = "spare_armor_plate",
+            base_cooldown = 150,
+            max_amount = 2,
+            activate = "" -- I know, it's a bad fix, but I had no better idea to disable the sound and keep the default value defined
+        },
     }
 
     for i, injector in ipairs(injectors) do
@@ -39,7 +45,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             max_amount = injector.max_amount,
             custom = true,
             sounds = {
-                activate = "perkdeck_activate",
+                activate = injector.activate or "perkdeck_activate",
                 cooldown = "perkdeck_cooldown_over"
             }
         }

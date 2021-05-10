@@ -87,8 +87,9 @@ end
 local VPPP_PlayerManager_movement_speed_multiplier = PlayerManager.movement_speed_multiplier
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = VPPP_PlayerManager_movement_speed_multiplier(self, speed_state, bonus_multiplier, upgrade_level, health_ratio)
-	multiplier = self:give_temporary_value_boost(multiplier, "yakuza_injector", 0.35)
-	multiplier = self:give_temporary_value_boost(multiplier, "adrenaline_shot", 0.15)
+	-- Changed to be a multiplicative buff
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.35)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "adrenaline_shot", 1.15)
 
 	return multiplier
 end
@@ -135,4 +136,12 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "med_x", 0.70)
 
 	return multiplier
+end
+
+function PlayerManager:_attempt_spare_armor_plate()
+	local activated = self:generic_attempt("spare_armor_plate")
+	if activated then
+		managers.player:player_unit():character_damage():_regenerate_armor(false)
+	end
+	return activated
 end

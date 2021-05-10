@@ -27,4 +27,6 @@ Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", funct
     table.insert(self.default_upgrades, "auto_inject_super_stimpak")
     table.insert(self.default_upgrades, "adrenaline_shot")
     table.insert(self.default_upgrades, "temporary_adrenaline_shot_1")
+    table.insert(self.default_upgrades, "spare_armor_plate")
+    table.insert(self.default_upgrades, "temporary_spare_armor_plate_1")
 end)
