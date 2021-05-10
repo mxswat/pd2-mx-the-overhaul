@@ -40,6 +40,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			10
 		}
 	}
+
+	self.values.temporary.blood_transfusion = {
+		{
+			0.1,
+			0.5
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -128,6 +135,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "liquid_armor",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.blood_transfusion = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_blood_transfusion_1 = {
+		name_id = "menu_temporary_blood_transfusion_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "blood_transfusion",
 			category = "temporary"
 		}
 	}

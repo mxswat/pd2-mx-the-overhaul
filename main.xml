@@ -1,5 +1,5 @@
 <mod name="More throwables and abilities" author="Mx" color="Color(0,1,0)" priority="1000">
-	<AssetUpdates id="32222" version="6" provider="modworkshop" />
+	<AssetUpdates id="32222" version="6.5" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -26,5 +26,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/adrenaline_shot"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/spare_armor_plate"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/liquid_armor"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/blood_transfusion"/>
 	</AddFiles>
 </mod>

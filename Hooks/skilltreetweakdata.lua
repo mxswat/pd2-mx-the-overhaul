@@ -11,6 +11,10 @@ Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", funct
         menu_deck3_1 = {
             "liquid_armor",
             "temporary_liquid_armor_1"
+        },
+        menu_deck13_1 = {
+            "blood_transfusion",
+            "temporary_blood_transfusion_1"
         }
     }
 

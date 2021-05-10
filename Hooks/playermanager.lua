@@ -141,7 +141,7 @@ end
 function PlayerManager:_attempt_spare_armor_plate()
 	local activated = self:generic_attempt("spare_armor_plate")
 	if activated then
-		managers.player:player_unit():character_damage():_regenerate_armor(false)
+		char_damage:_regenerate_armor(false)
 	end
 	return activated
 end
@@ -155,6 +155,16 @@ local VPPP_PlayerManager_body_armor_skill_multiplier = PlayerManager.body_armor_
 function PlayerManager:body_armor_skill_multiplier(override_armor)
 	local multiplier = VPPP_PlayerManager_body_armor_skill_multiplier(self, override_armor)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "liquid_armor", 2)
-	log("multiplier"..multiplier)
 	return multiplier
+end
+
+function PlayerManager:_attempt_blood_transfusion()
+	local activated = self:generic_attempt("blood_transfusion", 2)
+	if activated then
+		local char_damage = managers.player: player_unit():character_damage()
+		char_damage._armor_stored_health = char_damage._armor_stored_health * 2
+		char_damage:consume_armor_stored_health()
+		char_damage:set_armor(math.max(char_damage:_max_armor() / 2, char_damage:get_real_armor()))
+	end
+	return activated
 end
