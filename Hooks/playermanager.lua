@@ -141,6 +141,7 @@ end
 function PlayerManager:_attempt_spare_armor_plate()
 	local activated = self:generic_attempt("spare_armor_plate")
 	if activated then
+		local char_damage = managers.player: player_unit():character_damage()
 		char_damage:_regenerate_armor(false)
 	end
 	return activated
