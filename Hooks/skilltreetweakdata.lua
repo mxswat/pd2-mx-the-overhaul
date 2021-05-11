@@ -15,6 +15,10 @@ Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", funct
         menu_deck13_1 = {
             "blood_transfusion",
             "temporary_blood_transfusion_1"
+        },
+        menu_deck5_1 = {
+            "wick_mode",
+            "temporary_wick_mode_1"
         }
     }
 

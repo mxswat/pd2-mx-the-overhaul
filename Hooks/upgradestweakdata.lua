@@ -47,6 +47,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			0.5
 		}
 	}
+	
+	self.values.temporary.wick_mode = {
+		{
+			0.1,
+			8
+		}
+	}
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -149,6 +156,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "blood_transfusion",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.wick_mode = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_wick_mode_1 = {
+		name_id = "menu_temporary_wick_mode_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "wick_mode",
 			category = "temporary"
 		}
 	}

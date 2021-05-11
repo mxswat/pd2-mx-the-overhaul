@@ -14,5 +14,7 @@
   "bm_ability_liquid_armor": "Armorer's Liquid Armor",
   "bm_ability_liquid_armor_desc": "90s cooldown -2s cooldown on kill\n\nWhen activated, your max armor doubles for 10 seconds",
   "bm_ability_blood_transfusion": "Blood Transfusion",
-  "bm_ability_blood_transfusion_desc": "60s cooldown -2s cooldown on kill\n\nWhen activated, you gain 200% of your stored health and 50% of your max armor. It cannot overheal"
+  "bm_ability_blood_transfusion_desc": "60s cooldown -2s cooldown on kill\n\nWhen activated, you gain 200% of your stored health and 50% of your max armor. It cannot overheal",
+  "bm_ability_wick_mode": "Wick Mode",
+  "bm_ability_wick_mode_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you have infinite ammo for 8 seconds"
 }

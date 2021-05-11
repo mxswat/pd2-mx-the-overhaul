@@ -42,6 +42,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             base_cooldown = 60,
             max_amount = 1,
         },
+        {
+            name_id = "wick_mode",
+            base_cooldown = 50,
+            max_amount = 1,
+        },
     }
 
     for i, injector in ipairs(injectors) do

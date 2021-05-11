@@ -169,3 +169,11 @@ function PlayerManager:_attempt_blood_transfusion()
 	end
 	return activated
 end
+
+function PlayerManager:_attempt_wick_mode()
+	local activated = self:generic_attempt("wick_mode", 1)
+	if activated then
+		managers.player:add_to_temporary_property("bullet_storm", self:upgrade_value("temporary", "wick_mode")[2], 1)
+	end
+	return activated
+end

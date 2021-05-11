@@ -27,5 +27,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/spare_armor_plate"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/liquid_armor"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/blood_transfusion"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/wick_mode"/>
 	</AddFiles>
 </mod>
