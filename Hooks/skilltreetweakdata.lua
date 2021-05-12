@@ -1,4 +1,4 @@
-Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", function(self)
+function AddThrowables(self)
     local name_id_to_upgrade_map = {
         menu_deck12_1 = {
             "yakuza_injector",
@@ -41,4 +41,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", funct
     table.insert(self.default_upgrades, "temporary_adrenaline_shot_1")
     table.insert(self.default_upgrades, "spare_armor_plate")
     table.insert(self.default_upgrades, "temporary_spare_armor_plate_1")
-end)
+end
+
+Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", AddThrowables)
+
+
+Hooks:Add("sso_skilltweak_init_complete", "VPP_sydch_overhaul_compatibility_patch", AddThrowables)
