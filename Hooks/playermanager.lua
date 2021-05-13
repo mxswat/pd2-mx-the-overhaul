@@ -123,6 +123,11 @@ end
 function PlayerManager:_attempt_auto_inject_super_stimpak()
 	if game_state_machine:verify_game_state(GameStateFilters.downed) then
 		self:send_message(Message.RevivePlayer, nil, nil)
+		local function speed_up_on_kill()
+			managers.player:speed_up_grenade_cooldown(reduction or 1)
+		end
+	
+		self:register_message(Message.OnEnemyKilled, "speed_up_auto_inject_super_stimpak", speed_up_on_kill)
 		return true
 	end
 	return false -- false Does not allow the attempt_ability() to remove 1 nade
