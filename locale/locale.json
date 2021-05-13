@@ -1,6 +1,6 @@
 {
   "bm_ability_yakuza_injector": "Yakuza's Injector",
-  "bm_ability_yakuza_injector_desc": "30s cooldown -2s cooldown on kill\n\nWhen activated, you gain 35% movement speed and 40% armor regeneration for 8 seconds, and when you use your melee weapon, you will receive self-damage if you miss (useful in stealth) ",
+  "bm_ability_yakuza_injector_desc": "30s cooldown -1s cooldown on kill\n\nWhen activated instantly recharges 100% of your stamina and, you gain 50% movement speed and 50% armor regeneration for 8 seconds, and when you use your melee weapon, you will receive self-damage if you miss (can't self damage under 1% health) ",
   "bm_ability_burglar_luck": "Burglar's Luck",
   "bm_ability_burglar_luck_desc": "30s cooldown -1s cooldown on kill\n\nWhen activated, you gain 30% dodge for 8 seconds",
   "bm_ability_med_x": "Med-X",
@@ -8,13 +8,13 @@
   "bm_ability_auto_inject_super_stimpak": "Auto-inject Super Stimpak",
   "bm_ability_auto_inject_super_stimpak_desc": "300s cooldown no cooldown on kill\n\nWhen downed it can be activated to instantly revive you",
   "bm_ability_adrenaline_shot": "L4D2 Adrenaline Shot",
-  "bm_ability_adrenaline_shot_desc": "2 shots with 60s cooldown -2s cooldown on kill\n\nWhen activated, you gain 40% interaction speed, 80% swap speed and reload speed for 10 seconds",
+  "bm_ability_adrenaline_shot_desc": "2 shots with 60s cooldown -2s cooldown on kill\n\nWhen activated instantly recharges 50% of your stamina and, you gain 40% interaction speed, 80% swap speed and reload speed for 10 seconds",
   "bm_ability_spare_armor_plate": "Spare Armor Plates",
   "bm_ability_spare_armor_plate_desc": "2 plates with 150s cooldown -1s cooldown on kill\n\nWhen activated, you instantly regain armor",
   "bm_ability_liquid_armor": "Armorer's Liquid Armor",
   "bm_ability_liquid_armor_desc": "90s cooldown -2s cooldown on kill\n\nWhen activated, your max armor doubles for 10 seconds",
   "bm_ability_blood_transfusion": "Blood Transfusion",
-  "bm_ability_blood_transfusion_desc": "60s cooldown -2s cooldown on kill\n\nWhen activated, you gain 200% of your stored health and 50% of your max armor. It cannot overheal",
+  "bm_ability_blood_transfusion_desc": "40s cooldown -1s cooldown on kill\n\nWhen activated, you gain 150% of your stored health and 100% of your max armor. It cannot overheal",
   "bm_ability_wick_mode": "Wick Mode",
   "bm_ability_wick_mode_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you have infinite ammo for 8 seconds"
 }

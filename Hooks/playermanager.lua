@@ -80,7 +80,13 @@ end
 --[[ Common functions END ]] --
 
 function PlayerManager:_attempt_yakuza_injector()
-	return self:generic_attempt("yakuza_injector", 2)
+	local activated = self:generic_attempt("yakuza_injector", 2)
+	if activated then
+		local player_unit = self:player_unit()
+		local stamina_regen = player_unit:movement():_max_stamina() * 1
+		player_unit:movement():add_stamina(stamina_regen)
+	end
+	return activated
 end
 
 
@@ -88,8 +94,8 @@ local VPPP_PlayerManager_movement_speed_multiplier = PlayerManager.movement_spee
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = VPPP_PlayerManager_movement_speed_multiplier(self, speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	-- Changed to be a multiplicative buff
-	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.35)
-	multiplier = self:multiply_by_temporary_value_boost(multiplier, "adrenaline_shot", 1.15)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.5)
+	-- multiplier = self:multiply_by_temporary_value_boost(multiplier, "adrenaline_shot", 1.15)
 
 	return multiplier
 end
@@ -97,7 +103,7 @@ end
 local VPPP_PlayerManager_body_armor_regen_multiplier = PlayerManager.body_armor_regen_multiplier
 function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
 	local multiplier = VPPP_PlayerManager_body_armor_regen_multiplier(self, moving, health_ratio)
-	multiplier = self:give_temporary_value_boost(multiplier, "yakuza_injector", 0.40)
+	multiplier = self:give_temporary_value_boost(multiplier, "yakuza_injector", 0.50)
 	
 	return multiplier
 end
@@ -123,7 +129,13 @@ function PlayerManager:_attempt_auto_inject_super_stimpak()
 end
 
 function PlayerManager:_attempt_adrenaline_shot()
-	return self:generic_attempt("adrenaline_shot", 2)
+	local activated = self:generic_attempt("adrenaline_shot", 2)
+	if activated then
+		local player_unit = self:player_unit()
+		local stamina_regen = player_unit:movement():_max_stamina() * 0.5
+		player_unit:movement():add_stamina(stamina_regen)
+	end
+	return activated
 end
 
 function PlayerManager:_attempt_med_x()
@@ -160,12 +172,12 @@ function PlayerManager:body_armor_skill_multiplier(override_armor)
 end
 
 function PlayerManager:_attempt_blood_transfusion()
-	local activated = self:generic_attempt("blood_transfusion", 2)
+	local activated = self:generic_attempt("blood_transfusion")
 	if activated then
 		local char_damage = managers.player: player_unit():character_damage()
-		char_damage._armor_stored_health = char_damage._armor_stored_health * 2
+		char_damage._armor_stored_health = char_damage._armor_stored_health * 1.5
 		char_damage:consume_armor_stored_health()
-		char_damage:set_armor(math.max(char_damage:_max_armor() / 2, char_damage:get_real_armor()))
+		char_damage:_regenerate_armor(false)
 	end
 	return activated
 end
