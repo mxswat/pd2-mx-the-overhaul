@@ -23,31 +23,10 @@ function PlayerStandard:_get_swap_speed_multiplier()
 end
 
 
-
 local old_PlayerStandard__find_pickups = PlayerStandard._find_pickups
 function PlayerStandard:_find_pickups(t)
+    local default_pickup = 200 * managers.player:upgrade_value("player", "increased_pickup_area", 1)
+    self._pickup_area = managers.player:has_activate_temporary_upgrade("temporary", "emergency_requisition") and 30000 or default_pickup
 	local result = old_PlayerStandard__find_pickups(self, t)
-	if managers.player:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
-        local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), 30000, self._slotmask_pickups)
-        local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
-        local may_find_grenade = not grenade_tweak.base_cooldown and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
-
-        for _, pickup in ipairs(pickups) do
-            if pickup:pickup() and pickup:pickup():pickup(self._unit) then
-                if may_find_grenade then
-                    local data = managers.player:upgrade_value("player", "regain_throwable_from_ammo", nil)
-
-                    if data then
-                        managers.player:add_coroutine("regain_throwable_from_ammo", PlayerAction.FullyLoaded, managers.player, data.chance, data.chance_inc)
-                    end
-                end
-
-                for id, weapon in pairs(self._unit:inventory():available_selections()) do
-                    managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
-                end
-            end
-        end
-    end
-    
 	return result
 end

@@ -207,7 +207,9 @@ end
 local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
 function PlayerManager:upgrade_value(category, upgrade, default)
 	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
-	if category == "temporary" and upgrade == "loose_ammo_restore_health" then
+	if 	category == "temporary" 
+		and upgrade == "loose_ammo_restore_health" 
+		and managers.player:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
 		-- log("loose_ammo_restore_health")
 		-- 04:52:27 PM Lua: {
 		-- 	[1] = {
