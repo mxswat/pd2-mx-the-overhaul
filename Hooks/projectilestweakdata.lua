@@ -27,7 +27,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "spare_armor_plate",
-            base_cooldown = 150,
+            base_cooldown = 90,
             max_amount = 2,
             activate = "" -- I know, it's a bad fix, but I had no better idea to disable the sound and keep the default value defined
         },
@@ -46,6 +46,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             name_id = "wick_mode",
             base_cooldown = 50,
             max_amount = 1,
+        },
+        {
+            name_id = "emergency_requisition",
+            base_cooldown = 25,
+            max_amount = 1,
+            activate = "" -- I know, it's a bad fix, but I had no better idea to disable the sound and keep the default value defined
         },
     }
 

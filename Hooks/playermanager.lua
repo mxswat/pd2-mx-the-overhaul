@@ -194,3 +194,30 @@ function PlayerManager:_attempt_wick_mode()
 	end
 	return activated
 end
+
+function PlayerManager:_attempt_emergency_requisition()
+	local activated = self:generic_attempt("emergency_requisition", 1)
+	if activated then
+		-- Well, it's activated, duh
+	end
+	return activated
+end
+
+-- I really need to make this `upgrade_value` override function common with my other mods
+local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
+function PlayerManager:upgrade_value(category, upgrade, default)
+	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
+	if category == "temporary" and upgrade == "loose_ammo_restore_health" then
+		-- log("loose_ammo_restore_health")
+		-- 04:52:27 PM Lua: {
+		-- 	[1] = {
+		-- 		[1] = 16, Healing min
+		-- 		[2] = 20 Healing max
+		-- 	},
+		-- 	[2] = 3 -- Cooldown
+		-- }
+		result[1][1] = result[1][1] * 1.5 
+		result[1][2] = result[1][2] * 1.5 
+	end
+	return result
+end

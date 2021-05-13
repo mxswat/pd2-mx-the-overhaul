@@ -5,3 +5,12 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 
     return multiplier
 end     
+
+
+
+local old_NewRaycastWeaponBase_fire_rate_multiplier = NewRaycastWeaponBase.fire_rate_multiplier
+function NewRaycastWeaponBase:fire_rate_multiplier()
+	local multiplier = old_NewRaycastWeaponBase_fire_rate_multiplier(self)
+	multiplier = managers.player:multiply_by_temporary_value_boost(multiplier, "wick_mode", 1.5)
+	return multiplier
+end

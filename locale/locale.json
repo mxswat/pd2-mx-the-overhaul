@@ -10,11 +10,13 @@
   "bm_ability_adrenaline_shot": "L4D2 Adrenaline Shot",
   "bm_ability_adrenaline_shot_desc": "2 shots with 60s cooldown -2s cooldown on kill\n\nWhen activated instantly recharges 50% of your stamina and, you gain 40% interaction speed, 80% swap speed and reload speed for 10 seconds",
   "bm_ability_spare_armor_plate": "Spare Armor Plates",
-  "bm_ability_spare_armor_plate_desc": "2 plates with 150s cooldown -1s cooldown on kill\n\nWhen activated, you instantly regain armor",
+  "bm_ability_spare_armor_plate_desc": "2 plates with 90s cooldown -1s cooldown on kill\n\nWhen activated, you instantly regain armor",
   "bm_ability_liquid_armor": "Armorer's Liquid Armor",
   "bm_ability_liquid_armor_desc": "90s cooldown -2s cooldown on kill\n\nWhen activated, your max armor doubles for 10 seconds",
   "bm_ability_blood_transfusion": "Blood Transfusion",
   "bm_ability_blood_transfusion_desc": "40s cooldown -1s cooldown on kill\n\nWhen activated, you gain 150% of your stored health and 100% of your max armor. It cannot overheal",
   "bm_ability_wick_mode": "Wick Mode",
-  "bm_ability_wick_mode_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you have infinite ammo for 8 seconds"
+  "bm_ability_wick_mode_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you have infinite ammo for 8 seconds and 50% Rate of fire (except for grenade/rocket launchers)",
+  "bm_ability_emergency_requisition": "Emergency Requisition",
+  "bm_ability_emergency_requisition_desc": "25s cooldown -1s cooldown on kill\n\nWhen activated, your ammo pickup range becomes 30 meters and increases your Gambler healing by 50% for 2 seconds"
 }

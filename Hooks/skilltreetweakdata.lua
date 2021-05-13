@@ -21,6 +21,10 @@ function AddThrowables(self)
         menu_deck5_1 = {
             "wick_mode",
             "temporary_wick_mode_1"
+        },
+        menu_deck10_1 = {
+            "emergency_requisition",
+            "temporary_emergency_requisition_1"
         }
     }
 

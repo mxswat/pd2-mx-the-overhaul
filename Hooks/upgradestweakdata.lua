@@ -51,7 +51,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 	self.values.temporary.wick_mode = {
 		{
 			0.1,
-			8
+			6
+		}
+	}
+
+	self.values.temporary.emergency_requisition = {
+		{
+			0.1,
+			2
 		}
 	}
 end)
@@ -170,6 +177,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "wick_mode",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.emergency_requisition = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_emergency_requisition_1 = {
+		name_id = "menu_temporary_emergency_requisition_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "emergency_requisition",
 			category = "temporary"
 		}
 	}

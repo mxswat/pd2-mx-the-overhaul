@@ -38,6 +38,16 @@ tweak_data.hud_icons.adrenaline_shot = {
     }
 }
 
+tweak_data.hud_icons.auto_inject_super_stimpak = {
+    texture = "guis/textures/pd2/equipment_02",
+    texture_rect = {
+        96,
+        0,
+        32,
+        32
+    }
+}
+
 -- From pd2-lua\lib\tweak_data\hudiconstweakdata.lua
 local csb_size = 128
 tweak_data.hud_icons.spare_armor_plate = {
@@ -71,6 +81,16 @@ tweak_data.hud_icons.blood_transfusion = {
 }
 
 tweak_data.hud_icons.wick_mode = {
+    texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
+    texture_rect = {
+        csb_size * 2,
+        csb_size * 0,
+        csb_size,
+        csb_size
+    }
+}
+
+tweak_data.hud_icons.emergency_requisition = {
     texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
     texture_rect = {
         csb_size * 2,
