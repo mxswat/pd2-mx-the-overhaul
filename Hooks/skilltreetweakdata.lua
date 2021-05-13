@@ -1,3 +1,5 @@
+Hooks:RegisterHook("VPPP_AddThrowables_Done") -- Added if someone wants to include my mod in their rebalance, just like I hooked my mod to SSO
+
 function AddThrowables(self)
     local name_id_to_upgrade_map = {
         menu_deck12_1 = {
@@ -41,6 +43,8 @@ function AddThrowables(self)
     table.insert(self.default_upgrades, "temporary_adrenaline_shot_1")
     table.insert(self.default_upgrades, "spare_armor_plate")
     table.insert(self.default_upgrades, "temporary_spare_armor_plate_1")
+
+    Hooks:Call("VPPP_AddThrowables_Done", self)
 end
 
 Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", AddThrowables)
