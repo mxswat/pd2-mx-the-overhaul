@@ -1,5 +1,5 @@
 <mod name="More throwables and abilities" author="Mx" color="Color(0,1,0)" priority="900">
-	<AssetUpdates id="32222" version="7.4" provider="modworkshop" />
+	<AssetUpdates id="32222" version="7.4.5" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
