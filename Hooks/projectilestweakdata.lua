@@ -53,6 +53,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             max_amount = 1,
             activate = "" -- I know, it's a bad fix, but I had no better idea to disable the sound and keep the default value defined
         },
+        {
+            name_id = "the_mixtape",
+            base_cooldown = 40,
+            max_amount = 1,
+        },
     }
 
     for i, injector in ipairs(injectors) do

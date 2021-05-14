@@ -18,5 +18,7 @@
   "bm_ability_wick_mode": "Wick Mode",
   "bm_ability_wick_mode_desc": "50s cooldown -1s cooldown on kill\n\nWhen activated, you have infinite ammo for 8 seconds and 50% Rate of fire (except for grenade/rocket launchers)",
   "bm_ability_emergency_requisition": "Emergency Requisition",
-  "bm_ability_emergency_requisition_desc": "25s cooldown -1s cooldown on kill\n\nWhen activated, your ammo pickup range becomes 30 meters and increases your Gambler healing by 50% for 2 seconds"
+  "bm_ability_emergency_requisition_desc": "25s cooldown -1s cooldown on kill\n\nWhen activated, your ammo pickup range becomes 30 meters and increases your Gambler healing by 50% for 2 seconds",
+  "bm_ability_the_mixtape": "The Mixtape",
+  "bm_ability_the_mixtape_desc": "40s cooldown -1s cooldown on kill, -2s cooldown on melee kill\n\nWhen activated for 4 seconds all the enemies in a 10 meter radius go in panic, and you gain 30% movement speed and 30% damage resistance"
 }

@@ -61,6 +61,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 			2
 		}
 	}
+
+	self.values.temporary.the_mixtape = {
+		{
+			0.1,
+			4
+		}
+	}
+
+	self.values.player.body_armor.dodge[1] = 1
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
@@ -191,6 +200,20 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 		upgrade = {
 			value = 1,
 			upgrade = "emergency_requisition",
+			category = "temporary"
+		}
+	}
+
+	self.definitions.the_mixtape = {
+		category = "grenade",
+	}
+
+	self.definitions.temporary_the_mixtape_1 = {
+		name_id = "menu_temporary_the_mixtape_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "the_mixtape",
 			category = "temporary"
 		}
 	}

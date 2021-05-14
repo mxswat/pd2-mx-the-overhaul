@@ -1,5 +1,5 @@
 <mod name="More throwables and abilities" author="Mx" color="Color(0,1,0)" priority="900">
-	<AssetUpdates id="32222" version="7.4.6" provider="modworkshop" />
+	<AssetUpdates id="32222" version="7.5" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -30,5 +30,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/blood_transfusion"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/wick_mode"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/emergency_requisition"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/the_mixtape"/>
 	</AddFiles>
 </mod>

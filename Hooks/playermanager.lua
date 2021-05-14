@@ -95,7 +95,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	local multiplier = VPPP_PlayerManager_movement_speed_multiplier(self, speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	-- Changed to be a multiplicative buff
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.5)
-	-- multiplier = self:multiply_by_temporary_value_boost(multiplier, "adrenaline_shot", 1.15)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "the_mixtape", 1.30)
 
 	return multiplier
 end
@@ -151,6 +151,7 @@ local VPPP_PlayerManager_damage_reduction_skill_multiplier = PlayerManager.damag
 function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	local multiplier = VPPP_PlayerManager_damage_reduction_skill_multiplier(self, damage_type)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "med_x", 0.70)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "the_mixtape", 0.30)
 
 	return multiplier
 end
@@ -203,6 +204,49 @@ function PlayerManager:_attempt_emergency_requisition()
 	return activated
 end
 
+function PlayerManager:mixtape_panic()
+	local slotmask = managers.slot:get_mask("enemies")
+	local units = World:find_units_quick("sphere", self:player_unit():movement():m_pos(), 1000, slotmask)
+
+	for e_key, unit in pairs(units) do
+		if alive(unit) and unit:character_damage() and not unit:character_damage():dead() then
+			unit:character_damage():build_suppression("panic", 1)
+			unit:movement():on_suppressed("panic")
+		end
+	end
+end
+
+function PlayerManager:_attempt_the_mixtape()
+	local activated = self:generic_attempt("the_mixtape", 1)
+	if activated then	
+		local function speed_up_on_melee_kill(weapon_unit, variant)
+			if variant == "melee" then
+				managers.player:speed_up_grenade_cooldown(2)
+			end
+		end
+
+		self:register_message(Message.OnEnemyKilled, "speed_up_on_melee_kill_the_mixtape", speed_up_on_melee_kill)
+		
+		local triggers = {
+			0.5,
+			1,
+			1.5,
+			2,
+			2.5,
+			3,
+			3.5,
+		}
+		
+		self:mixtape_panic()
+		for i,v in ipairs(triggers) do
+			DelayedCalls:Add("Mixtape_Panic_Burst_"..i, v, function()
+				self:mixtape_panic()
+			end)
+		end
+	end
+	return activated
+end
+
 -- I really need to make this `upgrade_value` override function common with my other mods
 -- Also if I'm editing an object like in the case of the values of "loose_ammo_restore_health" 
 -- I must make a deep copy or it can happen that the values can overflow since it's changing the referenced value
@@ -212,7 +256,6 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
 	local is_gambler = category == "temporary" and upgrade == "loose_ammo_restore_health"
 	if is_gambler and managers.player:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
-		-- log("loose_ammo_restore_health")
 		-- 04:52:27 PM Lua: {
 		-- 	[1] = {
 		-- 		[1] = 16, Healing min
@@ -221,7 +264,7 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 		-- 	[2] = 3 -- Cooldown
 		-- }
 		local new_result = deep_clone(result)
-		new_result[1][1] = new_result[1][1] * 1.5 
+		new_result[1][1] = new_result[1][1] * 1.5
 		new_result[1][2] = new_result[1][2] * 1.5
 		result = new_result
 	end
