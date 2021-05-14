@@ -204,6 +204,9 @@ function PlayerManager:_attempt_emergency_requisition()
 end
 
 -- I really need to make this `upgrade_value` override function common with my other mods
+-- Also if I'm editing an object like in the case of the values of "loose_ammo_restore_health" 
+-- I must make a deep copy or it can happen that the values can overflow since it's changing the referenced value
+-- Just like the bug I had with "The Fixes Mod"
 local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
 function PlayerManager:upgrade_value(category, upgrade, default)
 	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
@@ -217,8 +220,10 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 		-- 	},
 		-- 	[2] = 3 -- Cooldown
 		-- }
-		result[1][1] = result[1][1] * 1.5 
-		result[1][2] = result[1][2] * 1.5 
+		local new_result = deep_clone(result)
+		new_result[1][1] = new_result[1][1] * 1.5 
+		new_result[1][2] = new_result[1][2] * 1.5
+		result = new_result
 	end
 	return result
 end
