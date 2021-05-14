@@ -53,5 +53,4 @@ end
 
 Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", AddThrowables)
 
-
-Hooks:Add("sso_skilltweak_init_complete", "VPP_sydch_overhaul_compatibility_patch", AddThrowables)
+Hooks:Add("sso_skilltweak_init_complete", "VPPP_sydch_overhaul_compatibility_patch", AddThrowables)
