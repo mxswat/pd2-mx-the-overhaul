@@ -69,8 +69,32 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 		}
 	}
 
+	self.values.temporary.throwable_trip_mine = {
+		{
+			0.1,
+			0.1
+		}
+	}
+
 	-- self.values.player.body_armor.dodge[1] = 1
 end)
+
+function UpgradesTweakData:common_add_throwable(name_id)
+	self.definitions[name_id] = {
+		category = "grenade",
+	}
+
+	self.definitions["temporary_"..name_id.."_1"] = {
+		name_id = "menu_temporary_"..name_id.."_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = name_id,
+			category = "temporary"
+		}
+	}
+end
+
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
     self.definitions.yakuza_injector = {
@@ -217,4 +241,6 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData
 			category = "temporary"
 		}
 	}
+
+	self:common_add_throwable("throwable_trip_mine")
 end)

@@ -17,6 +17,9 @@
 		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
 		<hook file="interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 		<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
+		<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
+		<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
+		
 	</Hooks>
 
 	<AddFiles directory="Assets">
@@ -31,5 +34,7 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/wick_mode"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/emergency_requisition"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/the_mixtape"/>
+		<unit 	 path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_mx"/>
+		
 	</AddFiles>
 </mod>

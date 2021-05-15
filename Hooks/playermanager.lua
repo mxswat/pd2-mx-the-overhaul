@@ -270,3 +270,15 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 	end
 	return result
 end
+
+
+
+
+function PlayerManager:_attempt_throwable_trip_mine()
+	local activated = self:generic_attempt("throwable_trip_mine", 1)
+	if activated then
+		-- unit:equipment()[equipment.use_function](unit:equipment(), self._equipment.selected_index, equipment.unit)
+		activated = self:player_unit():equipment()['use_trip_mine_mx'](self:player_unit():equipment())
+	end
+	return activated
+end

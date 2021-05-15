@@ -32,6 +32,7 @@ function AddThrowables(self)
         }
     }
 
+    -- Add to perkdecks card
     for k, deck in pairs(self.specializations) do
         for k, card in pairs(deck) do
             if card and card.name_id and name_id_to_upgrade_map[card.name_id] then
@@ -44,13 +45,39 @@ function AddThrowables(self)
         end
     end
 
-    table.insert(self.default_upgrades, "med_x")
-    table.insert(self.default_upgrades, "temporary_med_x_1")
-    table.insert(self.default_upgrades, "auto_inject_super_stimpak")
-    table.insert(self.default_upgrades, "adrenaline_shot")
-    table.insert(self.default_upgrades, "temporary_adrenaline_shot_1")
-    table.insert(self.default_upgrades, "spare_armor_plate")
-    table.insert(self.default_upgrades, "temporary_spare_armor_plate_1")
+
+    local add_to_default = {
+        "med_x",
+        "temporary_med_x_1",
+        "auto_inject_super_stimpak",
+        "adrenaline_shot",
+        "temporary_adrenaline_shot_1",
+        "spare_armor_plate",
+        "temporary_spare_armor_plate_1",
+    }
+
+    for i, upgrade in ipairs(add_to_default) do
+        table.insert(self.default_upgrades, upgrade)    
+    end
+
+    local name_id_to_skill_upgrade_map = {
+        more_fire_power = {
+            level = 2,
+            upgrades = {
+                "throwable_trip_mine",
+                "temporary_throwable_trip_mine_1"
+            }
+        }
+    }
+
+    for skill_name, skill_data in pairs(name_id_to_skill_upgrade_map) do
+        local skill = self.skills[skill_name]
+        if skill and skill[skill_data.level] then
+            for i, upgrade in ipairs(skill_data.upgrades) do
+                table.insert(skill[skill_data.level].upgrades, upgrade)
+            end
+        end
+    end
 
     Hooks:Call("VPPP_AddThrowables_Done", self)
 end
