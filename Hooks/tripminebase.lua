@@ -7,7 +7,7 @@ function TripMineBase.spawn(pos, rot, sensor_upgrade, peer_id, is_mx_mine)
         unit:base():setup(sensor_upgrade)
         return unit
     else 
-        local result = old_TripMineBase_spawn(self, pos, rot, sensor_upgrade, peer_id)
+        local result = old_TripMineBase_spawn(pos, rot, sensor_upgrade, peer_id)
         return result
     end
 end
