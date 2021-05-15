@@ -17,7 +17,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "auto_inject_super_stimpak",
-            base_cooldown = 300,
+            base_cooldown = 210,
             max_amount = 1,
         },
         {
@@ -57,12 +57,19 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             name_id = "the_mixtape",
             base_cooldown = 40,
             max_amount = 1,
+            icon = "chico_injector"
         },
         {
             name_id = "throwable_trip_mine",
-            base_cooldown = 0.25,
+            base_cooldown = 100,
             max_amount = 2,
             icon = "equipment_trip_mine"
+        },
+        {
+            name_id = "jet",
+            base_cooldown = 40,
+            max_amount = 1,
+            icon = "chico_injector"
         },
     }
 

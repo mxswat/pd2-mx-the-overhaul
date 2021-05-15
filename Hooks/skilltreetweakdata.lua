@@ -54,6 +54,8 @@ function AddThrowables(self)
         "temporary_adrenaline_shot_1",
         "spare_armor_plate",
         "temporary_spare_armor_plate_1",
+        "jet",
+        "temporary_jet_1",
     }
 
     for i, upgrade in ipairs(add_to_default) do

@@ -1,5 +1,5 @@
 <mod name="More throwables and abilities" author="Mx" color="Color(0,1,0)" priority="900">
-	<AssetUpdates id="32222" version="7.5" provider="modworkshop" />
+	<AssetUpdates id="32222" version="7.6" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -19,7 +19,6 @@
 		<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 		<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
 		<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
-		
 	</Hooks>
 
 	<AddFiles directory="Assets">
@@ -34,7 +33,9 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/wick_mode"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/emergency_requisition"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/the_mixtape"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/throwable_trip_mine"/>
 		<unit 	 path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_mx"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/jet"/>
 		
 	</AddFiles>
 </mod>

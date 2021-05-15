@@ -96,6 +96,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	-- Changed to be a multiplicative buff
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.5)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "the_mixtape", 1.30)
+	multiplier = self:multiply_by_temporary_value_boost(multiplier, "jet", 1.30)
 
 	return multiplier
 end
@@ -277,8 +278,26 @@ end
 function PlayerManager:_attempt_throwable_trip_mine()
 	local activated = self:generic_attempt("throwable_trip_mine", 1)
 	if activated then
-		-- unit:equipment()[equipment.use_function](unit:equipment(), self._equipment.selected_index, equipment.unit)
 		activated = self:player_unit():equipment()['use_trip_mine_mx'](self:player_unit():equipment())
+
+		local function speed_up_on_explosive_kill(weapon_unit, variant)
+			if variant == "explosion" then
+				managers.player:speed_up_grenade_cooldown(2)
+			end
+		end
+		if activated then
+			self:register_message(Message.OnEnemyKilled, "speed_up_on_explosive_kill_trip_mine", speed_up_on_explosive_kill)
+		end
+	end
+	return activated
+end
+
+function PlayerManager:_attempt_jet()
+	local activated = self:generic_attempt("jet", 1)
+	if activated then
+		local player_unit = self:player_unit()
+		local stamina_regen = player_unit:movement():_max_stamina() * 0.5
+		player_unit:movement():add_stamina(stamina_regen)
 	end
 	return activated
 end
