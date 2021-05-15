@@ -69,7 +69,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 		}
 	}
 
-	self.values.player.body_armor.dodge[1] = 1
+	-- self.values.player.body_armor.dodge[1] = 1
 end)
 
 Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
