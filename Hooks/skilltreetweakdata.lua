@@ -29,6 +29,10 @@ function AddThrowables(self)
         menu_deck9_1 = {
             "the_mixtape",
             "temporary_the_mixtape_1"
+        },
+        menu_deck14_1 = {
+            "whiff",
+            "temporary_whiff_1"
         }
     }
 

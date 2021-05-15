@@ -71,6 +71,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             max_amount = 1,
             icon = "chico_injector"
         },
+        {
+            name_id = "whiff",
+            base_cooldown = 40,
+            max_amount = 1,
+            icon = "chico_injector"
+        },
     }
 
     for i, injector in ipairs(injectors) do

@@ -25,5 +25,7 @@
   "bm_ability_throwable_trip_mine_desc": "2 Trip mines with 100s cooldown -1s cooldown on kill, -2s cooldown on explosive kill\n\nIt places a trip mine with all the upgrades you own from the skill tree\n\nYou can't have 'too many' explosives - Mx",
   "bm_menu_skill_locked_throwable_trip_mine": "Requires More Fire Power aced",
   "bm_ability_jet": "Jet",
-  "bm_ability_jet_desc": "40s cooldown -1s cooldown on kill\n\nWhen activated instantly recharges 50% of your stamina and, you gain 30% movement speed for 8 seconds"
+  "bm_ability_jet_desc": "40s cooldown -1s cooldown on kill\n\nWhen activated instantly recharges 50% of your stamina and, you gain 30% movement speed for 8 seconds",
+  "bm_ability_whiff": "I'll have a Whiff",
+  "bm_ability_whiff_desc": "40s cooldown -2s cooldown on kill\n\nWhen activated stops the hysteria decay, you gain 40% interaction speed, 80% swap speed and reload speed for 8 seconds"
 }

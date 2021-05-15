@@ -256,7 +256,7 @@ local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
 function PlayerManager:upgrade_value(category, upgrade, default)
 	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
 	local is_gambler = category == "temporary" and upgrade == "loose_ammo_restore_health"
-	if is_gambler and managers.player:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
+	if is_gambler and self:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
 		-- 04:52:27 PM Lua: {
 		-- 	[1] = {
 		-- 		[1] = 16, Healing min
@@ -269,11 +269,12 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 		new_result[1][2] = new_result[1][2] * 1.5
 		result = new_result
 	end
+	local is_cocaine = category == "player" and upgrade == "cocaine_stacks_decay_multiplier"
+	if is_cocaine and self:has_activate_temporary_upgrade("temporary", "whiff") then
+		result = 0
+	end
 	return result
 end
-
-
-
 
 function PlayerManager:_attempt_throwable_trip_mine()
 	local activated = self:generic_attempt("throwable_trip_mine", 1)
@@ -299,5 +300,10 @@ function PlayerManager:_attempt_jet()
 		local stamina_regen = player_unit:movement():_max_stamina() * 0.5
 		player_unit:movement():add_stamina(stamina_regen)
 	end
+	return activated
+end
+
+function PlayerManager:_attempt_whiff()
+	local activated = self:generic_attempt("whiff", 2)
 	return activated
 end
