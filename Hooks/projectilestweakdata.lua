@@ -97,23 +97,4 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         }
     end
 
-    -- self.projectiles.throwable_trip_mine = {
-	-- 	name_id = "bm_throwable_trip_mine",
-    --     desc_id = "bm_throwable_trip_mine_desc",
-	-- 	unit = "units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine",
-	-- 	unit_dummy = "units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_dummy",
-	-- 	local_unit = "units/pd2_dlc_cake/weapons/wpn_prj_ace/wpn_prj_ace_local",
-	-- 	icon = "ace_projectile",
-	-- 	throw_shout = true,
-	-- 	no_cheat_count = true,
-	-- 	impact_detonation = true,
-	-- 	client_authoritative = true,
-	-- 	throwable = true,
-	-- 	anim_global_param = "projectile_four",
-	-- 	throw_allowed_expire_t = 0.15,
-	-- 	expire_t = 1.1,
-	-- 	repeat_expire_t = 0.3,
-    --     base_cooldown = 1, --70
-	-- 	max_amount = 2,
-	-- }
 end)

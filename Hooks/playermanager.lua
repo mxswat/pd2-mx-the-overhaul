@@ -57,19 +57,22 @@ function PlayerManager:multiply_by_temporary_value_boost(starting_value, tempora
 	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value * boost) or starting_value
 end
 
-function PlayerManager:generic_attempt(name_id, reduction)
+function PlayerManager:generic_attempt(name_id)
 	if self:has_activate_temporary_upgrade("temporary", name_id) then
 		return false
 	end
+	local upgrade_values = self:upgrade_value("temporary", name_id)
+	-- mx_print_table(data)
+	local cooldown_reduction = upgrade_values[1]
+	local duration = upgrade_values[2]
 
-	local duration = self:upgrade_value("temporary", name_id)[2]
 	local now = managers.game_play_central:get_heist_timer()
 	managers.network:session():send_to_peers("sync_ability_hud", now + duration, duration)
 
 	self:activate_temporary_upgrade("temporary", name_id)
 
 	local function speed_up_on_kill()
-		managers.player:speed_up_grenade_cooldown(reduction or 1)
+		managers.player:speed_up_grenade_cooldown(cooldown_reduction)
 	end
 
 	self:register_message(Message.OnEnemyKilled, "speed_up_"..name_id, speed_up_on_kill)
@@ -135,7 +138,7 @@ function PlayerManager:_attempt_auto_inject_super_stimpak()
 end
 
 function PlayerManager:_attempt_adrenaline_shot()
-	local activated = self:generic_attempt("adrenaline_shot", 2)
+	local activated = self:generic_attempt("adrenaline_shot")
 	if activated then
 		local player_unit = self:player_unit()
 		local stamina_regen = player_unit:movement():_max_stamina() * 0.5
@@ -167,7 +170,7 @@ function PlayerManager:_attempt_spare_armor_plate()
 end
 
 function PlayerManager:_attempt_liquid_armor()
-	return self:generic_attempt("liquid_armor", 2)
+	return self:generic_attempt("liquid_armor")
 end
 
 
@@ -190,7 +193,7 @@ function PlayerManager:_attempt_blood_transfusion()
 end
 
 function PlayerManager:_attempt_wick_mode()
-	local activated = self:generic_attempt("wick_mode", 1)
+	local activated = self:generic_attempt("wick_mode")
 	if activated then
 		managers.player:add_to_temporary_property("bullet_storm", self:upgrade_value("temporary", "wick_mode")[2], 1)
 	end
@@ -198,7 +201,7 @@ function PlayerManager:_attempt_wick_mode()
 end
 
 function PlayerManager:_attempt_emergency_requisition()
-	local activated = self:generic_attempt("emergency_requisition", 1)
+	local activated = self:generic_attempt("emergency_requisition")
 	if activated then
 		-- Well, it's activated, duh
 	end
@@ -218,7 +221,7 @@ function PlayerManager:mixtape_panic()
 end
 
 function PlayerManager:_attempt_the_mixtape()
-	local activated = self:generic_attempt("the_mixtape", 1)
+	local activated = self:generic_attempt("the_mixtape")
 	if activated then	
 		local function speed_up_on_melee_kill(weapon_unit, variant)
 			if variant == "melee" then
@@ -277,7 +280,7 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 end
 
 function PlayerManager:_attempt_throwable_trip_mine()
-	local activated = self:generic_attempt("throwable_trip_mine", 1)
+	local activated = self:generic_attempt("throwable_trip_mine")
 	if activated then
 		activated = self:player_unit():equipment()['use_trip_mine_mx'](self:player_unit():equipment())
 
@@ -294,7 +297,7 @@ function PlayerManager:_attempt_throwable_trip_mine()
 end
 
 function PlayerManager:_attempt_jet()
-	local activated = self:generic_attempt("jet", 1)
+	local activated = self:generic_attempt("jet")
 	if activated then
 		local player_unit = self:player_unit()
 		local stamina_regen = player_unit:movement():_max_stamina() * 0.5
@@ -304,6 +307,6 @@ function PlayerManager:_attempt_jet()
 end
 
 function PlayerManager:_attempt_whiff()
-	local activated = self:generic_attempt("whiff", 2)
+	local activated = self:generic_attempt("whiff")
 	return activated
 end
