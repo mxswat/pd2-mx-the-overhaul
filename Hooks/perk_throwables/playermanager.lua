@@ -77,7 +77,7 @@ function PlayerManager:generic_attempt(name_id)
 
 	self:register_message(Message.OnEnemyKilled, "speed_up_"..name_id, speed_up_on_kill)
 	managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, duration)
-	managers.hud:activate_local_ability_radial_with_fullscreen(duration)
+	-- managers.hud:activate_local_ability_radial_with_fullscreen(duration)
 	return true
 end
 

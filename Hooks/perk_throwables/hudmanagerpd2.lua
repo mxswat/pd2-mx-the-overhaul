@@ -3,7 +3,7 @@ function HUDManager:activate_local_ability_radial_with_fullscreen(time_left)
 
     function make_bitmap()
         return hud.panel:bitmap({
-			name = "chico_injector_left",
+			name = "custom_fullscreen_effect",
 			visible = false,
 			texture = "guis/textures/full_screen_effect_1",
 			layer = 0,
@@ -16,17 +16,17 @@ function HUDManager:activate_local_ability_radial_with_fullscreen(time_left)
 		})
     end
 
-    local chico_injector_left = hud.panel:child("chico_injector_left") or make_bitmap()
+    local custom_fullscreen_effect = hud.panel:child("custom_fullscreen_effect") or make_bitmap()
 
 	local function anim(o)
-		chico_injector_left:set_visible(true)
+		custom_fullscreen_effect:set_visible(true)
 		over(time_left, function (p)
 			
 		end)
-		chico_injector_left:set_visible(false)
+		custom_fullscreen_effect:set_visible(false)
 	end
 
-	chico_injector_left:stop()
-	chico_injector_left:animate(anim)
+	custom_fullscreen_effect:stop()
+	custom_fullscreen_effect:animate(anim)
     -- TODO add this? managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, duration)
 end

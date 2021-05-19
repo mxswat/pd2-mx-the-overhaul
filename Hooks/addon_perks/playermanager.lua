@@ -4,11 +4,10 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 			if variant == "melee" then
 				self:activate_temporary_upgrade("temporary", "dodgeopath_speed")
 				self:activate_temporary_upgrade("temporary", "dodgeopath_dodge")
-				managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, 1)
+				managers.hud:activate_local_ability_radial_with_fullscreen(1)
 				local player_unit = self:player_unit()
 				local stamina_regen = player_unit:movement():_max_stamina()
 				player_unit:movement():add_stamina(stamina_regen)
-				log("speed_up_on_melee_kill triggered")
 			end
 		end
 	
