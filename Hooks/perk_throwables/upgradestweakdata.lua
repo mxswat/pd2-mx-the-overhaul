@@ -1,4 +1,4 @@
-Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_init_pd2_values", function(self)
+Hooks:PostHook(UpgradesTweakData, "init", "VPPP_UpgradesTweakData_init", function(self)
 	self:throwable_values("yakuza_injector", 1, 8)
 	self:throwable_values("burglar_luck", 1, 8)
 	self:throwable_values("med_x", 1, 8)
@@ -13,9 +13,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "VPPP_UpgradesTweakData_in
 	self:throwable_values("jet", 1, 8)
 	self:throwable_values("whiff", 2, 8)
 	-- self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
-end)
 
-Hooks:PostHook(UpgradesTweakData, "_player_definitions", "VPPP_UpgradesTweakData_player_definitions", function(self)
 	self:common_add_throwable("yakuza_injector")
 	self:common_add_throwable("burglar_luck")
 	self:common_add_throwable("med_x")

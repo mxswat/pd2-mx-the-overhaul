@@ -100,7 +100,6 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "yakuza_injector", 1.5)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "the_mixtape", 1.30)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "jet", 1.30)
-
 	return multiplier
 end
 
@@ -120,7 +119,6 @@ local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = VPPP_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
 	chance = self:give_temporary_value_boost(chance, "burglar_luck", 0.30)
-
 	return chance
 end
 

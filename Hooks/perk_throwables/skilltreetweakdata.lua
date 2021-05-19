@@ -91,3 +91,10 @@ end
 Hooks:PostHook(SkillTreeTweakData, "init", "VPPP_SkillTreeTweakData_init", AddThrowables)
 
 Hooks:Add("sso_skilltweak_init_complete", "VPPP_sydch_overhaul_compatibility_patch", AddThrowables)
+
+-- DLC Debug shit
+-- function WINDLCManager:_verify_dlcs()
+--     for dlc_name, dlc_data in pairs(Global.dlc_manager.all_dlc_data) do
+--         dlc_data.verified = true
+--     end
+-- end
