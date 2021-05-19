@@ -55,8 +55,8 @@ function AddAddonPerks(self)
     local dodgeOpath = {
         {
             cost = 0,
-            desc_id = "menu_deck9_1_desc",
-            name_id = "menu_deck9_1",
+            desc_id = "dodgeopath_1_desc",
+            name_id = "dodgeopath_1",
             upgrades = {
                 "player_damage_dampener_outnumbered_strong",
                 "melee_stacking_hit_damage_multiplier_1",
@@ -74,12 +74,10 @@ function AddAddonPerks(self)
         deck2,
         {
             cost = 0,
-            desc_id = "menu_deck9_3_desc",
-            name_id = "menu_deck9_3",
+            desc_id = "dodgeopath_3_desc",
+            name_id = "dodgeopath_3",
             upgrades = {
-                -- "player_killshot_regen_armor_bonus",
-                -- "player_tier_armor_multiplier_1",
-                -- "player_tier_armor_multiplier_2"
+
             },
             icon_xy = {
                 0,
@@ -89,10 +87,9 @@ function AddAddonPerks(self)
         deck4,
         {
             cost = 0,
-            desc_id = "menu_deck9_5_desc",
-            name_id = "menu_deck9_5",
+            desc_id = "dodgeopath_5_desc",
+            name_id = "dodgeopath_5",
             upgrades = {
-                -- "player_melee_kill_life_leech",
                 "player_damage_dampener_close_contact_1"
             },
             icon_xy = {
@@ -103,11 +100,10 @@ function AddAddonPerks(self)
         deck6,
         {
             cost = 0,
-            desc_id = "menu_deck9_7_desc",
-            name_id = "menu_deck9_7",
+            desc_id = "dodgeopath_7_desc",
+            name_id = "dodgeopath_7",
             upgrades = {
-                -- "player_killshot_close_regen_armor_bonus",
-                -- "player_tier_armor_multiplier_3"
+            
             },
             icon_xy = {
                 2,
@@ -117,8 +113,8 @@ function AddAddonPerks(self)
         deck8,
         {
             cost = 0,
-            desc_id = "menu_deck9_9_desc",
-            name_id = "menu_deck9_9",
+            desc_id = "dodgeopath_9_desc",
+            name_id = "dodgeopath_9",
             upgrades = {
                 "player_passive_loot_drop_multiplier",
                 "player_killshot_close_panic_chance"
@@ -128,8 +124,8 @@ function AddAddonPerks(self)
                 5
             }
         },
-        name_id = "menu_st_spec_9_dodge",
-        desc_id = "menu_st_spec_9_dodge_desc"
+        name_id = "dodgeopath",
+        desc_id = "dodgeopath_desc"
     }
 
     table.insert(self.specializations, dodgeOpath)

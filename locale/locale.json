@@ -27,5 +27,17 @@
   "bm_ability_jet": "Jet",
   "bm_ability_jet_desc": "40s cooldown -1s cooldown on kill\n\nWhen activated instantly recharges 50% of your stamina and, you gain 30% movement speed for 8 seconds",
   "bm_ability_whiff": "I'll Have A Whiff",
-  "bm_ability_whiff_desc": "40s cooldown -2s cooldown on kill\n\nWhen activated stops the hysteria decay, you gain 40% interaction speed, 80% swap speed and reload speed for 8 seconds"
+  "bm_ability_whiff_desc": "40s cooldown -2s cooldown on kill\n\nWhen activated stops the hysteria decay, you gain 40% interaction speed, 80% swap speed and reload speed for 8 seconds",
+  "dodgeopath_1_desc": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+  "dodgeopath_1": "OVERDOG",
+  "dodgeopath_3_desc": "You gain ##15%## dodge",
+  "dodgeopath_3": "Running in the 90s",
+  "dodgeopath_5_desc": "When you are within medium range of an enemy you recieve ##8%## less damage.",
+  "dodgeopath_5": "Resistance",
+  "dodgeopath_7_desc": "Killing an enemy at medium range has a ##75%## chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every ##1## second.",
+  "dodgeopath_7": "Showdown",
+  "dodgeopath_9_desc": "On melee kill, you gain ##50%## movement speed for ##3## seconds, and you gain ##1## second of ##100%## dodge",
+  "dodgeopath_9": "Unhinged",
+  "dodgeopath": "Dodgeopath",
+  "dodgeopath_desc": "Sociopath, but it's with dodge"
 }
