@@ -1,4 +1,5 @@
 -- This code works but after many feedback I decided to make it work in manual way
+-- This used to be the code for auto triggering the auto stimpack when downed
 -- local VPPP_PlayerDamage_chk_cheat_death = PlayerDamage._chk_cheat_death
 -- function PlayerDamage:_chk_cheat_death()
 --     -- mx_print_table({
@@ -13,3 +14,7 @@
 --     end
 --     VPPP_PlayerDamage_chk_cheat_death(self)
 -- end
+
+-- Hooks:PostHook(PlayerDamage, "update", "VPPP_PlayerDamage_update", function(self, unit, t, dt)
+-- 	-- code
+-- end)

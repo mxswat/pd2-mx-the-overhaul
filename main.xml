@@ -20,6 +20,7 @@
 			<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase" />
 			<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase" />
 			<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment" />
+			<hook file="hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
 		</hooks>
 		<hooks directory="skilltree_addon">
 			<hooks directory="SkillFramework">
@@ -54,5 +55,6 @@
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_mx" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/jet" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/whiff" />
+		<texture path="guis/textures/full_screen_effect_1" />
 	</AddFiles>
 </mod>

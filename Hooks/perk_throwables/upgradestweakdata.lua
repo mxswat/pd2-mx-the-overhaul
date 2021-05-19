@@ -13,7 +13,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "VPPP_UpgradesTweakData_init", functio
 	self:common_add_throwables("jet", 1, 8)
 	self:common_add_throwables("whiff", 2, 8)
 	-- self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
-	mx_print_table(self.specialization_descs)
+	-- mx_print_table(self.specialization_descs)
 end)
 
 -- Todo make new override for [pd2-lua\lib\managers\menu\skilltreegui.lua]SpecializationTierItem:init the self._desc_string and use new macros

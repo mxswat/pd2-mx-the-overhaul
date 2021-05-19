@@ -1,0 +1,3 @@
+-- Hooks:PostHook(SkillTreeTweakData, "init", "Pyromancer_SkillTreeTweakData_init", function(self)
+--     -- body
+-- end)
