@@ -8,6 +8,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "VPPP_UpgradesTweakData_init", functio
 	self:common_add_throwables("blood_transfusion", 1, 0.5)
 	self:common_add_throwables("wick_mode", 1, 6)
 	self:common_add_throwables("emergency_requisition", 1, 2)
+	self:common_add_throwables("auto_inject_super_stimpak", 1, 0.1)
 	self:common_add_throwables("the_mixtape", 1, 4)
 	self:common_add_throwables("throwable_trip_mine", 1, 0.1)
 	self:common_add_throwables("jet", 1, 8)
