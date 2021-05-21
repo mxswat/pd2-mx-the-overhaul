@@ -140,3 +140,66 @@ function NewSkillTreeGui:set_skill_point_text(skill_points)
 	self._skill_points_title_text:set_color(color)
 	self._skill_points_text:set_color(color)
 end
+
+function NewSkillTreePage:init(page, page_data, tree_title_panel, tree_panel, fullscreen_panel, gui)
+	NewSkillTreePage.super.init(self)
+
+	local skilltrees_tweak = tweak_data.skilltree.trees
+	self._gui = gui
+	self._active = false
+	self._selected = 0
+	self._tree_titles = {}
+	self._trees = {}
+	self._trees_idx = {}
+	self._page_name = page
+	self._tree_title_panel = tree_title_panel
+	self._tree_panel = tree_panel
+	self._event_listener = gui:event_listener()
+
+	self._event_listener:add(page, {
+		"refresh"
+	}, callback(self, self, "_on_refresh_event"))
+
+	local tree_space = tree_title_panel:w() / 2 * 0.015
+	local tree_width = tree_title_panel:w() / 3 - tree_space
+	tree_space = (tree_title_panel:w() - tree_width * 3) / 2
+	local panel, tree_data = nil
+
+	for index, tree in ipairs(page_data) do
+		tree_data = skilltrees_tweak[tree]
+
+		table.insert(self._trees_idx, tree)
+
+		panel = tree_title_panel:panel({
+			name = "TreeTitle" .. tostring(tree),
+			w = tree_width,
+			x = (index - 1) * (tree_width + tree_space)
+		})
+
+		panel:text({
+			name = "TitleText",
+			blend_mode = "add",
+			align = "center",
+			vertical = "center",
+			text = managers.localization:to_upper_text(tree_data.name_id),
+			font = large_font,
+			font_size = large_font_size * 0.75,
+			color = tweak_data.screen_colors.button_stage_3
+		})
+		table.insert(self._tree_titles, panel)
+
+		panel = NewSkillTreeTreeItem:new(tree, tree_data, tree_panel:panel({
+			name = "Tree" .. tostring(tree),
+			w = tree_width,
+			x = (index - 1) * (tree_width + tree_space)
+		}), fullscreen_panel, gui, self)
+
+		table.insert(self._trees, panel)
+	end
+
+	for tree, tree_item in ipairs(self._trees) do
+		tree_item:link(self._trees[tree - 1], self._trees[tree + 1])
+	end
+
+	self:refresh()
+end

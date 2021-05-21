@@ -1,6 +1,6 @@
 Hooks:PostHook(UpgradesTweakData, "init", "AddonPerk_UpgradesTweakData_init", function(self)
 	self:add_temporary_upgrades("dodgeopath_speed", 0, 3)
-	self:add_temporary_upgrades("dodgeopath_dodge", 0, 1)
+	self:add_temporary_upgrades("dodgeopath_invulnerability_on_kill", 0, 3)
 end)
 
 function UpgradesTweakData:add_temporary_upgrades(name_id, generic_val, duration)

@@ -71,7 +71,8 @@ function AddThrowables(self)
             level = 2,
             upgrades = {
                 "throwable_trip_mine",
-                "temporary_throwable_trip_mine_1"
+                "temporary_throwable_trip_mine_1",
+                "flamethrower_reload_speed_multiplier_1"
             }
         }
     }

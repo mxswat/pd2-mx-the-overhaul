@@ -56,7 +56,8 @@ function SkillTreeTweakData:add_sub_skill_tree(tree_name_id, subtree_name_id, ti
 		name_id = subtree_name_id,
 		unlocked = true,
 		background_texture = "guis/textures/pd2/skilltree/bg_mastermind",
-		tiers = tiers
+		tiers = tiers,
+		is_custom = true
 	}
 
 	table.insert(self.trees, subtree)

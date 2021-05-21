@@ -3,8 +3,8 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 		local function speed_up_on_melee_kill(weapon_unit, variant)
 			if variant == "melee" then
 				self:activate_temporary_upgrade("temporary", "dodgeopath_speed")
-				self:activate_temporary_upgrade("temporary", "dodgeopath_dodge")
-				managers.hud:activate_local_ability_radial_with_fullscreen(1)
+				self:activate_temporary_upgrade("temporary", "dodgeopath_invulnerability_on_kill")
+				managers.hud:activate_local_ability_radial_with_fullscreen(3)
 				local player_unit = self:player_unit()
 				local stamina_regen = player_unit:movement():_max_stamina()
 				player_unit:movement():add_stamina(stamina_regen)
@@ -28,7 +28,10 @@ end
 local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = VPPP_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
-	chance = self:give_temporary_value_boost(chance, "dodgeopath_dodge", 1)
-
+	local player = managers.player:player_unit()
+	
+	if player and player:movement() and player:movement():current_state() and player:movement():current_state().in_melee and player:movement():current_state():in_melee() then
+		chance = self:give_temporary_value_boost(chance, "dodgeopath_invulnerability_on_kill", 1)
+	end
 	return chance
 end

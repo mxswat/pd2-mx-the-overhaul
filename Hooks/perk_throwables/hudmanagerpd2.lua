@@ -7,7 +7,7 @@ function HUDManager:activate_local_ability_radial_with_fullscreen(time_left)
 			visible = false,
 			texture = "guis/textures/full_screen_effect_1",
 			layer = 0,
-			color = Color(1, 0.6, 0),
+			color = Color(1, 0.1, 0),
 			blend_mode = "add",
 			w = hud.panel:w(),
 			h = hud.panel:h(),

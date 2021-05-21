@@ -62,7 +62,7 @@ function AddAddonPerks(self)
                 "melee_stacking_hit_damage_multiplier_1",
                 "player_passive_dodge_chance_2",
                 "temporary_dodgeopath_speed_1",
-                "temporary_dodgeopath_dodge_1",
+                "temporary_dodgeopath_invulnerability_on_kill_1",
                 "the_mixtape",
                 "temporary_the_mixtape_1"
             },

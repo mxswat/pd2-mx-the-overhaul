@@ -32,6 +32,12 @@
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 				<hook file="utils.lua" source_file="lib/entry"/>
 			</hooks>
+			<hooks directory="pyromancer">
+				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
+				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+				<hook file="newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
+				<hook file="flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
+			</hooks>
 		</hooks>
 		<hooks directory="addon_perks">
 			<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
