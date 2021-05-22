@@ -45,7 +45,7 @@
   "fuel_backpack": "Fuel Backpack",
   "fuel_backpack_desc": "BASIC:\nIncrease your flamethrower magazine size by 50% and increases your total ammo by 25%\n\n\nACED:\nIncrease your flamethrower magazine size by 100% and increases your total ammo by 50%",
   "extender": "extender",
-  "extender_desc": "BASIC:\nIncrease yourr flamethrower range magazine size by 60%(16m)\n\n\nACED:\nIncrease your flamethrower range size by 110% (21m)",
+  "extender_desc": "BASIC:\nIncrease yourr flamethrower range by 60%(16m)\n\n\nACED:\nIncrease your flamethrower range by 110% (21m)",
   "flaming_hands": "flaming_hands",
   "flaming_hands_desc": "BASIC:\nIncrease your flamethrower reload speed by 45%\n\n\nACED:\nIncrease your flamethrower reload speed by 75%",
   "everlasting_flames": "Everlasting flames",

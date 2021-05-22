@@ -19,7 +19,7 @@ function FlameBulletBase:give_fire_damage(col_ray, weapon_unit, user_unit, damag
 			fire_dot_data.dot_trigger_chance = fire_dot_data.dot_trigger_chance + dot_trigger_chance
 		end
 	end
-	mx_print_table(fire_dot_data)
+	-- mx_print_table(fire_dot_data)
     -- self.flamethrower_mk2.fire_dot_data = {
 	-- 	dot_trigger_chance = 75,
 	-- 	dot_damage = 30,
