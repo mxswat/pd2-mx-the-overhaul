@@ -2,14 +2,13 @@ Hooks:PostHook(NewFlamethrowerBase, "setup_default", "Pyromancer_NewFlamethrower
 	self._flame_max_range = managers.player:upgrade_value("flamethrower", "flame_max_range", 1000)
 end)
 
-
 function NewFlamethrowerBase:calculate_ammo_max_per_clip()
     local added = NewRaycastWeaponBase.super.calculate_ammo_max_per_clip(self)
 	local weapon_tweak_data = self:weapon_tweak_data()
 
     local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + added
     for _, category in ipairs(tweak_data.weapon[self._name_id].categories) do
-		ammo = ammo * managers.player:upgrade_value(category, "clip_ammo_increase", 1)
+		ammo = ammo * managers.player:upgrade_value(category, "magazine_capacity_inc", 1)
 	end
 
     return ammo
