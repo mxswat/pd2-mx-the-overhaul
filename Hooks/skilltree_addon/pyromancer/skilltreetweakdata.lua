@@ -32,7 +32,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "Pyromancer_SkillTreeTweakData_init",
 	self:add_new_skill("fuel_backpack", fuel_backpack_1, fuel_backpack_2, 2, { 6,0 }) -- 50% mag size | 100% mag size
 
 	self:add_new_skill("extender", "flamethrower_flame_max_range_1", "flamethrower_flame_max_range_2", 2, { 6,6 }) -- range 16m - 21m
-	self:add_new_skill("flaming_hands", "flamethrower_reload_speed_multiplier_1", "flamethrower_reload_speed_multiplier_2", 2, { 1,9 }) -- reload 45% | 75%
+	
+	local flaming_hands_1 = {"flamethrower_reload_speed_multiplier_1", "flamethrower_hip_run_and_shoot_1"}
+	self:add_new_skill("flaming_hands", flaming_hands_1, "flamethrower_reload_speed_multiplier_2", 2, { 1,9 }) -- reload 45% | 75%
 
 	local cleansing_fire_1 = {"flamethrower_damage_addend_1", "flamethrower_dot_damage_addend_1", "flamethrower_fire_rate_multiplier_1"}
 	local cleansing_fire_2 = {"flamethrower_damage_addend_2", "flamethrower_fire_rate_multiplier_2"}

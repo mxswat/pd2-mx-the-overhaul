@@ -13,3 +13,9 @@ function NewFlamethrowerBase:calculate_ammo_max_per_clip()
 
     return ammo
 end
+
+function NewFlamethrowerBase:run_and_shoot_allowed()
+	local allowed = NewFlamethrowerBase.super.run_and_shoot_allowed(self)
+
+	return allowed or managers.player:has_category_upgrade("flamethrower", "hip_run_and_shoot")
+end

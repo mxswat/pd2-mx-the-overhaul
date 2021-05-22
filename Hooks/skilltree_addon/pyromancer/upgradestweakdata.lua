@@ -43,6 +43,10 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
         10,
         20
 	}
+  
+    self.values.flamethrower.hip_run_and_shoot = {
+        true
+	}
     
     self.values.flamethrower.extra_ammo_multiplier = {
         1.25,
@@ -68,4 +72,5 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
     self:add_definition(nil, "dot_trigger_chance", "flamethrower", 2)
     self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 1)
     self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 2)
+    self:add_definition(nil, "hip_run_and_shoot", "flamethrower", 1)
 end)

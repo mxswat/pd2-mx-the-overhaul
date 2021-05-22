@@ -1,7 +1,7 @@
 Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_skills", function(self)
 	if self:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then -- Fix here to avoid skill being triggered by other perkdecks
 		local function speed_up_on_melee_kill(weapon_unit, variant)
-			if variant == "melee" then
+			if variant == "melee" or weapon_unit:base():is_category("saw") then
 				self:activate_temporary_upgrade("temporary", "dodgeopath_speed")
 				self:activate_temporary_upgrade("temporary", "dodgeopath_invulnerability_on_kill")
 				managers.hud:activate_local_ability_radial_with_fullscreen(3)
