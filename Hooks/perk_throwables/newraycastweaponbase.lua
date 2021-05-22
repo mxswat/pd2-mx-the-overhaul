@@ -3,7 +3,6 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
     local multiplier = VPPP_NewRaycastWeaponBase_reload_speed_multiplier(self)
     multiplier = managers.player:give_temporary_value_boost(multiplier, "adrenaline_shot", 0.80)
     multiplier = managers.player:give_temporary_value_boost(multiplier, "whiff", 0.80)
-    log("multiplier"..multiplier)
     return multiplier
 end     
 

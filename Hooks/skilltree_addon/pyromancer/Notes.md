@@ -1,5 +1,5 @@
 -- Thermal bomb ?
 
--- Damage sucks
--- Reload sucks
--- Range sucks
+-- Damage sucks -- Done
+-- Reload sucks -- Done
+-- Range sucks -- Done
