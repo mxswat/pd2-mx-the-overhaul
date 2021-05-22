@@ -29,9 +29,7 @@ local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = VPPP_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
 	local player = managers.player:player_unit()
-	
-	if player and player:movement() and player:movement():current_state() and player:movement():current_state().in_melee and player:movement():current_state():in_melee() then
-		chance = self:give_temporary_value_boost(chance, "dodgeopath_invulnerability_on_kill", 1)
-	end
+	chance = self:give_temporary_value_boost(chance, "dodgeopath_invulnerability_on_kill", 1)
+
 	return chance
 end

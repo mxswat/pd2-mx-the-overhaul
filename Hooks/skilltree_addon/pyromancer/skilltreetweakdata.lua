@@ -19,9 +19,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "Pyromancer_SkillTreeTweakData_init",
 			"everlasting_flames",
 			"cleansing_fire"
 		},
-		{
-			"primer_round"
-		}
+		-- {
+		-- 	"primer_round"
+		-- }
 	}
 
 	self:add_sub_skill_tree(skilltree_name, "mx_pyromancer", demolitionistTreeTiers)
