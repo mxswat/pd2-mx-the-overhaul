@@ -1,6 +1,6 @@
 function FlameBulletBase:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing)
 	local fire_dot_data = nil
-
+	
 	if weapon_unit.base and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.bullet_class == "FlameBulletBase" then
 		fire_dot_data = weapon_unit:base()._ammo_data.fire_dot_data
 	elseif weapon_unit.base and weapon_unit:base()._name_id then
@@ -9,12 +9,17 @@ function FlameBulletBase:give_fire_damage(col_ray, weapon_unit, user_unit, damag
 		if tweak_data.weapon[weapon_name_id] and tweak_data.weapon[weapon_name_id].fire_dot_data then
 			fire_dot_data = deep_clone(tweak_data.weapon[weapon_name_id].fire_dot_data)
             
+			self._can_shoot_through_enemy = managers.player:upgrade_value("flamethrower", "dot_damage_addend", 0) < 0 and true or false
+
 			local dot_damage_addend = managers.player:upgrade_value("flamethrower", "dot_damage_addend", 0)
 			local dot_length_addend = managers.player:upgrade_value("flamethrower", "dot_length_addend", 0)
+			local dot_trigger_chance = managers.player:upgrade_value("flamethrower", "dot_trigger_chance", 0)
             fire_dot_data.dot_damage = fire_dot_data.dot_damage + dot_damage_addend
 			fire_dot_data.dot_length = fire_dot_data.dot_length + dot_length_addend
+			fire_dot_data.dot_trigger_chance = fire_dot_data.dot_trigger_chance + dot_trigger_chance
 		end
 	end
+	mx_print_table(fire_dot_data)
     -- self.flamethrower_mk2.fire_dot_data = {
 	-- 	dot_trigger_chance = 75,
 	-- 	dot_damage = 30,

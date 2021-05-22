@@ -36,7 +36,17 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
 
     self.values.flamethrower.dot_length_addend = {
         0.8,
-        1.6
+        2
+	}
+    
+    self.values.flamethrower.dot_trigger_chance = {
+        10,
+        20
+	}
+    
+    self.values.flamethrower.extra_ammo_multiplier = {
+        1.25,
+        1.50
 	}
 
     self:add_definition(nil, "flame_max_range", "flamethrower", 1)
@@ -53,4 +63,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
     -- self:add_definition(nil, "hot_trade", "flamethrower", 2)
     self:add_definition(nil, "dot_damage_addend", "flamethrower", 1)
     self:add_definition(nil, "dot_length_addend", "flamethrower", 1)
+    self:add_definition(nil, "dot_length_addend", "flamethrower", 2)
+    self:add_definition(nil, "dot_trigger_chance", "flamethrower", 1)
+    self:add_definition(nil, "dot_trigger_chance", "flamethrower", 2)
+    self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 1)
+    self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 2)
 end)
