@@ -8,3 +8,13 @@ function BlackMarketManager:outfit_string()
 	end
 	return outfit_string
 end
+
+-- This crap does not work properly
+-- local old_BlackMarketManager_damage_addend = BlackMarketManager.damage_addend
+-- function BlackMarketManager:damage_addend(name, categories, silencer, detection_risk, current_state, blueprint)
+-- 	local value = old_BlackMarketManager_damage_addend(self, name, categories, silencer, detection_risk, current_state, blueprint)
+-- 	for _, category in ipairs(categories) do
+-- 		value = value + managers.player:upgrade_value(category, "damage_addend_v2", 0)
+-- 	end
+-- 	return value
+-- end

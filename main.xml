@@ -38,6 +38,7 @@
 				<hook file="newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
 				<hook file="flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 				<hook file="inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
+				<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 			</hooks>
 		</hooks>
 		<hooks directory="addon_perks">

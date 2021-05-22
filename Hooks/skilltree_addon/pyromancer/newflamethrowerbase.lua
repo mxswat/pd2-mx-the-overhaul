@@ -3,7 +3,7 @@ Hooks:PostHook(NewFlamethrowerBase, "setup_default", "Pyromancer_NewFlamethrower
 end)
 
 function NewFlamethrowerBase:calculate_ammo_max_per_clip()
-    local added = NewRaycastWeaponBase.super.calculate_ammo_max_per_clip(self)
+    local added = NewFlamethrowerBase.super.calculate_ammo_max_per_clip(self)
 	local weapon_tweak_data = self:weapon_tweak_data()
 
     local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + added
