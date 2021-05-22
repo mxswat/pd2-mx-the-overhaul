@@ -45,7 +45,8 @@ function SkillTreeTweakData:add_skill_tree(name_id)
 	
 	self.skilltree[name_id] = {
 		name_id = "st_menu_"..name_id.."",
-		desc_id = "st_menu_"..name_id.."_desc"
+		desc_id = "st_menu_"..name_id.."_desc",
+		is_custom = true
 	}
 end
 
