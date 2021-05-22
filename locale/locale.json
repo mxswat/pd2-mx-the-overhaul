@@ -39,5 +39,17 @@
   "dodgeopath_9_desc": "On melee kill, you gain ##50%## movement speed for ##3## seconds, and you gain ##3## second of ##100%## dodge while your melee weapon is used. You also gain the ability to use ##the mixtape## throwable (optional)",
   "dodgeopath_9": "Unhinged",
   "dodgeopath": "The Miami Slasher",
-  "dodgeopath_desc": "Sociopath, but it's with dodge, speed and invulnerability on kil"
+  "dodgeopath_desc": "Sociopath, but it's with dodge, speed and invulnerability on kil",
+  "mx_pyromancer": "Pyromancer",
+  "st_menu_mx_pack": "Mx one",
+  "fuel_backpack": "Fuel Backpack",
+  "fuel_backpack_desc": "BASIC:\nIncrease your flamethrower magazine size by 50%\n\n\nACED:\nIncrease your flamethrower magazine size by 100%",
+  "extender": "extender",
+  "extender_desc": "BASIC:\nIncrease yourr flamethrower range magazine size by 60%(16m)\n\n\nACED:\nIncrease your flamethrower range size by 110% (21m)",
+  "flaming_hands": "flaming_hands",
+  "flaming_hands_desc": "BASIC:\nIncrease your flamethrower reload speed by 45%\n\n\nACED:\nIncrease your flamethrower reload speed by 75%",
+  "everlasting_flames": "Everlasting flames",
+  "everlasting_flames_desc": "BASIC:\nIncrease your flamethrower afterburn duration by 50%\n\n\nACED:\nIncrease your afterburn duration by 100%",
+  "cleansing_fire": "cleansing_fire",
+  "cleansing_fire_desc": "BASIC:\nIncrease your flamethrower damage by 50 but reduces the rate of fire by 70%\n\n\nACED:\nIncrease your flamethrower damage by an additional 30, for a total of 70, but reduces the rate of fire by 60% instead of 70%"
 }

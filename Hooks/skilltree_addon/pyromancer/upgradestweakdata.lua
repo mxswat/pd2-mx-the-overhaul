@@ -25,10 +25,10 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
 		0.40
 	}
 
-    self.values.flamethrower.hot_trade = {
-        0.75, -- tick dmg
-        0.50, -- tick dmg
-	}
+    -- self.values.flamethrower.hot_trade = {
+    --     0.75, -- tick dmg
+    --     0.50, -- tick dmg
+	-- }
 
     self.values.flamethrower.dot_damage_addend = {
         -15,
@@ -49,8 +49,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
     self:add_definition(nil, "fire_rate_multiplier", "flamethrower", 2)
     self:add_definition(nil, "magazine_capacity_inc", "flamethrower", 1)
     self:add_definition(nil, "magazine_capacity_inc", "flamethrower", 2)
-    self:add_definition(nil, "hot_trade", "flamethrower", 1)
-    self:add_definition(nil, "hot_trade", "flamethrower", 2)
+    -- self:add_definition(nil, "hot_trade", "flamethrower", 1)
+    -- self:add_definition(nil, "hot_trade", "flamethrower", 2)
     self:add_definition(nil, "dot_damage_addend", "flamethrower", 1)
     self:add_definition(nil, "dot_length_addend", "flamethrower", 1)
 end)

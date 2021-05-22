@@ -24,7 +24,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "Pyromancer_SkillTreeTweakData_init",
 		}
 	}
 
-	self:add_sub_skill_tree(skilltree_name, "mx_demolitionist", demolitionistTreeTiers)
+	self:add_sub_skill_tree(skilltree_name, "mx_pyromancer", demolitionistTreeTiers)
 
 	self:add_new_skill("fuel_backpack", "flamethrower_magazine_capacity_inc_1", "flamethrower_magazine_capacity_inc_2", 2, { 6,0 }) -- 50% mag size | 100% mag size
 
