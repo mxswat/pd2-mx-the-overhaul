@@ -53,6 +53,11 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
         1.50
 	}
 
+    self.values.flamethrower.thermal_bomb = {
+        22,
+        14
+	}
+
     self:add_definition(nil, "flame_max_range", "flamethrower", 1)
     self:add_definition(nil, "flame_max_range", "flamethrower", 2)
     self:add_definition(nil, "reload_speed_multiplier", "flamethrower", 1)
@@ -73,4 +78,6 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
     self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 1)
     self:add_definition(nil, "extra_ammo_multiplier", "flamethrower", 2)
     self:add_definition(nil, "hip_run_and_shoot", "flamethrower", 1)
+    self:add_definition(nil, "thermal_bomb", "flamethrower", 1)
+    self:add_definition(nil, "thermal_bomb", "flamethrower", 2)
 end)

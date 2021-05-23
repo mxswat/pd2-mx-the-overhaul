@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="900">
-	<AssetUpdates id="32222" version="9.2" provider="modworkshop" />
+	<AssetUpdates id="32222" version="9.3" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -39,6 +39,7 @@
 				<hook file="flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 				<hook file="inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 				<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
+				<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 			</hooks>
 		</hooks>
 		<hooks directory="addon_perks">

@@ -17,7 +17,6 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 	end
 end)
 
-
 local VPPP_PlayerManager_movement_speed_multiplier = PlayerManager.movement_speed_multiplier
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = VPPP_PlayerManager_movement_speed_multiplier(self, speed_state, bonus_multiplier, upgrade_level, health_ratio)
