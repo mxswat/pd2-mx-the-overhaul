@@ -54,8 +54,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "Pyromancer_UpgradesTweakData_init", f
 	}
 
     self.values.flamethrower.thermal_bomb = {
-        22,
-        14
+        500,
+        400
 	}
 
     self:add_definition(nil, "flame_max_range", "flamethrower", 1)
