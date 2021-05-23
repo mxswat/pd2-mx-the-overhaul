@@ -51,7 +51,7 @@
   "everlasting_flames": "Everlasting flames",
   "everlasting_flames_desc": "BASIC:\nIncrease your flamethrower afterburn duration by ##50%## and increases your afterburn chance by ##10##\n\n\nACED:\nIncrease your afterburn duration by ##100%## and increases your afterburn chance by ##20##",
   "cleansing_fire": "cleansing fire",
-  "cleansing_fire_desc": "BASIC:\nIncrease your flamethrower damage by ##50## but reduces the rate of fire by ##70%## and allows the flamethrower to shoot through enemies\n\n\nACED:\nIncrease your flamethrower damage by an additional ##30##, for a total of ##70##, but reduces the rate of fire by ##60%## instead of ##70%##",
+  "cleansing_fire_desc": "BASIC:\nIncrease your flamethrower damage by ##50## but reduces the rate of fire by ##70%## and allows the flamethrower to ##shoot through## enemies\n\n\nACED:\nIncrease your flamethrower damage by an additional ##30##, for a total of ##70##, but reduces the rate of fire by ##60%## instead of ##70%##",
   "thermal_bomb": "Thermal Bomb",
   "thermal_bomb_desc": "BASIC:\nKilling enemies gives ##Heat##.\nAt ##500## ##Heat##, the next enemy killed will ##Detonate## and ##burn## enemies within ##5m##\n\nHarder enemies give more Heat.\n\n\nACED:\nReduced the Heat required to detonate by ##100##"
 }

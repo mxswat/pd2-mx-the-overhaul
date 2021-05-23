@@ -2,7 +2,7 @@ Hooks:PostHook(PlayerManager, "check_skills", "Pyromancer_check_skills", functio
 	if self:has_category_upgrade("flamethrower", "thermal_bomb") then
 		local function thermal_bomb(weapon_unit, variant, killed_unit)
 			self._pyromancer_thermal_bomb = self._pyromancer_thermal_bomb + killed_unit:character_damage()._HEALTH_INIT
-            log(self._pyromancer_thermal_bomb.."/"..self:upgrade_value("flamethrower", "thermal_bomb"))
+            -- log(self._pyromancer_thermal_bomb.."/"..self:upgrade_value("flamethrower", "thermal_bomb"))
             if self._pyromancer_thermal_bomb > self:upgrade_value("flamethrower", "thermal_bomb") then
                 self._pyromancer_thermal_bomb = 0
                 -- Im aware this code is kinda bad, but it's the overkill way plus my fix for the fire 
