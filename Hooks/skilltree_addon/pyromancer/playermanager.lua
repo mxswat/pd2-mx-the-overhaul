@@ -3,7 +3,7 @@ Hooks:PostHook(PlayerManager, "check_skills", "Pyromancer_check_skills", functio
 		local function thermal_bomb(weapon_unit, variant, killed_unit)
             local increase = (ORIGINAL_HEALTH_MAP[killed_unit:base()._tweak_table] or 4) -- Fallback because overkill BS
 			self._pyromancer_thermal_bomb = self._pyromancer_thermal_bomb + increase 
-            -- log(self._pyromancer_thermal_bomb.."/"..self:upgrade_value("flamethrower", "thermal_bomb").." +"..increase)
+            -- mx_print(self._pyromancer_thermal_bomb.."/"..self:upgrade_value("flamethrower", "thermal_bomb").." +"..increase)
             if self._pyromancer_thermal_bomb > self:upgrade_value("flamethrower", "thermal_bomb") then
                 self._pyromancer_thermal_bomb = 0
                 -- Im aware this code is kinda bad, but it's the overkill way plus my fix for the fire 

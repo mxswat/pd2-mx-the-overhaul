@@ -3,6 +3,9 @@
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
+		<hooks directory="utils">
+			<hook file="utils.lua" source_file="lib/entry"/>
+		</hooks>
 		<hooks directory="perk_throwables">
 			<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata" />
 			<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata" />
@@ -30,7 +33,6 @@
 				<hook file="skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
-				<hook file="utils.lua" source_file="lib/entry"/>
 				<hook file="charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
 			</hooks>
 			<hooks directory="pyromancer">
