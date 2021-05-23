@@ -1,7 +1,8 @@
 Hooks:PostHook(PlayerManager, "check_skills", "Pyromancer_check_skills", function(self)
 	if self:has_category_upgrade("flamethrower", "thermal_bomb") then
 		local function thermal_bomb(weapon_unit, variant, killed_unit)
-			self._pyromancer_thermal_bomb = self._pyromancer_thermal_bomb + killed_unit:character_damage()._HEALTH_INIT
+            local char_tweak = tweak_data.character[killed_unit:base()._tweak_table]
+			self._pyromancer_thermal_bomb = self._pyromancer_thermal_bomb + char_tweak.ORIGINAL_HEALTH_INIT
             -- log(self._pyromancer_thermal_bomb.."/"..self:upgrade_value("flamethrower", "thermal_bomb"))
             if self._pyromancer_thermal_bomb > self:upgrade_value("flamethrower", "thermal_bomb") then
                 self._pyromancer_thermal_bomb = 0
@@ -26,7 +27,7 @@ Hooks:PostHook(PlayerManager, "check_skills", "Pyromancer_check_skills", functio
                         local col_ray = {
                             ray = Vector3(1, 0, 0),
                             position = pos
-                            }
+                        }
                         local fire_dot_data = {
                             dot_trigger_chance = 100,
                             dot_damage = 25,

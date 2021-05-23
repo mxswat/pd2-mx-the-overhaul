@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="900">
-	<AssetUpdates id="32222" version="9.3" provider="modworkshop" />
+	<AssetUpdates id="32222" version="9.4" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -31,6 +31,7 @@
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 				<hook file="utils.lua" source_file="lib/entry"/>
+				<hook file="charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
 			</hooks>
 			<hooks directory="pyromancer">
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
