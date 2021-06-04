@@ -53,5 +53,18 @@
   "cleansing_fire": "cleansing fire",
   "cleansing_fire_desc": "BASIC:\nIncrease your flamethrower damage by ##50## but reduces the rate of fire by ##70%## and allows the flamethrower to ##shoot through## enemies\n\n\nACED:\nIncrease your flamethrower damage by an additional ##30##, for a total of ##70##, but reduces the rate of fire by ##60%## instead of ##70%##",
   "thermal_bomb": "Thermal Bomb",
-  "thermal_bomb_desc": "BASIC:\nKilling enemies gives ##Heat##.\nAt ##500## ##Heat##, the next enemy killed will ##Detonate## and ##burn## enemies within ##5m##\n\nHarder enemies give more Heat.\n\n\nACED:\nReduced the Heat required to detonate by ##100##"
+  "thermal_bomb_desc": "BASIC:\nKilling enemies gives ##Heat##.\nAt ##500## ##Heat##, the next enemy killed will ##Detonate## and ##burn## enemies within ##5m##\n\nHarder enemies give more Heat.\n\n\nACED:\nReduced the Heat required to detonate by ##100##",
+  "mx_oppressor": "Oppressor",
+  "opp_accuracy_desc":"BASIC: ##$basic##\nYou gain ##8## LMGs and minigun accuracy\n\nACED: ##$pro##\nYou gain ##12## LMGs and minigun accuracy",
+  "opp_accuracy":"Attached to the ground",
+  "opp_rof":"Yatatatata Kaboom!",
+  "opp_rof_desc":"BASIC: ##$basic##\nThe Rate of fire of LMGs and minigun is now increased by ##20%##\n\nACED: ##$pro##\nThe Rate of fire of LMGs and minigun is now increased by ##40%##",
+  "opp_reload":"Faster! Faster!",
+  "opp_reload_desc":"BASIC: ##$basic##\nYou reload LMGs and minigun ##20%## faster\n\nACED: ##$pro##\nYou reload LMGs and minigun ##50%## faster",
+  "opp_damage":"Shooting Good",
+  "opp_damage_desc":"BASIC: ##$basic##\nYou deal ##5## more damage with LMGs and minigun\n\nACED: ##$pro##\nYou deal ##10%## more damage with LMGs and minigun",
+  "opp_ammo":"Mow Down",
+  "opp_ammo_desc":"BASIC: ##$basic##\nLMGs and minigun have ##2##5%#### increased total ammo\n\nACED: ##$pro##\nLMGs and minigun have ##50%## increased total ammo",
+  "opp_conc_dmg":"I am Heavy Weapons Guy",
+  "opp_conc_dmg_desc":"BASIC: ##$basic##\nYou gain a ##5%## damage boost for every ##6## points of detection risk over ##35## up to ##30%##.\n\nACED: ##$pro##\nYou gain a ##5%## damage boost for every ##5## points of detection risk over ##35## up to ##40%##."
 }
