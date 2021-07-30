@@ -1,4 +1,4 @@
-<mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="900">
+<mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
 	<AssetUpdates id="32222" version="10" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
@@ -53,10 +53,9 @@
 			<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 			<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 			<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
-			<hook file="statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>
 			<hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 			<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
-			
+			<hook file="shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
 		</hooks>
 	</Hooks>
 	<AddFiles directory="Assets">

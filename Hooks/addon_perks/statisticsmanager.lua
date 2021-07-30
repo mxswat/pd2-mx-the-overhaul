@@ -1,4 +1,0 @@
--- Hooks:PostHook(StatisticsManager, "shot_fired", "VPPP_StatisticsManager_shot_fired", function(self, data)
---     managers.player:update_striker_stacks(data.hit and 0.01 or -0.02)
--- end)
--- Avoided to use this because the way shotguns accuracy is counted is trash, also this is pretty bad since it took in consideration other forms of damage too
