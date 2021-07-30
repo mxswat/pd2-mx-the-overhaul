@@ -128,8 +128,8 @@ function AddAddonPerks(self)
         desc_id = "dodgeopath_desc"
     }
 
-    -- +32% Stability
     -- Striker's Battlegear
+    -- +28 Stability
     -- Every consecutive hit deals 1.5% more damage. Stacks up to 100%. Missing shots drops bonus by 2%. Bonus is reduced by 1% every second.
 
     local striker = {
