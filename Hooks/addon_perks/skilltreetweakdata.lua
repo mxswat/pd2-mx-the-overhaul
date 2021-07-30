@@ -128,7 +128,87 @@ function AddAddonPerks(self)
         desc_id = "dodgeopath_desc"
     }
 
+    -- From TD1 Wiki
+    -- Set bonus (2): +20% Stability
+    -- Set bonus (3): +10% Enemy Armor Damage
+    -- Set bonus (4): Talent - Striker's Battlegear
+    -- Every consecutive hit deals 1% more damage. Stacks up to 100%. Missing shots drops bonus by 2%. Bonus is reduced by 1% every second. Bonus can be paused by EMP and is lost when exiting combat.
+    -- Set bonus (5): +10% Stability, +5% Enemy Armor Damage (Classified only)
+    -- Set bonus (6): Talent - Striker's Persistence & Improved Striker's Battlegear (Classified only)
+    -- Every hit adds 2 stacks of a self-healing bonus; each stack is worth 0.01% of max health per second. Stacks up to 100 hits. This bonus is increased by 0.05% per stack for every 3000 Stamina. Missing shots drops the bonus by 1 stack and the bonus is reduced by 2 stacks every second. It is not possible to gain stacks and the self-healing bonus is not applied while under the effects of EMP. Bonus is lost when exiting combat. While in the Dark Zone, Last Stand or Skirmish each hit only adds 1 stack instead of 2 and the healing rate is reduced.
+    -- Every hit increases the bonus damage from Striker's Battlegear by an additional 1%. Missing shots drops the bonus damage from Striker's Battlegear by 1% and the bonus is reduced by 2% every second. While in the Dark Zone, Last Stand or Skirmish the additional 1% bonus damage is not applied.
+
+    local striker = {
+        {
+            cost = 0,
+            desc_id = "striker_1_desc",
+            name_id = "striker_1",
+            upgrades = {
+                "player_striker_accuracy_to_damage_1"
+            },
+            icon_xy = {
+                6,
+                4
+            }
+        },
+        deck2,
+        {
+            cost = 0,
+            desc_id = "striker_3_desc",
+            name_id = "striker_3",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                0,
+                5
+            }
+        },
+        deck4,
+        {
+            cost = 0,
+            desc_id = "striker_5_desc",
+            name_id = "striker_5",
+            upgrades = {
+                
+            },
+            icon_xy = {
+                1,
+                5
+            }
+        },
+        deck6,
+        {
+            cost = 0,
+            desc_id = "striker_7_desc",
+            name_id = "striker_7",
+            upgrades = {
+            
+            },
+            icon_xy = {
+                2,
+                5
+            }
+        },
+        deck8,
+        {
+            cost = 0,
+            desc_id = "striker_9_desc",
+            name_id = "striker_9",
+            upgrades = {
+                "player_passive_loot_drop_multiplier",
+            },
+            icon_xy = {
+                3,
+                5
+            }
+        },
+        name_id = "striker",
+        desc_id = "striker_desc"
+    }
+
     table.insert(self.specializations, dodgeOpath)
+    table.insert(self.specializations, striker)
 end
 
 Hooks:PostHook(SkillTreeTweakData, "init", "addon_perks_SkillTreeTweakData_init", AddAddonPerks)

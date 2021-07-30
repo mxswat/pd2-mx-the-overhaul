@@ -1,6 +1,12 @@
 Hooks:PostHook(UpgradesTweakData, "init", "AddonPerk_UpgradesTweakData_init", function(self)
 	self:add_temporary_upgrades("dodgeopath_speed", 0, 3)
 	self:add_temporary_upgrades("dodgeopath_invulnerability_on_kill", 0, 3)
+
+	self.values.player.stability_increase_bonus_striker = {5}
+	self:add_definition(nil, "stability_increase_bonus_striker", "player", 1)
+
+	self.values.player.striker_accuracy_to_damage = {true}
+	self:add_definition(nil, "striker_accuracy_to_damage", "player", 1)
 end)
 
 function UpgradesTweakData:add_temporary_upgrades(name_id, generic_val, duration)

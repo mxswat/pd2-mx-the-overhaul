@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.globals": [
+        "Hooks",
+        "managers",
+        "Message",
+        "StatisticsManager",
+        "tweak_data"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "unbalanced-assignments",
+        "undefined-field"
+    ]
+}

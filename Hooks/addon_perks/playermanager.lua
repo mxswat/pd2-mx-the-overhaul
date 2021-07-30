@@ -10,7 +10,7 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 				player_unit:movement():add_stamina(stamina_regen)
 			end
 		end
-	
+
 		self:register_message(Message.OnEnemyKilled, "speed_up_on_melee_kill_dodgeopath", speed_up_on_melee_kill)
 	else
 		self:unregister_message(Message.OnEnemyKilled, "speed_up_on_melee_kill_dodgeopath")
@@ -27,8 +27,34 @@ end
 local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = VPPP_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
-	local player = managers.player:player_unit()
+	-- local player = managers.player:player_unit()
 	chance = self:give_temporary_value_boost(chance, "dodgeopath_invulnerability_on_kill", 1)
 
 	return chance
 end
+
+function PlayerManager:update_striker_stacks(value)
+	local newValue = self._decaying_stacks.striker_stacks + value
+	self._decaying_stacks.striker_stacks = newValue >= 0 and newValue or 0
+	mx_log(self._decaying_stacks.striker_stacks)
+end
+
+Hooks:PostHook(PlayerManager, "_setup", "VPPP_PlayerManager__setup", function(self)
+	self._decaying_stacks = {
+		striker_stacks = 0
+	}
+end)
+
+local strikerDecayInterval = 1
+
+Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
+	if not self:has_category_upgrade("player", "striker_accuracy_to_damage") then
+		return
+	end
+
+	self._striker_stack_decay_t = self._striker_stack_decay_t or t + strikerDecayInterval
+	if self._striker_stack_decay_t <= t then
+		self._striker_stack_decay_t = self._striker_stack_decay_t + strikerDecayInterval
+		self:update_striker_stacks(-1)
+	end
+end)
