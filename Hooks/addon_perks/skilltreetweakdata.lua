@@ -144,7 +144,8 @@ function AddAddonPerks(self)
             desc_id = "striker_1_desc",
             name_id = "striker_1",
             upgrades = {
-                "player_striker_accuracy_to_damage_1"
+                "player_striker_accuracy_to_damage_1",
+                "player_stability_increase_bonus_striker_1"
             },
             icon_xy = {
                 6,

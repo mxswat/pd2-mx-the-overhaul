@@ -33,9 +33,13 @@ function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, overri
 	return chance
 end
 
+function PlayerManager:get_striker_stacks()
+	return self._decaying_stacks.striker_stacks or 0
+end
+
 function PlayerManager:update_striker_stacks(value)
 	local newValue = self._decaying_stacks.striker_stacks + value
-	self._decaying_stacks.striker_stacks = newValue >= 0 and newValue or 0
+	self._decaying_stacks.striker_stacks = math.min(math.max(newValue, 0), 1);
 	mx_log(self._decaying_stacks.striker_stacks)
 end
 
@@ -45,16 +49,16 @@ Hooks:PostHook(PlayerManager, "_setup", "VPPP_PlayerManager__setup", function(se
 	}
 end)
 
-local strikerDecayInterval = 1
+local strikerDecayInterval = 100 -- 1s between one decay and the other
 
 Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
 	if not self:has_category_upgrade("player", "striker_accuracy_to_damage") then
 		return
 	end
-
+	
 	self._striker_stack_decay_t = self._striker_stack_decay_t or t + strikerDecayInterval
 	if self._striker_stack_decay_t <= t then
 		self._striker_stack_decay_t = self._striker_stack_decay_t + strikerDecayInterval
-		self:update_striker_stacks(-1)
+		self:update_striker_stacks(-0.01)
 	end
 end)
