@@ -103,7 +103,7 @@ function AddAddonPerks(self)
             desc_id = "dodgeopath_7_desc",
             name_id = "dodgeopath_7",
             upgrades = {
-            
+
             },
             icon_xy = {
                 2,
@@ -130,7 +130,8 @@ function AddAddonPerks(self)
 
     -- Striker's Battlegear
     -- +28 Stability
-    -- Every consecutive hit deals 1.5% more damage. Stacks up to 100%. Missing shots drops bonus by 2%. Bonus is reduced by 1% every second.
+    -- Every consecutive hit deals 1% more damage. Stacks up to 100%. Missing shots drops bonus by 2%. Bonus is reduced by 1% every second.
+    -- Every hit adds 1 stacks of a self-healing bonus; each stack is worth 0.01% of max health per second. Stacks up to 100 hits. [This bonus is increased by 0.05% per stack for every 3000 Stamina | Maybe scale with armor]
 
     local striker = {
         {
@@ -152,7 +153,7 @@ function AddAddonPerks(self)
             desc_id = "striker_3_desc",
             name_id = "striker_3",
             upgrades = {
-    
+
             },
             icon_xy = {
                 5,
@@ -165,7 +166,7 @@ function AddAddonPerks(self)
             desc_id = "striker_5_desc",
             name_id = "striker_5",
             upgrades = {
-                
+
             },
             icon_xy = {
                 5,
@@ -178,7 +179,7 @@ function AddAddonPerks(self)
             desc_id = "striker_7_desc",
             name_id = "striker_7",
             upgrades = {
-            
+
             },
             icon_xy = {
                 5,

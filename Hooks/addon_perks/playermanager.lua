@@ -40,7 +40,6 @@ end
 function PlayerManager:update_striker_stacks(value)
 	local newValue = self._decaying_stacks.striker_stacks + value
 	self._decaying_stacks.striker_stacks = math.min(math.max(newValue, 0), 1);
-	mx_log(self._decaying_stacks.striker_stacks)
 end
 
 Hooks:PostHook(PlayerManager, "_setup", "VPPP_PlayerManager__setup", function(self)
@@ -49,7 +48,7 @@ Hooks:PostHook(PlayerManager, "_setup", "VPPP_PlayerManager__setup", function(se
 	}
 end)
 
-local strikerDecayInterval = 100 -- 1s between one decay and the other
+local strikerDecayInterval = 1 -- 1s between one decay and the other
 
 Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
 	if not self:has_category_upgrade("player", "striker_accuracy_to_damage") then
@@ -60,5 +59,11 @@ Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(se
 	if self._striker_stack_decay_t <= t then
 		self._striker_stack_decay_t = self._striker_stack_decay_t + strikerDecayInterval
 		self:update_striker_stacks(-0.01)
+		local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
+		if char_damage and self:get_striker_stacks() > 0 then
+			local healing = char_damage:_max_health() * 0.01 * self:get_striker_stacks()
+			-- mx_log("healing:"..tostring(healing).."_max_health"..tostring(char_damage:_max_health()))
+			char_damage:restore_health(healing, true)
+		end
 	end
 end)

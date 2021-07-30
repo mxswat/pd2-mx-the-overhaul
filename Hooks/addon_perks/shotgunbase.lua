@@ -29,20 +29,17 @@ Hooks:PostHook(ShotgunBase, "_fire_raycast", "CHANGEME_ShotgunBase__fire_raycast
 
         if col_ray then 
             if col_ray.unit:character_damage() then
-                log("hit")
                 hits = hits + 1
             else
-                log("miss")
                 miss = miss + 1
             end
         else 
-            log("miss")
             miss = miss + 1
         end
 	end
 
 	if user_unit == managers.player:player_unit()  then
 		managers.player:update_striker_stacks(-0.02 * miss)
-		managers.player:update_striker_stacks(0.015 * hits)
+		managers.player:update_striker_stacks(0.01 * hits)
 	end
 end)
