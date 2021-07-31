@@ -307,5 +307,6 @@ end
 
 function PlayerManager:_attempt_whiff()
 	local activated = self:generic_attempt("whiff")
+	managers.player._damage_dealt_to_cops_decay_t = managers.player._damage_dealt_to_cops_decay_t + 8
 	return activated
 end
