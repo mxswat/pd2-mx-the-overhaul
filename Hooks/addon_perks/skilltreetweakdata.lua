@@ -138,13 +138,14 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_1_desc",
             name_id = "striker_1",
+            texture_bundle_folder = "addon_perks",
             upgrades = {
                 "player_striker_accuracy_to_damage_1",
                 "player_stability_increase_bonus_striker_1"
             },
             icon_xy = {
-                5,
-                2
+                2,
+                0
             }
         },
         deck2,
@@ -152,12 +153,13 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_3_desc",
             name_id = "striker_3",
+            texture_bundle_folder = "addon_perks",
             upgrades = {
 
             },
             icon_xy = {
-                5,
-                2
+                0,
+                0
             }
         },
         deck4,
@@ -165,12 +167,13 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_5_desc",
             name_id = "striker_5",
+            texture_bundle_folder = "addon_perks",
             upgrades = {
 
             },
             icon_xy = {
-                5,
-                2
+                1,
+                0
             }
         },
         deck6,
@@ -178,29 +181,34 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_7_desc",
             name_id = "striker_7",
+            texture_bundle_folder = "addon_perks",
             upgrades = {
 
             },
             icon_xy = {
-                5,
-                2
+                1,
+                0
             }
         },
         deck8,
         {
+            custom = true,
             cost = 0,
             desc_id = "striker_9_desc",
             name_id = "striker_9",
             upgrades = {
                 "player_passive_loot_drop_multiplier",
             },
+            texture_bundle_folder = "addon_perks",
             icon_xy = {
-                5,
-                2
+                1,
+                1
             }
         },
+        custom = true,
+        custom_id = "Striker",
         name_id = "striker",
-        desc_id = "striker_desc"
+        desc_id = "striker_desc",
     }
 
     table.insert(self.specializations, dodgeOpath)

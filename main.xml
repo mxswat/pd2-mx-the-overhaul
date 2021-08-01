@@ -75,5 +75,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/jet" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/whiff" />
 		<texture path="guis/textures/full_screen_effect_1" />
+		<texture path="guis/dlcs/addon_perks/textures/pd2/specialization/icons_atlas" force="true"/>
 	</AddFiles>
 </mod>
