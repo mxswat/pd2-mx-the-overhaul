@@ -5,6 +5,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "AddonPerk_UpgradesTweakData_init", fu
 	self.values.player.stability_increase_bonus_striker = { -0.35 }
 	self:add_definition(nil, "stability_increase_bonus_striker", "player", 1)
 
+	self.values.player.accuracy_increase_bonus_striker = { -0.25 }
+	self:add_definition(nil, "accuracy_increase_bonus_striker", "player", 1)
+
 	self.values.player.striker_accuracy_to_damage = {true}
 	self:add_definition(nil, "striker_accuracy_to_damage", "player", 1)
 end)

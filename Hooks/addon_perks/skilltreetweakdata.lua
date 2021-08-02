@@ -141,7 +141,8 @@ function AddAddonPerks(self)
             texture_bundle_folder = "addon_perks",
             upgrades = {
                 "player_striker_accuracy_to_damage_1",
-                "player_stability_increase_bonus_striker_1"
+                "player_stability_increase_bonus_striker_1",
+                "player_accuracy_increase_bonus_striker_1"
             },
             icon_xy = {
                 2,
