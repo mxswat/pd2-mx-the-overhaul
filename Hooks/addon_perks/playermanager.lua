@@ -72,7 +72,9 @@ Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(se
 			char_damage:restore_health(healing, true)
 		end
 
-		managers.hud:set_info_meter_fast(nil, {
+		local attempt_hud_update = managers.hud[managers.hud.set_info_meter_fast and "set_info_meter_fast" or "set_info_meter"]
+
+		attempt_hud_update(nil, {
 			icon = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_icon_01",
 			max = 1,
 			current = self:get_striker_stacks(),
