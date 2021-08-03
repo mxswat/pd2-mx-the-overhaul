@@ -50,6 +50,9 @@ end)
 
 local strikerDecayInterval = 1 -- 1s between one decay and the other
 
+PlayerManager.stikerStackIncrease = 0.015
+PlayerManager.stikerStackDecrease = -0.02
+
 Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
 	local player = self:player_unit()
 
@@ -58,13 +61,13 @@ Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(se
 	end
 	
 	self._striker_stack_decay_t = self._striker_stack_decay_t or t + strikerDecayInterval
-	if self._striker_stack_decay_t <= t then
+	if self._striker_stack_decay_t <= t and managers and managers.hud then
 		self._striker_stack_decay_t = self._striker_stack_decay_t + strikerDecayInterval
-		self:update_striker_stacks(-0.01)
+		self:update_striker_stacks(-managers.player.stikerStackIncrease)
 		local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
 
 		if char_damage and self:get_striker_stacks() > 0 then
-			local healing = char_damage:_max_health() * 0.01 * self:get_striker_stacks()
+			local healing = char_damage:_max_health() * managers.player.stikerStackIncrease * self:get_striker_stacks()
 			-- mx_log("healing:"..tostring(healing).."_max_health"..tostring(char_damage:_max_health()))
 			char_damage:restore_health(healing, true)
 		end
@@ -79,8 +82,7 @@ Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(se
 end)
 
 Hooks:PostHook(PlayerManager, "_internal_load", "CHANGEME_PlayerManager__internal_load", function(self)
-	log("_internal_load")
-	if self:has_category_upgrade("player", "striker_accuracy_to_damage") then
+	if self:has_category_upgrade("player", "striker_accuracy_to_damage") and managers and managers.hud then
 		managers.hud:set_info_meter(nil, {
 			icon = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_icon_01",
 			max = 1,
