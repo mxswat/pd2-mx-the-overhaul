@@ -138,7 +138,7 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_1_desc",
             name_id = "striker_1",
-            texture_bundle_folder = "addon_perks",
+            texture_bundle_folder = "addon_perks_striker",
             upgrades = {
                 "player_striker_accuracy_to_damage_1",
                 "player_stability_increase_bonus_striker_1",
@@ -154,7 +154,7 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_3_desc",
             name_id = "striker_3",
-            texture_bundle_folder = "addon_perks",
+            texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
             },
@@ -168,7 +168,7 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_5_desc",
             name_id = "striker_5",
-            texture_bundle_folder = "addon_perks",
+            texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
             },
@@ -182,7 +182,7 @@ function AddAddonPerks(self)
             cost = 0,
             desc_id = "striker_7_desc",
             name_id = "striker_7",
-            texture_bundle_folder = "addon_perks",
+            texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
             },
@@ -200,7 +200,7 @@ function AddAddonPerks(self)
             upgrades = {
                 "player_passive_loot_drop_multiplier",
             },
-            texture_bundle_folder = "addon_perks",
+            texture_bundle_folder = "addon_perks_striker",
             icon_xy = {
                 1,
                 1
@@ -212,8 +212,86 @@ function AddAddonPerks(self)
         desc_id = "striker_desc",
     }
 
+    local lonestar = {
+        {
+            cost = 0,
+            desc_id = "lonestar_1_desc",
+            name_id = "lonestar_1",
+            texture_bundle_folder = "addon_perks_lonestar",
+            upgrades = {
+                "player_lonestar_extra_ammo_multiplier_1",
+            },
+            icon_xy = {
+                2,
+                0
+            }
+        },
+        deck2,
+        {
+            cost = 0,
+            desc_id = "lonestar_3_desc",
+            name_id = "lonestar_3",
+            texture_bundle_folder = "addon_perks_lonestar",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                0,
+                0
+            }
+        },
+        deck4,
+        {
+            cost = 0,
+            desc_id = "lonestar_5_desc",
+            name_id = "lonestar_5",
+            texture_bundle_folder = "addon_perks_lonestar",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                1,
+                0
+            }
+        },
+        deck6,
+        {
+            cost = 0,
+            desc_id = "lonestar_7_desc",
+            name_id = "lonestar_7",
+            texture_bundle_folder = "addon_perks_lonestar",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                1,
+                0
+            }
+        },
+        deck8,
+        {
+            custom = true,
+            cost = 0,
+            desc_id = "lonestar_9_desc",
+            name_id = "lonestar_9",
+            upgrades = {
+                "player_passive_loot_drop_multiplier",
+            },
+            texture_bundle_folder = "addon_perks_lonestar",
+            icon_xy = {
+                1,
+                1
+            }
+        },
+        custom = true,
+        custom_id = "lonestar",
+        name_id = "lonestar",
+        desc_id = "lonestar_desc",
+    }
+
     table.insert(self.specializations, dodgeOpath)
     table.insert(self.specializations, striker)
+    table.insert(self.specializations, lonestar)
 end
 
 Hooks:PostHook(SkillTreeTweakData, "init", "addon_perks_SkillTreeTweakData_init", AddAddonPerks)

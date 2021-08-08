@@ -250,13 +250,11 @@ function PlayerManager:_attempt_the_mixtape()
 	return activated
 end
 
--- I really need to make this `upgrade_value` override function common with my other mods
--- Also if I'm editing an object like in the case of the values of "loose_ammo_restore_health" 
--- I must make a deep copy or it can happen that the values can overflow since it's changing the referenced value
+-- If I'm editing an object like in the case of the values of "loose_ammo_restore_health" 
+-- I must make a deep copy or it can happen that the values can overflow since it's changing the referenced value in the tweak_data
 -- Just like the bug I had with "The Fixes Mod"
-local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
-function PlayerManager:upgrade_value(category, upgrade, default)
-	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
+Hooks:AddHook( "PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_value_overrides_perkthrowables", function(self, category, upgrade, default, result)
+    local _result = nil
 	local is_gambler = category == "temporary" and upgrade == "loose_ammo_restore_health"
 	if is_gambler and self:has_activate_temporary_upgrade("temporary", "emergency_requisition") then
 		-- 04:52:27 PM Lua: {
@@ -269,14 +267,14 @@ function PlayerManager:upgrade_value(category, upgrade, default)
 		local new_result = deep_clone(result)
 		new_result[1][1] = new_result[1][1] * 1.5
 		new_result[1][2] = new_result[1][2] * 1.5
-		result = new_result
+		_result = new_result
 	end
 	local is_cocaine = category == "player" and upgrade == "cocaine_stacks_decay_multiplier"
 	if is_cocaine and self:has_activate_temporary_upgrade("temporary", "whiff") then
-		result = 0
+		_result = 0
 	end
-	return result
-end
+	return _result
+end)
 
 function PlayerManager:_attempt_throwable_trip_mine()
 	local activated = self:generic_attempt("throwable_trip_mine")

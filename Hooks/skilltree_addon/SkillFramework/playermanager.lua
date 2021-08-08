@@ -23,3 +23,11 @@ Hooks:RegisterHook("SF_Cooldowns_update")
 Hooks:PostHook(PlayerManager, "update", "SF_PlayerManager_update", function(self, t, dt)
     Hooks:Call("SF_Cooldowns_update", self, t, dt)
 end)
+
+Hooks:RegisterHook("PlayerManager_upgrade_value_overrides")
+local old_PlayerManager_upgrade_value = PlayerManager.upgrade_value
+function PlayerManager:upgrade_value(category, upgrade, default)
+	local result = old_PlayerManager_upgrade_value(self, category, upgrade, default)
+    local overridden_result = Hooks:ReturnCall("PlayerManager_upgrade_value_overrides", self, category, upgrade, default, result )
+    return overridden_result or result
+end

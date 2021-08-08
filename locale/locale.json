@@ -36,7 +36,7 @@
   "dodgeopath_5": "Resistance",
   "dodgeopath_7_desc": "Killing an enemy at medium range has a ##75%## chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every ##1## second.",
   "dodgeopath_7": "Showdown",
-  "dodgeopath_9_desc": "On melee or saw kill, you gain ##50%## movement speed for ##3## seconds, and you gain ##3## second of ##100%##. You also gain the ability to use ##the mixtape## throwable (optional)",
+  "dodgeopath_9_desc": "On melee or saw kill, you gain ##50%## movement speed for ##3## seconds, and you gain ##3## second of ##100%## dodge. You also gain the ability to use ##the mixtape## throwable (optional)",
   "dodgeopath_9": "Unhinged",
   "dodgeopath": "The Miami Slasher",
   "dodgeopath_desc": "Sociopath, but it's with dodge, speed and invulnerability on kil",

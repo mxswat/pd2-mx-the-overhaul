@@ -92,3 +92,14 @@ Hooks:PostHook(PlayerManager, "_internal_load", "CHANGEME_PlayerManager__interna
 		self:update_cocaine_hud()
 	end	
 end)
+
+Hooks:AddHook("PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_value_overrides_perkthrowables", function(self, category, upgrade, default, result)
+    local new_result = nil
+	local player_extra_ammo_multiplier = category == "player" and upgrade == "extra_ammo_multiplier"
+
+	if player_extra_ammo_multiplier and self:has_category_upgrade("player", "lonestar_extra_ammo_multiplier") then
+		new_result = self:upgrade_value("player", "lonestar_extra_ammo_multiplier") + result -- Add +X% ammo
+	end
+
+	return new_result
+end)
