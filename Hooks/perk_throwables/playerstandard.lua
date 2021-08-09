@@ -19,6 +19,7 @@ function PlayerStandard:_get_swap_speed_multiplier()
 	local multiplier = VPPP_PlayerStandard_get_swap_speed_multiplier(self)
 	multiplier = managers.player:give_temporary_value_boost(multiplier, "adrenaline_shot", 0.80)
 	multiplier = managers.player:give_temporary_value_boost(multiplier, "whiff", 0.80)
+    multiplier = managers.player:has_category_upgrade("player", "lonestar_extra_ammo_multiplier") and (multiplier * (1 + 0.40)) or multiplier
 
 	return multiplier
 end

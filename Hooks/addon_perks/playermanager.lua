@@ -96,10 +96,19 @@ end)
 Hooks:AddHook("PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_value_overrides_perkthrowables", function(self, category, upgrade, default, result)
     local new_result = nil
 	local player_extra_ammo_multiplier = category == "player" and upgrade == "extra_ammo_multiplier"
-
+	
 	if player_extra_ammo_multiplier and self:has_category_upgrade("player", "lonestar_extra_ammo_multiplier") then
 		new_result = self:upgrade_value("player", "lonestar_extra_ammo_multiplier") + result -- Add +X% ammo
 	end
-
+	
 	return new_result
 end)
+
+function PlayerManager:_attempt_lonestar_rage()
+	local activated = self:generic_attempt("lonestar_rage")
+	if activated then
+		self:player_unit():movement():current_state()._equipped_unit:base():on_reload()
+		managers.hud:set_ammo_amount(self:player_unit():movement():current_state()._equipped_unit:base():selection_index(), self:player_unit():movement():current_state()._equipped_unit:base():ammo_info())
+	end
+	return activated
+end

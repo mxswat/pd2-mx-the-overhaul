@@ -3,7 +3,7 @@ local mvec_to = Vector3()
 local mvec_direction = Vector3()
 local mvec_spread_direction = Vector3()
 
-Hooks:PostHook(ShotgunBase, "_fire_raycast", "CHANGEME_ShotgunBase__fire_raycast", function(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
+Hooks:PostHook(ShotgunBase, "_fire_raycast", "VPPP_ShotgunBase__fire_raycast", function(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
 	local spread_x, spread_y = self:_get_spread(user_unit)
 	local right = direction:cross(Vector3(0, 0, 1)):normalized()
 	local up = direction:cross(right):normalized()

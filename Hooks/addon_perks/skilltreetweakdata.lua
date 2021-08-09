@@ -136,8 +136,8 @@ function AddAddonPerks(self)
     local striker = {
         {
             cost = 0,
-            desc_id = "striker_1_desc",
             name_id = "striker_1",
+            desc_id = "striker_1_desc",
             texture_bundle_folder = "addon_perks_striker",
             upgrades = {
                 "player_striker_accuracy_to_damage_1",
@@ -152,8 +152,8 @@ function AddAddonPerks(self)
         deck2,
         {
             cost = 0,
-            desc_id = "striker_3_desc",
             name_id = "striker_3",
+            desc_id = "striker_3_desc",
             texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
@@ -166,8 +166,8 @@ function AddAddonPerks(self)
         deck4,
         {
             cost = 0,
-            desc_id = "striker_5_desc",
             name_id = "striker_5",
+            desc_id = "striker_5_desc",
             texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
@@ -180,8 +180,8 @@ function AddAddonPerks(self)
         deck6,
         {
             cost = 0,
-            desc_id = "striker_7_desc",
             name_id = "striker_7",
+            desc_id = "striker_7_desc",
             texture_bundle_folder = "addon_perks_striker",
             upgrades = {
 
@@ -195,8 +195,8 @@ function AddAddonPerks(self)
         {
             custom = true,
             cost = 0,
-            desc_id = "striker_9_desc",
             name_id = "striker_9",
+            desc_id = "striker_9_desc",
             upgrades = {
                 "player_passive_loot_drop_multiplier",
             },
@@ -215,36 +215,24 @@ function AddAddonPerks(self)
     local lonestar = {
         {
             cost = 0,
-            desc_id = "lonestar_1_desc",
             name_id = "lonestar_1",
+            desc_id = "lonestar_1_desc",
             texture_bundle_folder = "addon_perks_lonestar",
             upgrades = {
+                "lonestar_rage",
+                "temporary_lonestar_rage_1",
                 "player_lonestar_extra_ammo_multiplier_1",
-            },
-            icon_xy = {
-                2,
-                0
-            }
-        },
-        deck2,
-        {
-            cost = 0,
-            desc_id = "lonestar_3_desc",
-            name_id = "lonestar_3",
-            texture_bundle_folder = "addon_perks_lonestar",
-            upgrades = {
-    
             },
             icon_xy = {
                 0,
                 0
             }
         },
-        deck4,
+        deck2,
         {
             cost = 0,
-            desc_id = "lonestar_5_desc",
-            name_id = "lonestar_5",
+            name_id = "lonestar_3",
+            desc_id = "lonestar_3_desc",
             texture_bundle_folder = "addon_perks_lonestar",
             upgrades = {
     
@@ -254,17 +242,31 @@ function AddAddonPerks(self)
                 0
             }
         },
-        deck6,
+        deck4,
         {
             cost = 0,
-            desc_id = "lonestar_7_desc",
-            name_id = "lonestar_7",
+            name_id = "lonestar_5",
+            desc_id = "lonestar_5_desc",
             texture_bundle_folder = "addon_perks_lonestar",
             upgrades = {
     
             },
             icon_xy = {
-                1,
+                2,
+                0
+            }
+        },
+        deck6,
+        {
+            cost = 0,
+            name_id = "lonestar_7",
+            desc_id = "lonestar_7_desc",
+            texture_bundle_folder = "addon_perks_lonestar",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                3,
                 0
             }
         },
@@ -272,15 +274,15 @@ function AddAddonPerks(self)
         {
             custom = true,
             cost = 0,
-            desc_id = "lonestar_9_desc",
             name_id = "lonestar_9",
+            desc_id = "lonestar_9_desc",
             upgrades = {
                 "player_passive_loot_drop_multiplier",
             },
             texture_bundle_folder = "addon_perks_lonestar",
             icon_xy = {
-                1,
-                1
+                0,
+                0
             }
         },
         custom = true,

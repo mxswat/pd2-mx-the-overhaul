@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
-	<AssetUpdates id="32222" version="13.2" provider="modworkshop" />
+	<AssetUpdates id="32222" version="14" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -59,6 +59,7 @@
 			<hook file="hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 			<hook file="hudmanager.lua" source_file="lib/managers/hudmanager"/>
 			<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>			
+			<hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
 		</hooks>
 	</Hooks>
 	<AddFiles directory="Assets">
@@ -79,5 +80,7 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/whiff" />
 		<texture path="guis/textures/full_screen_effect_1" />
 		<texture path="guis/dlcs/addon_perks_striker/textures/pd2/specialization/icons_atlas" force="true"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/lonestar_rage" />
+		<texture path="guis/dlcs/addon_perks_lonestar/textures/pd2/specialization/icons_atlas" force="true"/>
 	</AddFiles>
 </mod>
