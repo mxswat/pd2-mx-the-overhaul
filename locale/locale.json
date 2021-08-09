@@ -92,6 +92,6 @@
   "lonestar":"Classified Lone Star",
   "lonestar_desc":"We managed to stole this tech from a secret US Agency. The Classified Lone Star increases your rate of fire and can instantly reload your weapons",
   "bm_ability_lonestar_rage": "Berserker",
-  "bm_ability_lonestar_rage_desc": "40s cooldown\n\nWhen activated your current weapon is instantly reloaded and you gain +30% rate of fire for ##5## seconds"
+  "bm_ability_lonestar_rage_desc": "40s cooldown\n\nWhen activated your current weapon is instantly reloaded and you gain +30% rate of fire for 5 seconds"
   
 }
