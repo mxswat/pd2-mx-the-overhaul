@@ -33,6 +33,10 @@ function AddThrowables(self)
         menu_deck14_1 = {
             "whiff",
             "temporary_whiff_1"
+        },
+        menu_deck6_1 = {
+            "crooks_con",
+            "temporary_crooks_con_1"
         }
     }
 

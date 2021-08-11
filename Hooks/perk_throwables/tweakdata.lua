@@ -109,3 +109,13 @@ tweak_data.hud_icons.lonestar_rage = {
         csb_size
     }
 }
+
+tweak_data.hud_icons.crooks_con = {
+    texture = "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
+    texture_rect = {
+        csb_size * 0,
+        csb_size * 2,
+        csb_size,
+        csb_size
+    }
+}

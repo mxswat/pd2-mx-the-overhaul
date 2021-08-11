@@ -81,7 +81,13 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             name_id = "lonestar_rage",
             base_cooldown = 40,
             max_amount = 1,
-            icon = "chico_injector"
+            icon = "lonestar_rage"
+        },
+        {
+            name_id = "crooks_con",
+            base_cooldown = 35,
+            max_amount = 2,
+            icon = "crooks_con"
         },
     }
 

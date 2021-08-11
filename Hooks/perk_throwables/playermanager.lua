@@ -120,6 +120,7 @@ local VPPP_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = VPPP_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
 	chance = self:give_temporary_value_boost(chance, "burglar_luck", 0.30)
+	chance = self:give_temporary_value_boost(chance, "crooks_con", 0.20)
 	return chance
 end
 
@@ -159,10 +160,19 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	return multiplier
 end
 
+function PlayerManager:_attempt_crooks_con()
+	local activated = self:generic_attempt("crooks_con")
+	if activated then
+		local char_damage = managers.player:player_unit():character_damage()
+		char_damage:change_armor(char_damage:_max_armor() * 0.40)
+	end
+	return activated
+end
+
 function PlayerManager:_attempt_spare_armor_plate()
 	local activated = self:generic_attempt("spare_armor_plate")
 	if activated then
-		local char_damage = managers.player: player_unit():character_damage()
+		local char_damage = managers.player:player_unit():character_damage()
 		char_damage:_regenerate_armor(false)
 	end
 	return activated
@@ -183,7 +193,7 @@ end
 function PlayerManager:_attempt_blood_transfusion()
 	local activated = self:generic_attempt("blood_transfusion")
 	if activated then
-		local char_damage = managers.player: player_unit():character_damage()
+		local char_damage = managers.player:player_unit():character_damage()
 		char_damage._armor_stored_health = char_damage._armor_stored_health * 1.5
 		char_damage:consume_armor_stored_health()
 		char_damage:_regenerate_armor(false)

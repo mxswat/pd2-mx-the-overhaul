@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
-	<AssetUpdates id="32222" version="14" provider="modworkshop" />
+	<AssetUpdates id="32222" version="15" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -82,5 +82,6 @@
 		<texture path="guis/dlcs/addon_perks_striker/textures/pd2/specialization/icons_atlas" force="true"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/lonestar_rage" />
 		<texture path="guis/dlcs/addon_perks_lonestar/textures/pd2/specialization/icons_atlas" force="true"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crooks_con" />
 	</AddFiles>
 </mod>
