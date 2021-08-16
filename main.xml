@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
-	<AssetUpdates id="32222" version="15.1" provider="modworkshop" />
+	<AssetUpdates id="32222" version="15.2" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -20,7 +20,6 @@
 			<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage" />
 			<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase" />
 			<hook file="interactionext.lua" source_file="lib/units/interactions/interactionext" />
-			<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase" />
 			<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase" />
 			<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment" />
 			<hook file="hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
@@ -59,7 +58,6 @@
 			<hook file="hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 			<hook file="hudmanager.lua" source_file="lib/managers/hudmanager"/>
 			<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>			
-			<hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
 		</hooks>
 	</Hooks>
 	<AddFiles directory="Assets">
