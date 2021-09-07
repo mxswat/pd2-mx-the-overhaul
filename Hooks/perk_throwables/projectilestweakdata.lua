@@ -89,6 +89,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             max_amount = 2,
             icon = "crooks_con"
         },
+        {
+            name_id = "crew_synchrony",
+            base_cooldown = 60,
+            max_amount = 1,
+            icon = "blood_transfusion"
+        },
     }
 
     for i, injector in ipairs(injectors) do

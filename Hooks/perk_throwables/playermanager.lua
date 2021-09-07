@@ -318,3 +318,10 @@ function PlayerManager:_attempt_whiff()
 	managers.player._damage_dealt_to_cops_decay_t = managers.player._damage_dealt_to_cops_decay_t + 8
 	return activated
 end
+
+function PlayerManager:_attempt_crew_synchrony()
+	local activated = self:_attempt_tag_team()
+	-- Easy peasy copy paste and works lmao
+	-- mx_log_chat('activated', activated)
+	return activated
+end

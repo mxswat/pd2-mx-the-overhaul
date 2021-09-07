@@ -94,5 +94,7 @@
   "bm_ability_lonestar_rage": "Berserker",
   "bm_ability_lonestar_rage_desc": "40s cooldown\n\nWhen activated your current weapon is instantly reloaded and you gain +30% rate of fire for 5 seconds",
   "bm_ability_crooks_con": "Crook's Con",
-  "bm_ability_crooks_con_desc": "2 charges, 35s cooldown -1s cooldown on kill\n\nWhen activated you repair 40% of your armor and gain 20% dodge for 5 seconds"
+  "bm_ability_crooks_con_desc": "2 charges, 35s cooldown -1s cooldown on kill\n\nWhen activated you repair 40% of your armor and gain 20% dodge for 5 seconds",
+  "bm_ability_crew_synchrony": "Crew synchrony",
+  "bm_ability_crew_synchrony_desc": "Unlocks and equips the Crew Synchrony.\nTo activate the Crew Synchrony you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 12 seconds and has a cooldown of 60 seconds.\nEach enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown."
 }

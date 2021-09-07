@@ -37,6 +37,13 @@ function AddThrowables(self)
         menu_deck6_1 = {
             "crooks_con",
             "temporary_crooks_con_1"
+        },
+        menu_deck1_1 = {
+            "crew_synchrony",
+            "player_tag_team_base",
+            "player_tag_team_cooldown_drain_1",
+            "player_tag_team_damage_absorption",
+            "player_tag_team_cooldown_drain_2",
         }
     }
 

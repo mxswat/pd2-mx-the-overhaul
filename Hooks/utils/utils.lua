@@ -36,6 +36,13 @@ function _G.mx_log(s)
 	end
 end
 
+function _G.mx_log_chat(name, content)
+    -- body
+    if MXTO_get_dev_mode() > 1 then
+        managers.chat:_receive_message(1, tostring(name), tostring(content), Color('00ff00'))
+	end
+end
+
 function _G.mx_print(node)
     if MXTO_get_dev_mode() < 2 then
         return -- Do not use mx_print, dev mode not active
