@@ -43,6 +43,14 @@
 				<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 				<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 			</hooks>
+			<hooks directory="demoliton_expert">
+				<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+				<hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
+				<hook file="grenadelauncherbase.lua" source_file="lib/units/weapons/grenadelauncherbase"/>
+				<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
+				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
+				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+			</hooks>
 			<hooks directory="oppressor">
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
