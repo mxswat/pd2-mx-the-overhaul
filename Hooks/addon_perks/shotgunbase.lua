@@ -39,7 +39,7 @@ Hooks:PostHook(ShotgunBase, "_fire_raycast", "VPPP_ShotgunBase__fire_raycast", f
 	end
 
 	if user_unit == managers.player:player_unit()  then
-		managers.player:update_striker_stacks(managers.player.stikerStackDecrease * miss)
-		managers.player:update_striker_stacks(managers.player.stikerStackIncrease * hits)
+		managers.player:update_striker_stacks(managers.player.strikerStackDecrease * miss)
+		managers.player:update_striker_stacks(managers.player.strikerStackIncrease * hits)
 	end
 end)

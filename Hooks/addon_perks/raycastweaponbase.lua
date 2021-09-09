@@ -8,7 +8,7 @@ local old_RaycastWeaponBase__fire_raycast = RaycastWeaponBase._fire_raycast
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	local result = old_RaycastWeaponBase__fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	if user_unit == managers.player:player_unit()  then
-		managers.player:update_striker_stacks(result.hit_enemy and managers.player.stikerStackIncrease or managers.player.stikerStackDecrease)
+		managers.player:update_striker_stacks(result.hit_enemy and managers.player.strikerStackIncrease or managers.player.strikerStackDecrease)
 	end
 	return result
 end

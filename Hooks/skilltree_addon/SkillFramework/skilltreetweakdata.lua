@@ -17,8 +17,8 @@ function SkillTreeTweakData:add_new_skill(name, basic_upgrades, aced_upgrades, t
 			cost = cost_aced
 		},
 		name_id = name,
-		texture = texture,
 		desc_id = name.."_desc",
+		texture = texture,
 		icon_xy = icon_xy
 	}
 end
