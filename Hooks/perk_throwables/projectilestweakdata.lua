@@ -91,7 +91,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         },
         {
             name_id = "crew_synchrony",
-            base_cooldown = 60,
+            base_cooldown = 50,
             max_amount = 1,
             icon = "blood_transfusion"
         },
