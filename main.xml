@@ -33,6 +33,7 @@
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 				<hook file="charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
+				<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 			</hooks>
 			<hooks directory="pyromancer">
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>

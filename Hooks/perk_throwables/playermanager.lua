@@ -346,23 +346,25 @@ BuffBannerCoRoutine = {
 					end
 				end
 			end
+			-- mx_print(damage_info)
 			-- TODO: If too strong, limit this to a specific damage type? Like only bullets? Idks
 			if not was_killed and valid_player and damage_info.damage and damage_info.col_ray then
 				local damage = damage_info.damage * 0.4 
 				-- No col-ray so this does not get stuck in an infite damage loop
-				damage_info.col_ray.unit:character_damage():damage_simple({
+				-- Also this is copied from the graze coroutine
+				damage_info._unit:character_damage():damage_simple({
 					variant = "bullet",
 					damage = damage,
 					attacker_unit = managers.player:player_unit(),
-					pos = damage_info.col_ray.position,
-					attack_dir = damage_info.col_ray.normal
+					pos = damage_info.pos,
+					attack_dir = Vector3(0, 0, 0)
 				})
-				mx_log_chat('damage', damage)
+				-- mx_log_chat('damage', damage)
 			end
 		end
 
 		CopDamage.register_listener(on_damage_key, {
-			"on_damage"
+			"SF2_on_damage"
 		}, on_damage)
 
 		while alive(player) and timer:time() < end_time do
