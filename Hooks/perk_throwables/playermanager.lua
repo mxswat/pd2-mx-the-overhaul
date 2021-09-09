@@ -338,7 +338,7 @@ BuffBannerCoRoutine = {
 			local valid_player = damage_info.attacker_unit == player
 			if not valid_player then -- then look if the damage was dealt by a player, and check if it's also if he is a 6m radius from you
 				-- Thx to DrNewbie for the social distance find_units code
-				local __units = World:find_units("sphere", player:position(), 600, managers.slot:get_mask("players"))
+				local __units = World:find_units("sphere", player:position(), 1000, managers.slot:get_mask("players"))
 				for _, _unit in pairs(__units) do 
 					if _unit and alive(_unit) and _unit ~= player then
 						valid_player = valid_player or damage_info.attacker_unit == _unit

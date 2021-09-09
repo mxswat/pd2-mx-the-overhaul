@@ -111,5 +111,5 @@
   "primer_round_desc": "BASIC: ##$basic##\nEvery bullet that lands into the enemy flesh ##EXPLODES## with ##60%## damage of your base weapon damage, damaging every enemy in a ##3m## radius\n\nACED: ##$pro##\nIncrease the bounus to ##100%##",
   "mx_demolitionist": "Demolition Expert",
   "bm_ability_buff_banner": "Buff Banner",
-  "bm_ability_buff_banner_desc": "90s cooldown\n\nWhen activated, provides an offensive buff that causes nearby (6 meters) team members to do 40% more damage, this also applies to you"
+  "bm_ability_buff_banner_desc": "90s cooldown\n\nWhen activated, provides an offensive buff that causes nearby (10 meters) team members to do 40% more damage, this also applies to you"
 }
