@@ -325,3 +325,63 @@ function PlayerManager:_attempt_crew_synchrony()
 	-- mx_log_chat('activated', activated)
 	return activated
 end
+
+BuffBannerCoRoutine = {
+	Priority = 1,
+	Function = function (player)
+		local base_values = managers.player:upgrade_value("temporary", "buff_banner")
+		local timer = TimerManager:game()
+		local end_time = timer:time() + base_values[2]
+		local on_damage_key = {}
+		local function on_damage(damage_info)
+			local was_killed = damage_info.result.type == "death"
+			local valid_player = damage_info.attacker_unit == player
+			if not valid_player then -- then look if the damage was dealt by a player, and check if it's also if he is a 6m radius from you
+				-- Thx to DrNewbie for the social distance find_units code
+				local __units = World:find_units("sphere", player:position(), 600, managers.slot:get_mask("players"))
+				for _, _unit in pairs(__units) do 
+					if _unit and alive(_unit) and _unit ~= player then
+						valid_player = valid_player or damage_info.attacker_unit == _unit
+						break
+					end
+				end
+			end
+			-- TODO: If too strong, limit this to a specific damage type? Like only bullets? Idks
+			if not was_killed and valid_player and damage_info.damage and damage_info.col_ray then
+				local damage = damage_info.damage * 0.4 
+				-- No col-ray so this does not get stuck in an infite damage loop
+				damage_info.col_ray.unit:character_damage():damage_simple({
+					variant = "bullet",
+					damage = damage,
+					attacker_unit = managers.player:player_unit(),
+					pos = damage_info.col_ray.position,
+					attack_dir = damage_info.col_ray.normal
+				})
+				mx_log_chat('damage', damage)
+			end
+		end
+
+		CopDamage.register_listener(on_damage_key, {
+			"on_damage"
+		}, on_damage)
+
+		while alive(player) and timer:time() < end_time do
+			coroutine.yield()
+		end
+
+		CopDamage.unregister_listener(on_damage_key)
+
+		while not managers.player:got_max_grenades() do
+			coroutine.yield()
+		end		
+	end
+}
+
+function PlayerManager:_attempt_buff_banner()
+	local activated = self:generic_attempt("buff_banner")
+	if activated then
+		log("add_coroutine") 
+		self:add_coroutine("buff_banner", BuffBannerCoRoutine, managers.player:player_unit())
+	end
+	return activated
+end

@@ -44,7 +44,11 @@ function AddThrowables(self)
             "player_tag_team_cooldown_drain_1",
             "player_tag_team_damage_absorption",
             "player_tag_team_cooldown_drain_2",
-        }
+        },
+        menu_deck16_1 = {
+            "buff_banner",
+            "temporary_buff_banner_1"
+        },
     }
 
     -- Add to perkdecks card

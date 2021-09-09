@@ -95,6 +95,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             max_amount = 1,
             icon = "blood_transfusion"
         },
+        {
+            name_id = "buff_banner",
+            base_cooldown = 90,
+            max_amount = 1,
+            icon = "blood_transfusion"
+        },
     }
 
     for i, injector in ipairs(injectors) do

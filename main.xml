@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
-	<AssetUpdates id="32222" version="17" provider="modworkshop" />
+	<AssetUpdates id="32222" version="18" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
@@ -43,15 +43,15 @@
 				<hook file="raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 				<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 			</hooks>
+			<hooks directory="oppressor">
+				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
+				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+			</hooks>
 			<hooks directory="demoliton_expert">
 				<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 				<hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 				<hook file="grenadelauncherbase.lua" source_file="lib/units/weapons/grenadelauncherbase"/>
 				<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
-				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
-				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
-			</hooks>
-			<hooks directory="oppressor">
 				<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 			</hooks>
@@ -90,5 +90,6 @@
 		<texture path="guis/dlcs/addon_perks_lonestar/textures/pd2/specialization/icons_atlas" force="true"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crooks_con" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crew_synchrony" />
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/buff_banner" />
 	</AddFiles>
 </mod>
