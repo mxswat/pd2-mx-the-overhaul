@@ -11,13 +11,17 @@ function SkillTreeTweakData:init()
     self:add_skill_tree(skilltree_name)
 
     local treeTiers = {
-		{"the_melee_way"}, 
+		{"martial_arts_plus"}, 
 		{"pumping_iron_plus"},
 		{"wolverine"}
 	}
 
     self:add_sub_skill_tree(skilltree_name, "mx_butcher", treeTiers)
-    self:add_new_skill("the_melee_way", {}, {}, 1, {6, 6})
+
+    local martial_arts_plus_basic = {"player_melee_damage_dampener", "player_melee_range_boost_1"}
+    local martial_arts_plus_aced = {"player_melee_knockdown_mul", "player_melee_range_boost_2"}
+    self:add_new_skill("martial_arts_plus", martial_arts_plus_basic, martial_arts_plus_aced, 1, {11,7})
+
     local pumping_iron_plus_basic = {"player_non_special_melee_multiplier"}
     local pumping_iron_plus_aced = {"player_melee_damage_multiplier"}
     self:add_new_skill("pumping_iron_plus", pumping_iron_plus_basic, pumping_iron_plus_aced, 2, {1, 3})
@@ -34,5 +38,4 @@ end
 	-- Counter attack plus
 	-- Pumping iron plus
 	-- Hit multiple enemies at once?
-
 ]] -- 
