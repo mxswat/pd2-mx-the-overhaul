@@ -61,6 +61,7 @@
 				<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 				<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 				<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+				<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
 			</hooks>
 		</hooks>
 		<hooks directory="addon_perks">

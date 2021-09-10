@@ -22,7 +22,7 @@ Hooks:PostHook(PlayerManager, "_setup", "Butcher_PlayerManager__setup", function
             local attacker_unit = damage_info.attacker_unit
             local variant = damage_info.variant
             local was_killed = damage_info.result.type == "death"
-            local is_saw = damage_info and damage_info.weapon_unit and damage_info.weapon_unit:base():is_category("saw")
+            local is_saw = damage_info and damage_info.weapon_unit and damage_info.weapon_unit:base().is_category and damage_info.weapon_unit:base():is_category("saw")
             if variant == "melee" or is_saw and attacker_unit == self:player_unit() then
                 -- If is saw build stack 50% slower since the saw hits very fast compared to melee
 				self:update_wolverine_stacks(is_saw and PlayerManager.wolverineStackIncrease * 0.50 or PlayerManager.wolverineStackIncrease)
