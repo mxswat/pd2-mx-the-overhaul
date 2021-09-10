@@ -13,7 +13,8 @@ function SkillTreeTweakData:init()
     local treeTiers = {
 		{"martial_arts_plus"},
 		{"predator_thirst", "pumping_iron_plus"},
-		{"counter_strike_plus", "adrenaline"}
+		{"counter_strike_plus", "adrenaline"},
+        {"predator_deflect"}
 	}
 
     self:add_sub_skill_tree(skilltree_name, "mx_butcher", treeTiers)
@@ -37,6 +38,10 @@ function SkillTreeTweakData:init()
     local adrenaline_basic = {"player_butcher_melee_stacking_1"}
     local adrenaline_aced = {"player_butcher_melee_stacking_2"}
     self:add_new_skill("adrenaline", adrenaline_basic, adrenaline_aced, 3, {2, 2})
+    
+    local predator_deflect_basic = {"player_melee_deflect_chance_1"}
+    local predator_deflect_aced = {"player_melee_deflect_chance_2"}
+    self:add_new_skill("predator_deflect", predator_deflect_basic, predator_deflect_aced, 3, {0, 11})
 end
 
 --[[

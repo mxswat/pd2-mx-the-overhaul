@@ -42,24 +42,24 @@ for _, function_name in ipairs(damage_functions) do
 
 	PlayerDamage[function_name] = function(self, attack_data)
 		local current_state = self._unit:movement()._current_state
-
-		if (current_state and current_state.in_melee and current_state:in_melee()) then
-			local melee_entry = managers.blackmarket:equipped_melee_weapon()
-			local melee_tweak =  tweak_data.blackmarket.melee_weapons[melee_entry]
-
-			-- Add Skill check here
-			if (melee_tweak and melee_tweak) then
+		local has_deflect_skill = managers.player:has_category_upgrade("player", "melee_deflect_chance")
+		if has_deflect_skill and (current_state and current_state.in_melee and current_state:in_melee()) then
+			local deflect_roll = math.random()
+			local deflect_chance = managers.player:upgrade_value("player", "melee_deflect_chance")
+			local will_deflect = has_deflect_skill and deflect_roll > deflect_chance or false
+	
+			if will_deflect then
+				local melee_entry = managers.blackmarket:equipped_melee_weapon()
+				-- Add Skill check here
 				local attacker_unit = attack_data.attacker_unit
-
 				if (attacker_unit and attacker_unit.character_damage) then
-
 					attacker_unit:character_damage():damage_simple({
-                        variant = "mx_damage",
-                        damage = attack_data.damage,
-                        attacker_unit = self._unit,
-                        pos = mvector3.copy(attacker_unit:movement():m_head_pos()),
-                        attack_dir = Vector3(0, 0, 0)
-                    })
+						variant = "mx_damage",
+						damage = attack_data.damage,
+						attacker_unit = self._unit,
+						pos = mvector3.copy(attacker_unit:movement():m_head_pos()),
+						attack_dir = Vector3(0, 0, 0)
+					})
 
 					local player_pos = Vector3() 
 					mvector3.set(player_pos, managers.player:equipped_weapon_unit():position())

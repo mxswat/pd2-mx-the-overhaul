@@ -36,4 +36,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "Butcher_UpgradesTweakData_init", func
 
 	self:add_definition(nil, "melee_charge_run_speed_boost", "player", 1)
 	self:add_definition(nil, "melee_charge_run_speed_boost", "player", 2)
+
+	self.values.player.melee_deflect_chance = {
+		0.40,
+		0.50
+	}
+
+	self:add_definition(nil, "melee_deflect_chance", "player", 1)
+	self:add_definition(nil, "melee_deflect_chance", "player", 2)
 end)
