@@ -62,3 +62,25 @@ Hooks:PostHook(PlayerManager, "update", "Butcher_PlayerManager_update", function
 		self:update_wolverine_stacks(self.wolverineStackDecayDecrease)
 	end
 end)
+
+local Butcher_PlayerManager_movement_speed_multiplier = PlayerManager.movement_speed_multiplier
+function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
+	local multiplier = Butcher_PlayerManager_movement_speed_multiplier(self, speed_state, bonus_multiplier, upgrade_level, health_ratio)
+    local player_is_charging_melee = self:get_current_state() and self:get_current_state():_is_meleeing()
+    local melee_charge_lerp_value = self:get_current_state() and self:get_current_state():get_current_melee_charge_lerp_value() or 0
+    if self:has_category_upgrade("player", "melee_charge_run_speed_boost") and player_is_charging_melee then
+        multiplier = multiplier * (self:upgrade_value("player", "melee_charge_run_speed_boost") + melee_charge_lerp_value)
+    end
+
+	return multiplier
+end
+
+local Butcher_PlayerManager_skill_dodge_chance = PlayerManager.skill_dodge_chance
+function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
+	local chance = Butcher_PlayerManager_skill_dodge_chance(self, running, crouching, on_zipline, override_armor, detection_risk)
+	local player_is_charging_melee = self:get_current_state() and self:get_current_state():_is_meleeing()
+    if self:has_category_upgrade("player", "during_melee_dodge") and player_is_charging_melee then
+        chance = chance + self:upgrade_value("player", "during_melee_dodge")
+    end
+	return chance
+end

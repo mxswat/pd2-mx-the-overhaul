@@ -1,6 +1,6 @@
-local old_PlayerStandard__calc_melee_hit_ray = PlayerStandard._calc_melee_hit_ray
+local Butcher_PlayerStandard__calc_melee_hit_ray = PlayerStandard._calc_melee_hit_ray
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
-	local result = old_PlayerStandard__calc_melee_hit_ray(self, t, sphere_cast_radius)
+	local result = Butcher_PlayerStandard__calc_melee_hit_ray(self, t, sphere_cast_radius)
 
     if managers.player:has_category_upgrade("player", "melee_range_boost") then
         -- It's the same code as the original, but with the dded melee range skill upgrade 
@@ -13,4 +13,24 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
     end
 
 	return result
+end
+
+Hooks:PostHook(PlayerStandard, "_do_action_melee", "Butcher_PlayerStandard__do_action_melee", function(self, t, input, skip_damage)
+    if managers.player:has_category_upgrade("player", "melee_speed_boost") then
+        local melee_entry = managers.blackmarket:equipped_melee_weapon()
+        local boost = managers.player:upgrade_value("player", "melee_speed_boost")
+        self._state_data.melee_expire_t = t + tweak_data.blackmarket.melee_weapons[melee_entry].expire_t
+        self._state_data.melee_repeat_expire_t = t + math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t) * boost        
+    end
+end)
+
+local Butcher_PlayerStandard__get_melee_charge_lerp_value = PlayerStandard._get_melee_charge_lerp_value
+function PlayerStandard:_get_melee_charge_lerp_value(t, offset)
+	local result = Butcher_PlayerStandard__get_melee_charge_lerp_value(self, t, offset)
+    self._state_data.melee_charge_lerp_value = result
+	return result
+end
+
+function PlayerStandard:get_current_melee_charge_lerp_value()
+    return self._state_data.melee_charge_lerp_value
 end
