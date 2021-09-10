@@ -41,7 +41,7 @@ function SkillTreeTweakData:init()
     
     local predator_deflect_basic = {"player_melee_deflect_chance_1"}
     local predator_deflect_aced = {"player_melee_deflect_chance_2"}
-    self:add_new_skill("predator_deflect", predator_deflect_basic, predator_deflect_aced, 3, {0, 11})
+    self:add_new_skill("predator_deflect", predator_deflect_basic, predator_deflect_aced, 4, {0, 11})
 end
 
 --[[
