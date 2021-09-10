@@ -123,7 +123,7 @@
   "counter_strike_plus": "counter strike plus",
   "counter_strike_plus_desc": "BASIC: ##$basic## \nWhen charging your melee weapon you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nThe longer you charge the faster you move up to ##+110%##\n\nACED: ##$pro##\nYou gain the ability to counterattack cloakers and their kicks.\nThe longer you charge the faster you move up to ##+125%##",
   "adrenaline": "adrenaline",
-  "adrenaline_desc": "BASIC: ##$basic##\nEvery consecutive ##melee## or ##saw## hits deals ##20%## more damage. Stacks up to ##100%##. \nBonus is reduced by ##10%## every ##2.5## second. \n\nACED: ##$pro##\nBonus is reduced by ##10%## every ##3## second instead of ##2##. ",
+  "adrenaline_desc": "BASIC: ##$basic##\nEvery consecutive ##melee## or ##saw## hits deals ##20%## more damage. Stacks up to ##100%##. \nBonus is reduced by ##10%## every ##2## second. \n\nACED: ##$pro##\nBonus is reduced by ##10%## every ##3## second instead of ##2##. ",
   "predator_deflect": "Predator's Deflect",
   "predator_deflect_desc": "BASIC: ##$basic##\nWhen charging your melee weapon, you will have a ##40%## chance of reflecting the damage back to the enemy.\nLike Genji from Overwatch\n\nACED: ##$pro##\nWhen charging your melee weapon, you will have a ##50%## chance of reflecting the damage back to the enemy."
 }
