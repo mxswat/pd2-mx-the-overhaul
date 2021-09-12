@@ -32,8 +32,8 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.primer_round = {
-		0.6,
-		1.0
+		0.40,
+		0.55
 	}
 
 	self.values.grenade_launcher.fire_rate_multiplier = {
