@@ -50,12 +50,12 @@ Hooks:PostHook(CopDamage, "damage_explosion", "Demo_damage_explosion" ,function(
 		return
 	end
 
-    local dot_damage = (attack_data * 0.10) / 4
+    local dot_damage = (attack_data.damage * 0.10)
     local fire_dot_data = {
         dot_damage = dot_damage,
         dot_trigger_max_distance = 9000,
         dot_trigger_chance = 100,
-        dot_length = 2,
+        dot_length = 3,
         dot_tick_period = 0.5
     }
     local action_data = {}
