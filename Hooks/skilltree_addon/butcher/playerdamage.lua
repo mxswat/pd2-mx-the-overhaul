@@ -52,14 +52,27 @@ for _, function_name in ipairs(damage_functions) do
 				local melee_entry = managers.blackmarket:equipped_melee_weapon()
 				-- Add Skill check here
 				local attacker_unit = attack_data.attacker_unit
-				if (attacker_unit and attacker_unit.character_damage) then
-					attacker_unit:character_damage():damage_simple({
-						variant = "mx_damage",
-						damage = attack_data.damage,
-						attacker_unit = self._unit,
-						pos = mvector3.copy(attacker_unit:movement():m_head_pos()),
-						attack_dir = Vector3(0, 0, 0)
-					})
+				if (attacker_unit and  attacker_unit.character_damage) then
+					if attacker_unit:base().sentry_gun then
+						local action_data = {
+							variant = "explosion",
+							damage = attack_data.damage * 1.20,
+							-- User current equipped primary, since equipped_melee_weapon does not have a :category which is used by copdamage 
+							weapon_unit = managers.blackmarket:equipped_primary(),
+							-- So, I can't use self._unit otherwise pd2 crashes, this is bullshit
+							attacker_unit = nil,
+							col_ray = Vector3(0, 0, 0)
+						}
+						attacker_unit:character_damage():damage_explosion(action_data)
+					else 
+						attacker_unit:character_damage():damage_simple({
+							variant = "mx_damage",
+							damage = attack_data.damage,
+							attacker_unit = self._unit,
+							pos = mvector3.copy(attacker_unit:movement():m_head_pos()),
+							attack_dir = Vector3(0, 0, 0)
+						})
+					end
 
 					local player_pos = Vector3() 
 					mvector3.set(player_pos, managers.player:equipped_weapon_unit():position())
