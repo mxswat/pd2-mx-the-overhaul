@@ -17,6 +17,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "VPPP_UpgradesTweakData_init", functio
 	self:common_add_throwables("crooks_con", 1, 4)
 	self:common_add_throwables("crew_synchrony", 1, 12)
 	self:common_add_throwables("buff_banner", 1, 12)
+	self:common_add_throwables("dynamite_mx", 1, 12)
+	self:common_add_throwables("wpn_prj_four_mx", 1, 12)
+	self:common_add_throwables("wpn_prj_hur_mx", 1, 12)
 	-- self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
 	-- mx_print_table(self.specialization_descs)
 end)

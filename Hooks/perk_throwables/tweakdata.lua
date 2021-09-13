@@ -119,3 +119,45 @@ tweak_data.hud_icons.crooks_con = {
         csb_size
     }
 }
+
+tweak_data.projectiles.dynamite_mx = {
+    damage = 160,
+    curve_pow = 0.1,
+    player_damage = 10,
+    range = 500,
+    name_id = "bm_grenade_frag",
+    effect_name = "effects/payday2/particles/explosions/dynamite_explosion"
+}
+
+tweak_data.projectiles.wpn_prj_four_mx = {
+    damage = 10,
+    launch_speed = 1500,
+    adjust_z = 0,
+    mass_look_up_modifier = 1,
+    name_id = "bm_prj_four",
+    push_at_body_index = 0,
+    dot_data = {
+        type = "poison"
+    },
+    bullet_class = "ProjectilesPoisonBulletBase",
+    sounds = {}
+}
+
+tweak_data.projectiles.wpn_prj_four_mx.sounds.flyby = "throwing_star_flyby"
+tweak_data.projectiles.wpn_prj_four_mx.sounds.flyby_stop = "throwing_star_flyby_stop"
+tweak_data.projectiles.wpn_prj_four_mx.sounds.impact = "throwables_impact_gen"
+tweak_data.projectiles.wpn_prj_four_mx.remove_on_impact = true
+
+
+tweak_data.projectiles.wpn_prj_hur_mx = {
+    damage = 110,
+    launch_speed = 1000,
+    adjust_z = 120,
+    mass_look_up_modifier = 1,
+    name_id = "bm_prj_hur",
+    push_at_body_index = "dynamic_body_spinn",
+    sounds = {}
+}
+tweak_data.projectiles.wpn_prj_hur_mx.sounds.flyby = "hur_flyby"
+tweak_data.projectiles.wpn_prj_hur_mx.sounds.flyby_stop = "hur_flyby_stop"
+tweak_data.projectiles.wpn_prj_hur_mx.sounds.impact = "hur_impact_gen"
