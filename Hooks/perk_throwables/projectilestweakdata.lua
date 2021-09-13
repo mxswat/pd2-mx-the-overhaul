@@ -130,12 +130,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
 		texture_bundle_folder = "west",
 		max_amount = 3,
 		throwable = true,
-		animation = "throw_dynamite",
-		anim_global_param = "projectile_dynamite",
+		-- animation = "throw_dynamite",
+		anim_global_param = "projectile_four",
 		throw_allowed_expire_t = 0.1,
 		expire_t = 1.3,
 		repeat_expire_t = 1.5,
-		is_a_grenade = true,
+		is_a_grenade = false, -- was true
 		is_explosive = true
 	}
 
