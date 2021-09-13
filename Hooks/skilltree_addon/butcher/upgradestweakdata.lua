@@ -1,6 +1,6 @@
 Hooks:PostHook(UpgradesTweakData, "init", "Butcher_UpgradesTweakData_init", function(self)
 	self.values.player.during_melee_dodge = {
-		0.8,
+		0.08,
 		0.12
 	}
 	self:add_definition(nil, "during_melee_dodge", "player", 1)
