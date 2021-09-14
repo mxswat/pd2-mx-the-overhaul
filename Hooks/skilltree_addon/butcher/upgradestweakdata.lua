@@ -23,7 +23,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "Butcher_UpgradesTweakData_init", func
 
 	self.values.player.melee_speed_boost = {
 		0.80,
-		0.75
+		0.70
 	}
 
 	self:add_definition(nil, "melee_speed_boost", "player", 1)

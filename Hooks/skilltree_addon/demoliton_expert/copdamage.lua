@@ -1,5 +1,13 @@
-Hooks:PostHook(CopDamage, "damage_bullet", "Demo_CopDamage_damage_bullet",    function(self, attack_data)
-    if managers.player:has_category_upgrade("player", "primer_round") and attack_data.attacker_unit == managers.player:player_unit() and not self:is_friendly_fire(attack_data.attacker_unit) then
+local function is_a_bow(attack_data)
+    return attack_data and attack_data.weapon_unit and attack_data.weapon_unit.base and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("bow")
+end
+
+Hooks:PostHook(CopDamage, "damage_bullet", "Demo_CopDamage_damage_bullet",    function(self, attack_data) 
+    local is_real_bullet = attack_data.variant == "bullet" and not is_a_bow(attack_data)
+    local is_player_damage = attack_data.attacker_unit == managers.player:player_unit()
+    local is_friendly_fire = self:is_friendly_fire(attack_data.attacker_unit)
+
+    if managers.player:has_category_upgrade("player", "primer_round") and is_real_bullet and is_player_damage and not is_friendly_fire then
         local primer_damage_mult = managers.player:upgrade_value("player", "primer_round")
         local SLOT_MASK = managers.slot:get_mask("enemies")
         local col_ray = attack_data.col_ray

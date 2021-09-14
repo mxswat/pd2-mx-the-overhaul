@@ -20,7 +20,10 @@ Hooks:PostHook(PlayerStandard, "_do_action_melee", "Butcher_PlayerStandard__do_a
         local melee_entry = managers.blackmarket:equipped_melee_weapon()
         local boost = managers.player:upgrade_value("player", "melee_speed_boost")
         self._state_data.melee_expire_t = t + tweak_data.blackmarket.melee_weapons[melee_entry].expire_t
-        self._state_data.melee_repeat_expire_t = t + math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t) * boost        
+        self._state_data.melee_repeat_expire_t = t + math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t) * boost
+        local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
+	    melee_damage_delay = math.min(melee_damage_delay, tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t) * boost
+        self._state_data.melee_damage_delay_t = t + melee_damage_delay
     end
 end)
 
