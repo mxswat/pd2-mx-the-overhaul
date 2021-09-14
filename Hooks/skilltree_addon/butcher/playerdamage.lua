@@ -46,7 +46,7 @@ for _, function_name in ipairs(damage_functions) do
 
 		local current_state = self._unit:movement()._current_state
 		local has_deflect_skill = managers.player:has_category_upgrade("player", "melee_deflect_chance")
-		local is_in_melee = (current_state and current_state.in_melee and current_state:in_melee()) or true
+		local is_in_melee = (current_state and current_state.in_melee and current_state:in_melee())
 		if has_deflect_skill and is_in_melee then
 			local melee_entry = managers.blackmarket:equipped_melee_weapon()
 			-- Add Skill check here
@@ -82,8 +82,7 @@ for _, function_name in ipairs(damage_functions) do
 			end
 
 			if (current_state.discharge_melee) then
-				current_state:discharge_melee()
-				self._unit:camera():play_shaker("player_exit_zipline", 0)
+				current_state:discharge_melee_fast()
 			end
 
 			return
