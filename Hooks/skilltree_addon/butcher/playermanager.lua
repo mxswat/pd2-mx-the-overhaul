@@ -84,3 +84,27 @@ function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, overri
     end
 	return chance
 end
+
+function PlayerManager:_on_deflect_cooldown_end()
+	HudChallengeNotification.queue("", "Deflect ready!")
+end
+
+function PlayerManager:_on_deflect_end()
+	local cooldown = self:upgrade_value("player", "melee_deflect").cooldown
+    HudChallengeNotification.queue("", "Deflect end!")
+	self:start_timer("melee_deflect_cooldown", cooldown, callback(self, self, "_on_deflect_cooldown_end"))
+end
+
+function PlayerManager:start_deflect()
+    local duration = self:upgrade_value("player", "melee_deflect").duration
+    HudChallengeNotification.queue("", "Deflect active!")
+    self:start_timer("deflect_duration", duration, callback(self, self, "_on_deflect_end"))
+end
+
+function PlayerManager:is_deflect_active()
+    return self:has_active_timer("deflect_duration")
+end
+
+function PlayerManager:is_deflect_on_cooldown()
+    return self:has_active_timer("deflect_cooldown")
+end

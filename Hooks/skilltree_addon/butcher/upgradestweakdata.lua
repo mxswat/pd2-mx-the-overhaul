@@ -34,14 +34,17 @@ Hooks:PostHook(UpgradesTweakData, "init", "Butcher_UpgradesTweakData_init", func
 		1.25
 	}
 
-	self:add_definition(nil, "melee_charge_run_speed_boost", "player", 1)
-	self:add_definition(nil, "melee_charge_run_speed_boost", "player", 2)
-
-	self.values.player.melee_deflect_chance = {
-		0.40,
-		0.50
+	self.values.player.melee_deflect = {
+		{
+			cooldown = 60,
+			duration = 6
+		},
+		{
+			cooldown = 45,
+			duration = 6
+		}
 	}
-
-	self:add_definition(nil, "melee_deflect_chance", "player", 1)
-	self:add_definition(nil, "melee_deflect_chance", "player", 2)
+	
+	self:add_definition(nil, "melee_deflect", "player", 1)
+	self:add_definition(nil, "melee_deflect", "player", 2)
 end)

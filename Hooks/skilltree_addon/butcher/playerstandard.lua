@@ -38,11 +38,18 @@ function PlayerStandard:get_current_melee_charge_lerp_value()
     return self._state_data.melee_charge_lerp_value
 end
 
+function PlayerStandard:is_melee_charge_full()
+    return (self._state_data.melee_charge_lerp_value or 0) >= 1
+end
+
 function PlayerStandard:discharge_melee_fast()
     self:_do_action_melee_mx(managers.player:player_timer():time(), nil, true)
 end
 
 function PlayerStandard:_do_action_melee_mx(t, input, skip_damage)
+	local deflect_boost = 5
+	local animation_deflect_boost = 5
+	-- From below here the code is the same as vanilla lol except the boosts
 	self._state_data.meleeing = nil
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
@@ -58,8 +65,8 @@ function PlayerStandard:_do_action_melee_mx(t, input, skip_damage)
 		bayonet_melee = true
 	end
 
-	self._state_data.melee_expire_t = t + (tweak_data.blackmarket.melee_weapons[melee_entry].expire_t / 5)
-	self._state_data.melee_repeat_expire_t = t + (math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t) / 5)
+	self._state_data.melee_expire_t = t + (tweak_data.blackmarket.melee_weapons[melee_entry].expire_t / deflect_boost)
+	self._state_data.melee_repeat_expire_t = t + (math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t) / deflect_boost)
 
 	if not instant_hit and not skip_damage then
 		self._state_data.melee_damage_delay_t = t + melee_damage_delay
@@ -96,7 +103,7 @@ function PlayerStandard:_do_action_melee_mx(t, input, skip_damage)
 			self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"))
 		end
 	else
-		local state = self._ext_camera:play_redirect(self:get_animation("melee_attack"), 5)
+		local state = self._ext_camera:play_redirect(self:get_animation("melee_attack"), animation_deflect_boost)
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars
 		self._melee_attack_var = anim_attack_vars and math.random(#anim_attack_vars)
 
@@ -123,4 +130,14 @@ function PlayerStandard:_do_action_melee_mx(t, input, skip_damage)
 
 		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim)
 	end
+end
+
+
+Hooks:PostHook(PlayerStandard, "_check_action_melee", "Butcher_PlayerStandard__check_action_melee", function(self, t, input)
+	self._state_data.btn_melee_press = input.btn_melee_press or input.btn_melee_release or self._state_data.melee_charge_wanted or input.btn_meleet_state
+end)
+
+
+function PlayerStandard:is_btn_melee_press()
+    return self._state_data.btn_melee_press
 end
