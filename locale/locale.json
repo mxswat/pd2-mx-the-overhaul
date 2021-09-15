@@ -125,5 +125,5 @@
   "adrenaline": "adrenaline",
   "adrenaline_desc": "BASIC: ##$basic##\nEvery consecutive ##melee## or ##saw## hits deals ##20%## more damage. Stacks up to ##100%##. \nBonus is reduced by ##10%## every ##2## seconds. \n\nACED: ##$pro##\nBonus is reduced by ##10%## every ##3## seconds.",
   "predator_deflect": "Predator's Deflect",
-  "predator_deflect_desc": "BASIC: ##$basic##\nWhen charging your melee weapon, you will have a ##40%## chance of reflecting the damage back to the enemy.\nLike Genji from Overwatch\n\nACED: ##$pro##\nWhen charging your melee weapon, you will have a ##50%## chance of reflecting the damage back to the enemy."
+  "predator_deflect_desc": "BASIC: ##$basic##\nYou learn the ability of the Predator Deflect.\nAfter fully charging your melee weapon, you will start deflecting bullets in front of you for ##6## seconds\nThis ability has a ##60## second cooldown.\nDeflected bullets can headshot. A deflected sniper bullet deals ##1000## damage. Deflected SWAT Turrets and Dozers bullets deal increased damage.\nLike Genji from Overwatch\n\nACED: ##$pro##\nReduces the cooldown to ##40## seconds"
 }
