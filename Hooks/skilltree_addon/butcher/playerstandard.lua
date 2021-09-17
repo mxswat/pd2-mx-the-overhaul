@@ -137,7 +137,6 @@ Hooks:PostHook(PlayerStandard, "_check_action_melee", "Butcher_PlayerStandard__c
 	self._state_data.btn_melee_press = input.btn_melee_press or input.btn_melee_release or self._state_data.melee_charge_wanted or input.btn_meleet_state
 end)
 
-
 function PlayerStandard:is_btn_melee_press()
-    return self._state_data.btn_melee_press
+    return self._state_data.btn_melee_press or self._state_data.melee_hold_t or self._state_data.melee_hold
 end
