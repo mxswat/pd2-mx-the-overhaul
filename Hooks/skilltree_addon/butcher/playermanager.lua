@@ -91,12 +91,14 @@ end
 
 function PlayerManager:_on_deflect_end()
 	local cooldown = self:upgrade_value("player", "melee_deflect").cooldown
+    -- mx_log_chat('cooldown', cooldown)
     HudChallengeNotification.queue("", "Deflect end!")
 	self:start_timer("melee_deflect_cooldown", cooldown, callback(self, self, "_on_deflect_cooldown_end"))
 end
 
 function PlayerManager:start_deflect()
     local duration = self:upgrade_value("player", "melee_deflect").duration
+    -- mx_log_chat('duration', duration)
     HudChallengeNotification.queue("", "Deflect active!")
     self:start_timer("deflect_duration", duration, callback(self, self, "_on_deflect_end"))
 end
@@ -106,5 +108,5 @@ function PlayerManager:is_deflect_active()
 end
 
 function PlayerManager:is_deflect_on_cooldown()
-    return self:has_active_timer("deflect_cooldown")
+    return self:has_active_timer("melee_deflect_cooldown")
 end
