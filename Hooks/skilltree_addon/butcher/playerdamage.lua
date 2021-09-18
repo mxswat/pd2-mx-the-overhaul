@@ -66,7 +66,7 @@ for _, function_name in ipairs(damage_functions) do
 			-- Add Skill check here
 			local attacker_unit = attack_data.attacker_unit
 			if (attacker_unit and attacker_unit.character_damage) then
-				local deflect_damage = attack_data.damage
+				local deflect_damage = attack_data.damage or 0
 
 				if string.find(attacker_unit:base()._tweak_table or '', "sniper") then
 					-- Fuck you snipers - By Mx, WolfTech21, Groovatron98 and the other fellas in the MWS discord server

@@ -1,5 +1,5 @@
 <mod name="The Overhaul" author="Mx#6478" color="Color(1,0.1,0.01)" priority="1">
-	<AssetUpdates id="32222" version="19.42" provider="modworkshop" />
+	<AssetUpdates id="32222" version="19.43" provider="modworkshop" />
 	<Localization directory="locale" default="locale.json">
 	</Localization>
 	<Hooks directory="Hooks">
