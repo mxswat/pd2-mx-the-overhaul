@@ -1,0 +1,40 @@
+[
+  {
+    "name": "butcher",
+    "type": "skilltree",
+    "tree": [
+      [
+        {
+          "name": "martial_arts_plus",
+          "desc": "martial_arts_plus_desc"
+        }
+      ],
+      [
+        {
+          "name": "pumping_iron_plus",
+          "desc": "pumping_iron_plus_desc"
+        },
+        {
+          "name": "predator_thirst",
+          "desc": "predator_thirst_desc"
+        }
+      ],
+      [
+        {
+          "name": "counter_strike_plus",
+          "desc": "counter_strike_plus_desc"
+        },
+        {
+          "name": "adrenaline",
+          "desc": "adrenaline_desc"
+        }
+      ],
+      [
+        {
+          "name": "predator_deflect",
+          "desc": "predator_deflect_desc"
+        }
+      ]
+    ]
+  }
+]

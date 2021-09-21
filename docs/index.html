@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mx's the overhaul</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      },
+      beforeCreate: function () {
+        fetch('https://raw.githubusercontent.com/mxswat/pd2-mx-the-overhaul/main/locale/locale.json')
+        // fetch('../locale/locale.json')
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+      }
+    })
+  </script>
+</body>
+
+</html>
