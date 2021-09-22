@@ -18,6 +18,7 @@
       Vue.component('SkillTree', {
         template: `
           <div class="skill-tree">
+            <h2 class="skill-tree__name"> {{ tree.name }} </h2>
             <skill-tier v-for="(skilltier, index) in tree.skilltiers" :key="index" v-bind:skilltier="skilltier"></skill-tier>
           </div>
         `,

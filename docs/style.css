@@ -1,9 +1,14 @@
 .skill-tier {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
   justify-content: center;
   padding: 8px;
+}
+
+.skill-tree__name {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .skill {
@@ -24,5 +29,64 @@ span.desc {
 }
 
 html {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+b {
+  color: #00f3ff;
+}
+
+
+
+// dark theme below
+
+html {
+  background-color: #242729;
+}
+html, body, input, textarea, select, button {
+  background-color: #242729;
+}
+html, body, input, textarea, select, button {
+  border-color: #ada18d;
+  color: #ffffff;
+}
+a {
+  color: #4ddaff;
+}
+table {
+  border-color: #7e898d;
+}
+::placeholder {
+  color: #fffff2;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #808900;
+  color: #ffffff;
+}
+::-webkit-scrollbar {
+  background-color: #303536;
+  color: #fff6e5;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #686f73;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #838d93;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #6c757a;
+}
+::-webkit-scrollbar-corner {
+  background-color: #242729;
+}
+::selection {
+  background-color: #0073ff;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #0073ff;
+  color: #ffffff;
 }
