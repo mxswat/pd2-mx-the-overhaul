@@ -3,16 +3,19 @@
   <html>
 
   <head>
-    <title>Vue Demo #1: The Box App</title>
+    <title>Mx's The Overhaul: Docs</title>
     <meta charset='utf-8' />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
-    <h1>Vue Demo #1</h1>
+    <h1>Mx's The Overhaul</h1>
     <div id="vapp">
-      <skill-tree v-for="tree in trees" :key="tree.butcher" v-bind:tree="tree"></skill-tree>
+      <div class="skill-tree-container">
+        <h1> Skill trees: </h1>
+        <skill-tree v-for="tree in trees" :key="tree.butcher" v-bind:tree="tree"></skill-tree>
+      </div>
     </div>
     <!-- Our View App goes at the end of the document -->
     <script>
