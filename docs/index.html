@@ -1,31 +1,68 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE html>
+  <html>
 
-<head>
-  <title>Mx's the overhaul</title>
-  <script src="https://unpkg.com/vue"></script>
-</head>
-<body>
-  <div id="app">
-    {{ message }}
-  </div>
-
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
-      },
-      beforeCreate: function () {
-        fetch('https://raw.githubusercontent.com/mxswat/pd2-mx-the-overhaul/main/locale/locale.json')
-        // fetch('../locale/locale.json')
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
+  <head>
+    <title>Vue Demo #1: The Box App</title>
+    <meta charset='utf-8' />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+      .box {
+        height: 200px;
+        width: 200px;
+        text-align: center;
       }
-    })
-  </script>
-</body>
 
-</html>
+      .red {
+        background-color: red;
+      }
+
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Vue Demo #1</h1>
+    <div id="vapp">
+      <skill-tree v-for="tree in trees" :key="tree.butcher"></skill-tree>
+    </div>
+    <!-- Our View App goes at the end of the document -->
+    <script>
+      Vue.component('SkillTree', {
+        template: `<div class="skilltree">Skill tree goes here</div>`,
+        methods: {
+          toggleMe() {
+            this.$root.toggleBox()
+          }
+        }
+      })
+      const vueApp = new Vue({
+        el: '#vapp',
+        data: {
+          display: 'redbox',
+          trees: [],
+          locale: {}
+        },
+        methods: {
+          // toggleBox() {
+          //   this.display == 'redbox' ? this.display = 'greenbox' : this.display = 'redbox'
+          // },
+          async fetchLocale(localeUrl) {
+            return fetch(localeUrl).then((response) => response.json())
+          },
+          async fetchConfig() {
+            return fetch('./config.json').then((response) => response.json())
+          },
+        },
+        created: async function () {
+          const config = await this.fetchConfig()
+          this.locale = await this.fetchLocale(config.localedir)
+          this.trees = config.trees
+          console.log(config, this.locale)
+        }
+      })
+    </script>
+  </body>
+
+  </html>
