@@ -4,7 +4,7 @@
     {
       "name": "butcher",
       "type": "skilltree",
-      "tree": [
+      "skilltiers": [
         [
           {
             "name": "martial_arts_plus",

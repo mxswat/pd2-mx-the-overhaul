@@ -25,16 +25,36 @@
   <body>
     <h1>Vue Demo #1</h1>
     <div id="vapp">
-      <skill-tree v-for="tree in trees" :key="tree.butcher"></skill-tree>
+      <skill-tree v-for="tree in trees" :key="tree.butcher" v-bind:tree="tree"></skill-tree>
     </div>
     <!-- Our View App goes at the end of the document -->
     <script>
       Vue.component('SkillTree', {
-        template: `<div class="skilltree">Skill tree goes here</div>`,
+        template: `
+          <div class="skill-tree">
+            <skill-tier v-for="(skilltier, index) in tree.skilltiers" :key="index" v-bind:skilltier="skilltier"></skill-tier>
+          </div>
+        `,
+        props: ['tree'],
         methods: {
           toggleMe() {
             this.$root.toggleBox()
           }
+        },
+        created: function () {
+          console.log(this.tree)
+        }
+      })
+      Vue.component('SkillTier', {
+        template: `
+          <div class="skill-tier">
+            
+          </div>
+        `,
+        props: ['skilltier'],
+        methods: {},
+        created: function () {
+          console.log(this.skilltier)
         }
       })
       const vueApp = new Vue({
