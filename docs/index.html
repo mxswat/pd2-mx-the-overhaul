@@ -42,21 +42,37 @@
           }
         },
         created: function () {
-          console.log(this.tree)
+          // console.log(this.tree)
         }
       })
+
       Vue.component('SkillTier', {
         template: `
           <div class="skill-tier">
-            
+            <skill v-for="(skill, index) in skilltier" :key="skill.name" v-bind:skill="skill"></skill>
           </div>
         `,
         props: ['skilltier'],
         methods: {},
         created: function () {
-          console.log(this.skilltier)
+          // console.log(this.skilltier)
         }
       })
+
+      Vue.component('Skill', {
+        template: `
+          <div class="skill">
+            <span class="name"> {{ skill.name }} </span>
+            <span class="desc"> {{ skill.desc }} </span>
+          </div>
+        `,
+        props: ['skill'],
+        methods: {},
+        created: function () {
+          console.log(this.skill)
+        }
+      })
+
       const vueApp = new Vue({
         el: '#vapp',
         data: {
