@@ -4,6 +4,8 @@
   align-content: center;
   justify-content: center;
   padding: 8px;
+  flex-basis: 25%;
+  border-bottom: 1px solid white;
 }
 
 .skill-tree__name {
@@ -13,9 +15,9 @@
 
 .skill {
   display: flex;
-  flex: 0 1 50%;
+  flex: 0 1 100%;
   flex-direction: column;
-  padding: 8px;
+  padding: 12px;
 }
 
 span.name {
@@ -39,7 +41,33 @@ b {
 
 .skill-tree-container {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(500px, 1fr) );
+  gap: 8px
+}
+
+.skill-tree {
+  background: url("https://pd2builder.netlify.app/img/skills/background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  border: 1px solid white; */
+  // Display grid POG
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.skll-tree-container {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-image: url(https://pd2builder.netlify.app/img/bg.png);
+  background-color: rgb(14, 14, 26);
+  margin: 0;
+  padding: 16px;
 }
 
 
