@@ -6,6 +6,7 @@
   padding: 8px;
   flex-basis: 25%;
   border-bottom: 1px solid white;
+  position: relative;
 }
 
 .skill-tree__name {
@@ -17,13 +18,15 @@
   display: flex;
   flex: 0 1 100%;
   flex-direction: column;
-  padding: 12px;
+  padding: 16px;
+  margin-top: 16px;
 }
 
 span.name {
   text-transform: capitalize;
   font-size: 1.35rem;
   text-align: center;
+  margin-bottom: 9px;
 }
 
 span.desc {
@@ -33,6 +36,13 @@ span.desc {
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+span.tier-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-weight: bold;
 }
 
 b {

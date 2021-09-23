@@ -21,11 +21,12 @@
     <!-- Our View App goes at the end of the document -->
     <script>
       Vue.component('SkillTree', {
+        // using the index and the % to always get the opposite index in the array
         template: `
           <div class="skll-tree-container">
             <h2 class="skill-tree__name"> {{ tree.name }} </h2>
             <div class="skill-tree">
-              <skill-tier v-for="(skilltier, index) in tree.skilltiers" :key="index" v-bind:skilltier="skilltier"></skill-tier>
+              <skill-tier v-for="(skilltier, index) in tree.skilltiers" :key="index" v-bind:tier="(index - tree.skilltiers.length) % (tree.skilltiers.length + 1)" v-bind:skilltier="skilltier"></skill-tier>
             </div>
           </div>
         `,
@@ -43,10 +44,11 @@
       Vue.component('SkillTier', {
         template: `
           <div class="skill-tier">
+            <span class="tier-label"> TIER {{ Math.abs(tier) }} </span>
             <skill v-for="(skill, index) in skilltier" :key="skill.name" v-bind:skill="skill"></skill>
           </div>
         `,
-        props: ['skilltier'],
+        props: ['skilltier', 'tier'],
         methods: {},
         created: function () {
           // console.log(this.skilltier)
