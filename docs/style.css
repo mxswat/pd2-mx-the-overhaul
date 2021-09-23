@@ -37,6 +37,10 @@ b {
   color: #00f3ff;
 }
 
+.skill-tree-container {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+}
 
 
 // dark theme below

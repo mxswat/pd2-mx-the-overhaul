@@ -31,8 +31,8 @@ function SkillTreeTweakData:init()
     local predator_thirst_aced = {"player_melee_speed_boost_2"}
     self:add_new_skill("predator_thirst", predator_thirst_basic, predator_thirst_aced, 3, {11,6})
 
-    local counter_strike_plus_basic = {"player_counter_strike_melee", "player_melee_charge_run_speed_boost_1"}
-    local counter_strike_plus_aced = {"player_counter_strike_spooc", "player_melee_charge_run_speed_boost_2"}
+    local counter_strike_plus_basic = {"player_counter_strike_melee", "player_counter_strike_spooc", "player_melee_charge_run_speed_boost_1"}
+    local counter_strike_plus_aced = {"player_melee_charge_run_speed_boost_2"}
     self:add_new_skill("counter_strike_plus", counter_strike_plus_basic, counter_strike_plus_aced, 3, {4,12})
 
     local adrenaline_basic = {"player_butcher_melee_stacking_1"}
