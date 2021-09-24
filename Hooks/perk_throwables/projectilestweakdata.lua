@@ -121,49 +121,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         }
     end
 
-    self.projectiles.dynamite_mx = {
-		name_id = "bm_dynamite",
-		unit = "units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite",
-		unit_dummy = "units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_dummy",
-		icon = "dynamite_grenade",
-		dlc = "west",
-		texture_bundle_folder = "west",
-		max_amount = 3,
-		throwable = true,
-		-- animation = "throw_dynamite",
-		anim_global_param = "projectile_four",
-		throw_allowed_expire_t = 0.1,
-		expire_t = 1.3,
-		repeat_expire_t = 1.5,
-		is_a_grenade = false, -- was true
-		is_explosive = true
-	}
-
-    self.projectiles.wpn_prj_four_mx = {
-		name_id = "bm_wpn_prj_four",
-		unit = "units/pd2_dlc_turtles/weapons/wpn_prj_four/wpn_prj_four",
-		unit_dummy = "units/pd2_dlc_turtles/weapons/wpn_prj_four/wpn_prj_four_husk",
-		local_unit = "units/pd2_dlc_turtles/weapons/wpn_prj_four/wpn_prj_four_local",
-		icon = "four_projectile",
-		throw_shout = true,
-		no_cheat_count = true,
-		impact_detonation = true,
-		client_authoritative = true,
-		add_trail_effect = true,
-		throwable = true,
-		texture_bundle_folder = "turtles",
-		dlc = "turtles",
-		max_amount = 10,
-		anim_global_param = "projectile_four",
-		throw_allowed_expire_t = 0.15,
-		expire_t = 1.1,
-		repeat_expire_t = 0.5
-	}
 
     self.projectiles.wpn_prj_hur_mx = {
 		name_id = "bm_wpn_prj_hur",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_mel_hur/wpn_prj_hur",
-		unit_dummy = "units/pd2_dlc_born/weapons/wpn_fps_mel_hur/wpn_prj_hur_husk",
+		unit = "units/mx_throwables/wpn_prj_hur_mx",
+		unit_dummy = "units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_dummy",
 		local_unit = "units/pd2_dlc_born/weapons/wpn_fps_mel_hur/wpn_prj_hur_local",
 		icon = "throwing_axe",
 		throw_shout = true,
@@ -173,7 +135,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
 		add_trail_effect = true,
 		throwable = true,
 		texture_bundle_folder = "born",
-		dlc = "born",
+        base_cooldown = 1,
 		max_amount = 3,
 		anim_global_param = "projectile_four",
 		throw_allowed_expire_t = 0.15,
