@@ -146,3 +146,11 @@ function _G.SetBool(list)
     end
     return set
 end
+
+function _G.raycast_from_player_eyes() 
+    local from = managers.player:player_unit():movement():m_head_pos()
+    local to = from + managers.player:player_unit():movement():m_head_rot():y() * 5000
+    local ray = managers.player:player_unit():raycast("ray", from, to, "slot_mask", managers.slot:get_mask("bullet_impact_targets"), "ignore_unit", {managers.player:player_unit()})
+
+    return ray, from, to
+end
