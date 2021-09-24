@@ -149,8 +149,13 @@ end
 
 function _G.raycast_from_player_eyes() 
     local from = managers.player:player_unit():movement():m_head_pos()
-    local to = from + managers.player:player_unit():movement():m_head_rot():y() * 5000
+    -- 50000 is 500 meters
+    local to = from + managers.player:player_unit():movement():m_head_rot():y() * number_to_meters(500)
     local ray = managers.player:player_unit():raycast("ray", from, to, "slot_mask", managers.slot:get_mask("bullet_impact_targets"), "ignore_unit", {managers.player:player_unit()})
 
     return ray, from, to
+end
+
+function _G.number_to_meters(number) 
+    return number * 100
 end
