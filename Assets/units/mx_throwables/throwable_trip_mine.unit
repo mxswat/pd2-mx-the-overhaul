@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <unit type="gen" slot="13">
-	<network sync="spawn" />
 	<object file="units/pd2_dlc_born/weapons/wpn_fps_mel_hur/wpn_prj_hur" />
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_weapon_sfx" />

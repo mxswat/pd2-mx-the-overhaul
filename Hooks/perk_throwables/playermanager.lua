@@ -81,6 +81,22 @@ function PlayerManager:generic_attempt(name_id)
 	return true
 end
 
+
+Hooks:PostHook(PlayerManager, "check_skills", "MXTO_PlayerManager_check_skills", function(self)
+	if managers.blackmarket:equipped_grenade() == "throwable_trip_mine" then
+		local function speed_up_on_kill(weapon_unit, variant)
+			managers.player:speed_up_grenade_cooldown(1)
+			if variant == "explosion" then
+				managers.player:speed_up_grenade_cooldown(1)
+			end
+		end
+
+		self:register_message(Message.OnEnemyKilled, "speed_up_throwable_trip_mine", speed_up_on_kill)
+	else
+		self:unregister_message(Message.OnEnemyKilled, "speed_up_throwable_trip_mine")
+	end
+end)
+
 --[[ Common functions END ]] --
 
 function PlayerManager:_attempt_yakuza_injector()
@@ -285,23 +301,6 @@ Hooks:AddHook( "PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_v
 	end
 	return _result
 end)
-
-function PlayerManager:_attempt_throwable_trip_mine()
-	local activated = self:generic_attempt("throwable_trip_mine")
-	if activated then
-		activated = self:player_unit():equipment()['use_trip_mine_mx'](self:player_unit():equipment())
-
-		local function speed_up_on_explosive_kill(weapon_unit, variant)
-			if variant == "explosion" then
-				managers.player:speed_up_grenade_cooldown(2)
-			end
-		end
-		if activated then
-			self:register_message(Message.OnEnemyKilled, "speed_up_on_explosive_kill_trip_mine", speed_up_on_explosive_kill)
-		end
-	end
-	return activated
-end
 
 function PlayerManager:_attempt_jet()
 	local activated = self:generic_attempt("jet")

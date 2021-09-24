@@ -75,9 +75,6 @@ function AddThrowables(self)
         "temporary_spare_armor_plate_1",
         "jet",
         "temporary_jet_1",
-        "dynamite_mx",
-        "wpn_prj_four_mx",
-        "wpn_prj_hur_mx"
     }
 
     for i, upgrade in ipairs(add_to_default) do

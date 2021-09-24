@@ -60,12 +60,6 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
             icon = "chico_injector"
         },
         {
-            name_id = "throwable_trip_mine",
-            base_cooldown = 100,
-            max_amount = 2,
-            icon = "equipment_trip_mine"
-        },
-        {
             name_id = "jet",
             base_cooldown = 40,
             max_amount = 1,
@@ -121,26 +115,26 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "VPPP_init_projectiles
         }
     end
 
-
-    self.projectiles.wpn_prj_hur_mx = {
-		name_id = "bm_wpn_prj_hur",
-		unit = "units/mx_throwables/wpn_prj_hur_mx",
+    self.projectiles.throwable_trip_mine = {
+        name_id = "bm_ability_throwable_trip_mine",
+        desc_id = "bm_ability_throwable_trip_mine_desc",
+        custom = true,
+        base_cooldown = 80,
+        max_amount = 2,
+        icon = "equipment_trip_mine",
+		unit = "units/mx_throwables/throwable_trip_mine",
 		unit_dummy = "units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_dummy",
-		local_unit = "units/pd2_dlc_born/weapons/wpn_fps_mel_hur/wpn_prj_hur_local",
-		icon = "throwing_axe",
+		local_unit = "units/mx_throwables/throwable_trip_mine",
 		throw_shout = true,
 		no_cheat_count = true,
 		impact_detonation = true,
 		client_authoritative = true,
 		add_trail_effect = true,
 		throwable = true,
-		texture_bundle_folder = "born",
-        base_cooldown = 1,
-		max_amount = 3,
+		texture_bundle_folder = "mods",
 		anim_global_param = "projectile_four",
 		throw_allowed_expire_t = 0.15,
 		expire_t = 1.1,
 		repeat_expire_t = 0.5
 	}
-
 end)

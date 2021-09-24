@@ -100,6 +100,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crooks_con" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crew_synchrony" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/buff_banner" />
-		<unit path="units/mx_throwables/wpn_prj_hur_mx" />
+		<unit path="units/mx_throwables/throwable_trip_mine" />
 	</AddFiles>
 </mod>
