@@ -57,6 +57,11 @@ function PlayerManager:multiply_by_temporary_value_boost(starting_value, tempora
 	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value * boost) or starting_value
 end
 
+function PlayerManager:multiply_by_temporary_value_boost_v2(starting_value, temporay_nameid)
+	local boost = self:temporary_upgrade_value("temporary", temporay_nameid)
+	return managers.player:has_activate_temporary_upgrade("temporary", temporay_nameid) and (starting_value * boost) or starting_value
+end
+
 function PlayerManager:generic_attempt(name_id)
 	if self:has_activate_temporary_upgrade("temporary", name_id) then
 		return false
