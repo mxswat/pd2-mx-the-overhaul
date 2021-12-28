@@ -48,3 +48,7 @@ function PlayerDamage:stealth_set_health(health)
 	})
 	-- return prev_health ~= Application:digest_value(self._health, false)
 end
+
+Hooks:PostHook(PlayerDamage, "on_incapacitated", "MXTO_PlayerDamage_on_incapacitated", function(self)
+	managers.player.redacted_boost_stacks = 0
+end)
