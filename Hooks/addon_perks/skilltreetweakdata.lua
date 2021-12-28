@@ -309,6 +309,7 @@ function AddAddonPerks(self)
             desc_id = "redacted_9_desc",
             upgrades = {
                 "player_passive_loot_drop_multiplier",
+                "player_killshot_close_panic_chance"
             },
             texture_bundle_folder = "addon_perks_redacted",
             icon_xy = {
