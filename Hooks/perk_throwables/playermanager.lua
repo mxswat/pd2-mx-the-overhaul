@@ -177,6 +177,9 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	local multiplier = VPPP_PlayerManager_damage_reduction_skill_multiplier(self, damage_type)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "med_x", 0.70)
 	multiplier = self:multiply_by_temporary_value_boost(multiplier, "the_mixtape", 0.30)
+	mx_log_chat('multiplier', multiplier)
+	multiplier = multiplier * self:upgrade_value("player", "redacted_damage_reduction", 1)
+	mx_log_chat('multiplier2', multiplier)
 
 	return multiplier
 end

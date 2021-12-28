@@ -85,11 +85,6 @@ function AddAddonPerks(self)
         desc_id = "dodgeopath_desc"
     }
 
-    -- Striker's Battlegear
-    -- +28 Stability
-    -- Every consecutive hit deals 1% more damage. Stacks up to 100%. Missing shots drops bonus by 2%. Bonus is reduced by 1% every second.
-    -- Every hit adds 1 stacks of a self-healing bonus; each stack is worth .01% of max health per second. Stacks up to 100 hits. [This bonus is increased by 0.05% per stack for every 3000 Stamina | Maybe scale with armor]
-
     local striker = {
         {
             cost = 0,
@@ -255,7 +250,9 @@ function AddAddonPerks(self)
             desc_id = "redacted_1_desc",
             texture_bundle_folder = "addon_perks_redacted",
             upgrades = {
-                "player_redacted_pain_1"
+                "player_redacted_pain_1",
+                "player_passive_health_multiplier_4",
+                "player_redacted_damage_reduction_1"
             },
             icon_xy = {
                 0,

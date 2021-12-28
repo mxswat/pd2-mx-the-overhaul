@@ -16,6 +16,11 @@ Hooks:PostHook(UpgradesTweakData, "init", "AddonPerk_UpgradesTweakData_init", fu
 
 	self.values.player.redacted_pain = {true}
 	self:add_definition(nil, "redacted_pain", "player", 1)
+	
+	self.values.player.redacted_damage_reduction = {
+		0.80
+	}
+	self:add_definition_v2("player", "redacted_damage_reduction", {1})
 end)
 
 function UpgradesTweakData:add_temporary_upgrades(name_id, generic_val, duration)

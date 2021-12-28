@@ -21,7 +21,7 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 			local player_unit = self:player_unit()
 			local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
 			if char_damage then
-				local healing = char_damage:_max_health() * 0.03
+				local healing = char_damage:_max_health() * 0.04
 				char_damage:restore_health(healing, true)
 			end
 		end
