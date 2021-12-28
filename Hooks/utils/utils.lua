@@ -159,3 +159,7 @@ end
 function _G.number_to_meters(number) 
     return number * 100
 end
+
+function normalize_between_min_and_max(val, max, min) 
+    return (val - min) / (max - min)
+end

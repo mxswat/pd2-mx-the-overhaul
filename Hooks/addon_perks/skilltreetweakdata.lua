@@ -248,9 +248,87 @@ function AddAddonPerks(self)
         desc_id = "lonestar_desc",
     }
 
+    local redacted = {
+        {
+            cost = 0,
+            name_id = "redacted_1",
+            desc_id = "redacted_1_desc",
+            texture_bundle_folder = "addon_perks_redacted",
+            upgrades = {
+                "player_redacted_pain_1"
+            },
+            icon_xy = {
+                0,
+                0
+            }
+        },
+        deck2,
+        {
+            cost = 0,
+            name_id = "redacted_3",
+            desc_id = "redacted_3_desc",
+            texture_bundle_folder = "addon_perks_redacted",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                1,
+                0
+            }
+        },
+        deck4,
+        {
+            cost = 0,
+            name_id = "redacted_5",
+            desc_id = "redacted_5_desc",
+            texture_bundle_folder = "addon_perks_redacted",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                2,
+                0
+            }
+        },
+        deck6,
+        {
+            cost = 0,
+            name_id = "redacted_7",
+            desc_id = "redacted_7_desc",
+            texture_bundle_folder = "addon_perks_redacted",
+            upgrades = {
+    
+            },
+            icon_xy = {
+                3,
+                0
+            }
+        },
+        deck8,
+        {
+            custom = true,
+            cost = 0,
+            name_id = "redacted_9",
+            desc_id = "redacted_9_desc",
+            upgrades = {
+                "player_passive_loot_drop_multiplier",
+            },
+            texture_bundle_folder = "addon_perks_redacted",
+            icon_xy = {
+                0,
+                0
+            }
+        },
+        custom = true,
+        custom_id = "redacted",
+        name_id = "redacted",
+        desc_id = "redacted_desc",
+    }
+
     table.insert(self.specializations, dodgeOpath)
     table.insert(self.specializations, striker)
     table.insert(self.specializations, lonestar)
+    table.insert(self.specializations, redacted)
 end
 
 Hooks:PostHook(SkillTreeTweakData, "init", "addon_perks_SkillTreeTweakData_init", AddAddonPerks)

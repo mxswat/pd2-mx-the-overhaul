@@ -18,3 +18,33 @@
 -- Hooks:PostHook(PlayerDamage, "update", "VPPP_PlayerDamage_update", function(self, unit, t, dt)
 -- 	-- code
 -- end)
+
+function PlayerDamage:stealth_set_health(health)
+    -- vanilla code
+	self:_check_update_max_health()
+
+	local max_health = self:_max_health() * self._max_health_reduction
+	health = math.min(health, max_health)
+	local prev_health = self._health and Application:digest_value(self._health, false) or health
+	self._health = Application:digest_value(math.clamp(health, 0, max_health), true)
+
+	self:_send_set_health()
+	-- self:_set_health_effect() -- not needed
+
+	if self._said_hurt and self:get_real_health() / self:_max_health() > 0.2 then
+		self._said_hurt = false
+	end
+
+	if self:health_ratio() < 0.3 then
+		self._heartbeat_start_t = TimerManager:game():time()
+		self._heartbeat_t = self._heartbeat_start_t + tweak_data.vr.heartbeat_time
+	end
+
+    -- Replaced with set_teammate_health and HUDManager.PLAYER_PANEL
+	managers.hud:set_teammate_health(HUDManager.PLAYER_PANEL, {
+		current = self:get_real_health(),
+		total = self:_max_health(),
+		revives = Application:digest_value(self._revives, false)
+	})
+	-- return prev_health ~= Application:digest_value(self._health, false)
+end

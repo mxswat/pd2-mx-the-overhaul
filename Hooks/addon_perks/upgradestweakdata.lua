@@ -10,9 +10,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "AddonPerk_UpgradesTweakData_init", fu
 
 	self.values.player.striker_accuracy_to_damage = {true}
 	self:add_definition(nil, "striker_accuracy_to_damage", "player", 1)
-
+	
 	self.values.player.lonestar_extra_ammo_multiplier = {1}
 	self:add_definition(nil, "lonestar_extra_ammo_multiplier", "player", 1)
+
+	self.values.player.redacted_pain = {true}
+	self:add_definition(nil, "redacted_pain", "player", 1)
 end)
 
 function UpgradesTweakData:add_temporary_upgrades(name_id, generic_val, duration)

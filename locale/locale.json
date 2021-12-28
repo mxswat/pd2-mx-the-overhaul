@@ -125,5 +125,17 @@
   "adrenaline": "adrenaline",
   "adrenaline_desc": "BASIC: ##$basic##\nEvery consecutive ##melee## or ##saw## hits deals ##20%## more damage. Stacks up to ##100%##. \nBonus is reduced by ##10%## every ##2## seconds. \n\nACE: ##$pro##\nBonus is reduced by ##10%## every ##3## seconds.",
   "predator_deflect": "Predator's Deflect",
-  "predator_deflect_desc": "BASIC: ##$basic##\nYou learn the ability of the Predator Deflect.\nAfter fully charging your melee weapon, you will start deflecting bullets in front of you for ##6## seconds\nThis ability has a ##60## second cooldown.\nDeflected bullets can headshot. A deflected sniper bullet deals ##1000## damage. Deflected SWAT Turrets and Dozers bullets deal increased damage.\nLike Genji from Overwatch\n\nACE: ##$pro##\nReduces the cooldown to ##40## seconds"
+  "predator_deflect_desc": "BASIC: ##$basic##\nYou learn the ability of the Predator Deflect.\nAfter fully charging your melee weapon, you will start deflecting bullets in front of you for ##6## seconds\nThis ability has a ##60## second cooldown.\nDeflected bullets can headshot. A deflected sniper bullet deals ##1000## damage. Deflected SWAT Turrets and Dozers bullets deal increased damage.\nLike Genji from Overwatch\n\nACE: ##$pro##\nReduces the cooldown to ##40## seconds",
+  "redacted_1": "Life of Pain",
+  "redacted_1_desc": "XXXX",
+  "redacted_3": "Masochism",
+  "redacted_3_desc": "XXX",
+  "redacted_5": "Sadism",
+  "redacted_5_desc": "XXXX",
+  "redacted_7": "Strength through pain",
+  "redacted_7_desc": "XXXX",
+  "redacted_9": "Unbreakable",
+  "redacted_9_desc": "XXXX",
+  "redacted": "Redacted",
+  "redacted_desc": "[REDACTED] sent us this package from [REDACTED]. We have little to no information about this technology; We know that it is based on constant pain, and the last know user of this tech was [REDACTED]. It requires an incredible amount of physical and mental strength to use. Be careful."
 }

@@ -15,6 +15,21 @@ Hooks:PostHook(PlayerManager, "check_skills", "Addon_Perks_PlayerManager_check_s
 	else
 		self:unregister_message(Message.OnEnemyKilled, "speed_up_on_melee_kill_dodgeopath")
 	end
+
+	if self:has_category_upgrade("player", "redacted_pain") then
+		local function redacted_on_kill(weapon_unit, variant)
+			local player_unit = self:player_unit()
+			local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
+			if char_damage then
+				local healing = char_damage:_max_health() * 0.03
+				char_damage:restore_health(healing, true)
+			end
+		end
+
+		self:register_message(Message.OnEnemyKilled, "redacted_on_kill", redacted_on_kill)
+	else
+		self:unregister_message(Message.OnEnemyKilled, "redacted_on_kill")
+	end
 end)
 
 local VPPP_PlayerManager_movement_speed_multiplier = PlayerManager.movement_speed_multiplier
@@ -48,13 +63,10 @@ Hooks:PostHook(PlayerManager, "_setup", "VPPP_PlayerManager__setup", function(se
 end)
 
 local strikerDecayInterval = 1 -- 1s between one decay and the other
-
 PlayerManager.strikerStackIncrease = 0.015
 PlayerManager.strikerStackDecrease = -0.02
 
-Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
-	local player = self:player_unit()
-
+function PlayerManager:striker_decay_update(player, t)
 	if not self:has_category_upgrade("player", "striker_accuracy_to_damage") or not player then
 		return
 	end
@@ -78,7 +90,7 @@ Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(se
 			total = 1
 		})
 	end
-end)
+end
 
 Hooks:PostHook(PlayerManager, "_internal_load", "Striker_PlayerManager__internal_load", function(self)
 	if self:has_category_upgrade("player", "striker_accuracy_to_damage") and managers and managers.hud then
@@ -90,6 +102,33 @@ Hooks:PostHook(PlayerManager, "_internal_load", "Striker_PlayerManager__internal
 		})
 		self:update_cocaine_hud()
 	end	
+end)
+
+local redactedDecayInterval = 1 -- 1s between one decay and the other
+function PlayerManager:redacted_decay_update(player, t)
+	if not self:has_category_upgrade("player", "redacted_pain") or not player and managers.groupai and not managers.groupai:state():whisper_mode()then
+		return
+	end
+
+	self._redacted_decay_t = self._redacted_decay_t or t + redactedDecayInterval
+	if self._redacted_decay_t <= t then
+		self._redacted_decay_t = self._redacted_decay_t + redactedDecayInterval
+		local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
+
+		if char_damage and not char_damage._dead and not char_damage._bleed_out and not char_damage._check_berserker_done then
+			local damage = (char_damage:_max_health() * 0.01)
+			char_damage:stealth_set_health(char_damage:get_real_health() - damage)
+			char_damage:_check_bleed_out(true) -- To avoid the "walking around with 0HP" shit
+
+			-- mx_log_chat('char_damage:health_ratio()', char_damage:health_ratio())
+		end
+	end
+end
+
+Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
+	local player = self:player_unit()
+	self:striker_decay_update(player, t)
+	self:redacted_decay_update(player, t)
 end)
 
 Hooks:AddHook("PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_value_overrides_perkthrowables", function(self, category, upgrade, default, result)
