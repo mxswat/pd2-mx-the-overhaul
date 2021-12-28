@@ -3,6 +3,12 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
     local multiplier = VPPP_NewRaycastWeaponBase_reload_speed_multiplier(self)
     multiplier = managers.player:give_temporary_value_boost(multiplier, "adrenaline_shot", 0.80)
     multiplier = managers.player:give_temporary_value_boost(multiplier, "whiff", 0.80)
+
+	if managers.player:has_category_upgrade("player", "redacted_pain") then
+		local stacks_count = managers.player.redacted_boost_stacks or 0
+		multiplier = multiplier * math.min(stacks_count * 0.015, 1)
+	end
+
     return multiplier
 end     
 

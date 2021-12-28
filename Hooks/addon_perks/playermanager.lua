@@ -109,27 +109,41 @@ function PlayerManager:redacted_decay_update(player, t)
 	if not self:has_category_upgrade("player", "redacted_pain") or not player and managers.groupai and not managers.groupai:state():whisper_mode()then
 		return
 	end
-
+	
 	self._redacted_decay_t = self._redacted_decay_t or t + redactedDecayInterval
 	if self._redacted_decay_t <= t then
 		self._redacted_decay_t = self._redacted_decay_t + redactedDecayInterval
 		local char_damage = managers.player and managers.player:player_unit() and managers.player:player_unit():character_damage()
-
+		
 		if char_damage and not char_damage._dead and not char_damage._bleed_out and not char_damage._check_berserker_done then
 			local damage = (char_damage:_max_health() * 0.01)
 			char_damage:stealth_set_health(char_damage:get_real_health() - damage)
 			char_damage:_check_bleed_out(true) -- To avoid the "walking around with 0HP" shit
-
-			-- mx_log_chat('char_damage:health_ratio()', char_damage:health_ratio())
 		end
 	end
+end
+
+local redactedBoostInterval = 60 -- 60s
+function PlayerManager:redacted_boosts_update(player, t)
+	self.redacted_boost_stacks = self.redacted_boost_stacks or 0
+	self.redacted_boost_stacks = self.redacted_boost_stacks + 1
 end
 
 Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)
 	local player = self:player_unit()
 	self:striker_decay_update(player, t)
 	self:redacted_decay_update(player, t)
+	self:generic_decay_update(t, 'redacted_boosts', redactedBoostInterval, self.redacted_boosts_update)
 end)
+
+function PlayerManager:generic_decay_update(t, decay_key, decayInterval, callback)
+	local player = self:player_unit()
+	self[decay_key] = self[decay_key] or t + decayInterval
+	if self[decay_key] <= t then
+		self[decay_key] = self[decay_key] + decayInterval
+		callback(self, player, t)
+	end
+end
 
 Hooks:AddHook("PlayerManager_upgrade_value_overrides", "PlayerManager_upgrade_value_overrides_perkthrowables", function(self, category, upgrade, default, result)
     local new_result = nil
