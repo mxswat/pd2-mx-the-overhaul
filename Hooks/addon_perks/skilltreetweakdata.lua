@@ -314,7 +314,7 @@ function AddAddonPerks(self)
             texture_bundle_folder = "addon_perks_redacted",
             icon_xy = {
                 0,
-                0
+                1
             }
         },
         custom = true,

@@ -101,5 +101,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/crew_synchrony" />
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/grenades/buff_banner" />
 		<unit path="units/mx_throwables/throwable_trip_mine" />
+		<texture path="guis/dlcs/addon_perks_redacted/textures/pd2/specialization/icons_atlas" force="true"/>
 	</AddFiles>
 </mod>
