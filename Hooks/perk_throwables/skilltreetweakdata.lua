@@ -54,7 +54,7 @@ function AddThrowables(self)
     -- Add to perkdecks card
     for k, deck in pairs(self.specializations) do
         for k, card in pairs(deck) do
-            if card and card.name_id and name_id_to_upgrade_map[card.name_id] then
+            if card and type(card) == "table" and card.name_id and name_id_to_upgrade_map[card.name_id] then
                 if card.upgrades then
                     for i, upgrade_id in ipairs(name_id_to_upgrade_map[card.name_id]) do
                         table.insert(card.upgrades, upgrade_id)
