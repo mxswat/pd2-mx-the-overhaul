@@ -123,7 +123,7 @@ function PlayerManager:redacted_decay_update(player, t)
 	end
 end
 
-local redactedBoostInterval = 60 -- 60s
+local redactedBoostInterval = 30 -- 30s
 function PlayerManager:redacted_boosts_update(player, t)
 	self.redacted_boost_stacks = self.redacted_boost_stacks or 0
 	self.redacted_boost_stacks = self.redacted_boost_stacks + 1

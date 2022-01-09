@@ -135,7 +135,7 @@
   "redacted_7": "Strength Through Pain",
   "redacted_7_desc": "Increases Max HP by ##60%##",
   "redacted_9": "Unbreakable",
-  "redacted_9_desc": "Every ##60## second spent without being downed you gain ##1.5%## Damage and Reload Speed up to ##100%##, resets on downed.\nKilling an enemy at medium range has a ##75%## chance to spread ##panic## among your enemies",
+  "redacted_9_desc": "Every ##30## second spent without being downed you gain ##1.5%## Damage and Reload Speed up to ##100%##, resets on downed.\nKilling an enemy at medium range has a ##75%## chance to spread ##panic## among your enemies",
   "redacted": "Redacted",
   "redacted_desc": "[REDACTED] sent us this package from [REDACTED]. We have little to no information about this technology; We know that it is based on constant pain, and the last know user of this tech was [REDACTED]. It requires an incredible amount of physical and mental strength to use. Be careful."
 }
