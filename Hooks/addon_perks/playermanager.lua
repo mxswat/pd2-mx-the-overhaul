@@ -127,6 +127,7 @@ local redactedBoostInterval = 30 -- 30s
 function PlayerManager:redacted_boosts_update(player, t)
 	self.redacted_boost_stacks = self.redacted_boost_stacks or 0
 	self.redacted_boost_stacks = self.redacted_boost_stacks + 1
+	mx_log_chat('redacted_boost_stacks', self.redacted_boost_stacks)
 end
 
 Hooks:PostHook(PlayerManager, "update", "VPPP_PlayerManager_update", function(self, t, dt)

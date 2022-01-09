@@ -31,20 +31,20 @@ end
 
 function _G.mx_log(s)	
 	-- Output log | Skip if nondeveloper.
-	if MXTO_get_dev_mode() < 2 then
+	if MXTO_get_dev_mode() >= 2 then
 		log("[MXTO] " .. s)
 	end
 end
 
 function _G.mx_log_chat(name, content)
     -- body
-    if MXTO_get_dev_mode() < 2 then
+    if MXTO_get_dev_mode() >= 2 then
         managers.chat:_receive_message(1, tostring(name), tostring(content), Color('00ff00'))
 	end
 end
 
 function _G.mx_print(node)
-    if MXTO_get_dev_mode() < 2 then
+    if MXTO_get_dev_mode() >= 2 then
         return -- Do not use mx_print, dev mode not active
     end
 
